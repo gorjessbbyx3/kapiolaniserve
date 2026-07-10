@@ -1,7 +1,9 @@
 import { useParams, Link, Navigate } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
 import { pathways } from '../data/pathways'
+import { partnersByPathway } from '../data/partners'
 import PathwayMarker from '../components/PathwayMarker'
+import PartnerCard from '../components/PartnerCard'
 
 export default function PathwayDetail() {
   const { slug } = useParams()
@@ -10,6 +12,7 @@ export default function PathwayDetail() {
   if (!pathway) return <Navigate to="/pathways" replace />
 
   const others = pathways.filter((p) => p.slug !== pathway.slug)
+  const partners = partnersByPathway[pathway.slug] ?? []
 
   return (
     <div>
@@ -26,10 +29,10 @@ export default function PathwayDetail() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-5 lg:px-8 py-16 grid lg:grid-cols-3 gap-12">
-        <div className="lg:col-span-2">
+      <section className="mx-auto max-w-7xl px-5 lg:px-8 py-16 grid lg:grid-cols-4 gap-12">
+        <div className="lg:col-span-3">
           <h2 className="font-display text-2xl text-kalo mb-4">What service looks like here</h2>
-          <ul className="space-y-3">
+          <ul className="space-y-3 mb-10">
             {pathway.focus.map((f) => (
               <li key={f} className="flex items-start gap-3 text-ink/80">
                 <span className="mt-2 h-1.5 w-1.5 rounded-full shrink-0" style={{ backgroundColor: pathway.color }} />
@@ -37,6 +40,37 @@ export default function PathwayDetail() {
               </li>
             ))}
           </ul>
+
+          {pathway.culturalNote && (
+            <div className="mb-10 border border-kalo/10 rounded-xl p-6" style={{ backgroundColor: `${pathway.color}0d` }}>
+              <p className="font-display text-lg text-kalo mb-4">{pathway.culturalNote.heading}</p>
+              <div className="grid sm:grid-cols-2 gap-4">
+                {pathway.culturalNote.values.map((v) => (
+                  <div key={v.term}>
+                    <p className="font-display text-sm" style={{ color: pathway.color }}>
+                      {v.term}
+                    </p>
+                    <p className="text-sm text-ink/70 mt-1 leading-relaxed">{v.meaning}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {partners.length > 0 && (
+            <>
+              <h2 className="font-display text-2xl text-kalo mb-1">Community partners</h2>
+              <p className="text-sm text-ink/60 mb-6">
+                {partners.length} active placement site{partners.length === 1 ? '' : 's'} in this pathway.
+              </p>
+              <div className="grid sm:grid-cols-2 gap-5">
+                {partners.map((partner) => (
+                  <PartnerCard key={partner.name} partner={partner} accent={pathway.color} />
+                ))}
+              </div>
+            </>
+          )}
+
           <div className="mt-10 border border-kalo/10 rounded-xl p-6 bg-white">
             <p className="font-display text-lg text-kalo">Ready to register for this pathway?</p>
             <p className="mt-2 text-sm text-ink/70">

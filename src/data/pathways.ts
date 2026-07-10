@@ -5,6 +5,7 @@ export type Pathway = {
   color: string
   summary: string
   focus: string[]
+  culturalNote?: { heading: string; values: { term: string; meaning: string }[] }
 }
 
 export const pathways: Pathway[] = [
@@ -50,8 +51,8 @@ export const pathways: Pathway[] = [
     marker: 'compass',
     color: '#6b4a8a',
     summary:
-      'Service with organizations supporting immigrant, refugee, and multicultural communities across Oʻahu.',
-    focus: ['Cross-cultural exchange', 'Community identity work', 'Language access'],
+      "Cross-cultural exchange drawing on KCC's diverse student body — from the campus International Café to language tutoring and immigrant-integration work with Project SHINE.",
+    focus: ['International Café cultural exchange', 'Peer & public-school language tutoring', 'Project SHINE immigrant integration support'],
   },
   {
     slug: 'bridging-generations',
@@ -59,8 +60,17 @@ export const pathways: Pathway[] = [
     marker: 'hands',
     color: '#8a5a3c',
     summary:
-      'Kūpuna support, intergenerational programming, and service with senior and long-term care communities.',
-    focus: ['Kūpuna companionship', 'Intergenerational programs', 'Senior services'],
+      'Kūpuna companionship and intergenerational service grounded in Kaʻāmauloa — the unbroken cultural thread connecting ancestors, present-day communities, and future generations.',
+    focus: ['Kūpuna companionship & transportation', 'Hospice and long-term care support', 'Intergenerational mentorship'],
+    culturalNote: {
+      heading: 'Grounded in Kaʻāmauloa — the unbroken thread',
+      values: [
+        { term: 'Aloha', meaning: 'Compassion and respect for all generations, the foundation of community trust.' },
+        { term: 'Mālama', meaning: 'To care for and protect — mālama ʻāina ensures the land sustains future generations.' },
+        { term: 'Kuleana', meaning: 'A sacred responsibility to ʻohana and heritage, carrying knowledge forward.' },
+        { term: 'Naʻauao', meaning: 'Sharing intellectual wisdom and ancestral knowledge across generations.' },
+      ],
+    },
   },
   {
     slug: 'resilience-neighborhoods',
