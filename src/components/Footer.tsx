@@ -27,6 +27,11 @@ function Twitter(props: { size?: number }) {
 export default function Footer() {
   return (
     <footer className="bg-kalo-dark text-sand/90">
+      <img
+        src="/images/footer-banner.jpg"
+        alt="Kapiʻolani Service & Sustainability Learning — student volunteers at Diamond Head and planting in the garden"
+        className="w-full h-auto"
+      />
       <div className="mx-auto max-w-7xl px-5 lg:px-8 py-14 grid gap-10 md:grid-cols-3">
         <div>
           <p className="font-display text-xl text-sand mb-3">Kapiʻolani Service &amp; Sustainability Learning</p>
@@ -67,6 +72,16 @@ export default function Footer() {
         <div className="mx-auto max-w-7xl px-5 lg:px-8 py-5 text-xs text-sand/50 flex flex-col sm:flex-row justify-between gap-2">
           <span>&copy; {new Date().getFullYear()} Kapiʻolani Service &amp; Sustainability Learning Program</span>
           <span>Kapiʻolani Community College is proud to hold the Carnegie Foundation&rsquo;s Community Engagement Classification, 2015&ndash;2025.</span>
+        </div>
+        <div className="mx-auto max-w-7xl px-5 lg:px-8 pb-5 text-xs text-sand/40">
+          <a
+            href="https://techsavvyhawaii.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-ilima transition-colors"
+          >
+            Powered by TechSavvy Hawaii
+          </a>
         </div>
       </div>
     </footer>
