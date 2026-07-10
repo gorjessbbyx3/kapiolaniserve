@@ -74,9 +74,11 @@ export const leafPages: LeafPage[] = [
     sectionPath: sections.events.path,
     blurb: 'Ways to plug into KSSLP outside of a course requirement.',
     body: [
-      'Not enrolled in a service-learning course? You can still volunteer through KSSLP-affiliated events, campus programs, and community partner opportunities.',
-      'Check current openings with Pohukaina Food Pantry, Māla Māunuunu, the KCC Ecology Club, and seasonal community events.',
+      'Not enrolled in a service-learning course? You can still volunteer through campus blood drives, KSSLP-affiliated events, and community partner opportunities across all seven pathways.',
+      'Volunteers fill a real gap for community organizations that can\u2019t staff every need on their own \u2014 and in return, students get hands-on experience that complements what they\u2019re studying in class. It\u2019s a win-win: organizations get motivated help, and students build skills and connections outside the classroom.',
+      'The easiest way to start is to reach out to the KSSLP office directly, or connect with a specific pathway\u2019s partner list to find an opportunity that fits your interests and schedule.',
     ],
+    links: [{ label: 'Donate blood with the Blood Bank of Hawaiʻi', href: 'https://www.bbh.org/' }],
   },
   // Become Certified
   {
@@ -87,7 +89,7 @@ export const leafPages: LeafPage[] = [
     blurb: 'Training pathways toward a KSSLP service-learning certificate.',
     body: [
       'The certificate recognizes sustained, reflective service across one or more pathways, combining logged hours, training modules, and a capstone reflection.',
-      'Training modules cover community engagement ethics, cultural protocol, and pathway-specific orientation.',
+      'Training modules cover community engagement ethics, cultural protocol, and pathway-specific orientation. Ask the KSSLP office about the current Academic Subject Certificate in Sustainability track and how it stacks with your degree requirements.',
     ],
   },
   // Resource Library
@@ -108,7 +110,10 @@ export const leafPages: LeafPage[] = [
     section: sections.library.title,
     sectionPath: sections.library.path,
     blurb: 'Curated readings and tools across the seven pathways.',
-    body: ['A growing collection of articles, guides, and toolkits organized by pathway to support deeper learning beyond your service hours.'],
+    body: [
+      '"Knowledge grows exponentially. The more we know, the greater our ability to learn, and the faster we expand our knowledge base." \u2014 Dan Brown',
+      'A growing collection of articles, guides, and toolkits organized by pathway to support deeper learning beyond your service hours, including community-university engagement scholarship and health and safety references relevant to specific placement sites.',
+    ],
   },
   {
     path: '/service-learning',
@@ -116,7 +121,11 @@ export const leafPages: LeafPage[] = [
     section: sections.library.title,
     sectionPath: sections.library.path,
     blurb: 'What service-learning means at KCC and how it differs from volunteering.',
-    body: ['Service-learning pairs structured community service with academic reflection, so the work you do off campus feeds directly back into what you\u2019re studying.'],
+    body: [
+      'Service-learning was first defined in federal legislation through the National and Community Service Act of 1990: a method where participants learn through active, organized service that meets a real community need, connects back to academic coursework, and includes structured time for reflection.',
+      'The key difference from ordinary volunteering is reciprocity. Rather than one group simply donating resources to another, service-learning treats the community partner as a co-educator \u2014 the relationship runs both ways.',
+      'The philosophy traces back to educational theorists like John Dewey, who argued that real learning comes from reflecting on doing, not just being told information, and to Kolb\u2019s experiential learning cycle: concrete experience, reflection, conceptualization, and then trying it again differently.',
+    ],
   },
   {
     path: '/disaster-preparedness',
@@ -124,7 +133,21 @@ export const leafPages: LeafPage[] = [
     section: sections.library.title,
     sectionPath: sections.library.path,
     blurb: 'Household and neighborhood readiness resources for Oʻahu.',
-    body: ['Guidance on building a family emergency plan, hurricane and tsunami readiness, and how the Resilience Neighborhoods pathway supports preparedness work locally.'],
+    body: [
+      'Resilience Hubs play a critical role before, during, and immediately after an emergency \u2014 they\u2019re community assets that strengthen social resilience ahead of a disaster, and can also provide year-round services that support neighborhood wellbeing and revitalization.',
+      'The Resilience Neighborhoods pathway connects service learners to this work directly, including partnerships with the National Disaster Preparedness Training Center on risk assessment and community-based readiness strategies.',
+    ],
+  },
+  {
+    path: '/blood-donations',
+    title: 'Blood Donations',
+    section: sections.library.title,
+    sectionPath: sections.library.path,
+    blurb: 'Campus blood drive schedule and eligibility info.',
+    body: [
+      'KSSLP partners with the Blood Bank of Hawaiʻi to host campus blood drives each semester \u2014 a cornerstone Health pathway activity that any KCC student, staff, or faculty member can take part in, whether or not you\u2019re enrolled in a service-learning course.',
+    ],
+    links: [{ label: 'Blood Bank of Hawaiʻi — donate today', href: 'https://www.bbh.org/' }],
   },
   {
     path: '/native-hawaiian-plants-listing',
@@ -139,8 +162,14 @@ export const leafPages: LeafPage[] = [
     title: 'Native Hawaiian Plants Resources',
     section: sections.library.title,
     sectionPath: sections.library.path,
-    blurb: 'Further reading and partner organizations for native plant stewardship.',
-    body: ['Links to botanical gardens, propagation guides, and community restoration partners across Oʻahu.'],
+    blurb: 'Further reading and reference books for native plant stewardship.',
+    body: [
+      'A working reading list for anyone going deeper on native Hawaiian flora, compiled from University of Hawaiʻi botany coursework: Alfred Byrd Graf\u2019s Tropica (a color reference of exotic plants for warm-region horticulture), the USDA\u2019s Common Forest Trees of Hawaiʻi by Little & Skolmen, and Motooka et al.\u2019s Weeds of Hawaiʻi\u2019s Pastures and Natural Areas identification guide.',
+    ],
+    links: [
+      { label: 'Common Forest Trees of Hawaiʻi (CTAHR)', href: 'http://www.ctahr.hawaii.edu/forestry/trees/little_skolmen.html' },
+      { label: 'Weeds of Hawaiʻi\u2019s Pastures guide (CTAHR)', href: 'http://www.ctahr.hawaii.edu/invweed/weedsHi.html' },
+    ],
   },
   {
     path: '/invasive-plant-species',
@@ -172,15 +201,8 @@ export const leafPages: LeafPage[] = [
     section: sections.library.title,
     sectionPath: sections.library.path,
     blurb: 'Safety background for service sites involving older buildings or soil disturbance.',
-    body: ['Reference material on recognizing and avoiding asbestos exposure risk during community restoration and building-adjacent service projects.'],
-  },
-  {
-    path: '/blood-donations',
-    title: 'Blood Donations',
-    section: sections.library.title,
-    sectionPath: sections.library.path,
-    blurb: 'Campus blood drive schedule and eligibility info.',
-    body: ['KSSLP partners with the Blood Bank of Hawaiʻi to host campus blood drives each semester \u2014 a cornerstone Health pathway activity.'],
+    body: ['Reference material on recognizing and avoiding asbestos exposure risk during community restoration and building-adjacent service projects, since some older Oʻahu structures and job sites may still contain legacy asbestos materials.'],
+    links: [{ label: 'Asbestos & health background', href: 'https://www.asbestos.com/mesothelioma/' }],
   },
   // About
   {

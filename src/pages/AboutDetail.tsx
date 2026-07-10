@@ -87,6 +87,10 @@ export function MeetTheTeam() {
         <Link to="/about" className="text-sm text-ocean hover:text-papaya">
           &larr; Back to About
         </Link>
+        <p className="font-display text-xl italic text-kalo leading-snug">
+          &ldquo;The best way to find yourself is to lose yourself in the service of others.&rdquo;
+        </p>
+        <p className="text-sm text-ink/60 -mt-4">&mdash; Mahatma Gandhi</p>
         <div className="grid sm:grid-cols-2 gap-5">
           {team.map((t) => (
             <div key={t.name} className="card-lift border border-kalo/10 rounded-xl p-6 bg-white">
@@ -111,6 +115,11 @@ export function MeetTheTeam() {
               </span>
             ))}
           </div>
+        </div>
+        <div className="border-t border-kalo/10 pt-8">
+          <p className="text-sm text-ink/70">
+            Interested in becoming a Pathway Leader? Contact the KSSLP office to learn more.
+          </p>
         </div>
       </section>
     </div>
