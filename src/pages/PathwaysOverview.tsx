@@ -18,7 +18,7 @@ export default function PathwaysOverview() {
             <Link
               key={p.slug}
               to={`/pathways/${p.slug}`}
-              className="group border border-kalo/10 rounded-xl p-7 bg-white hover:shadow-md transition-shadow flex gap-5"
+              className="card-lift group border border-kalo/10 rounded-xl p-7 bg-white flex gap-5"
             >
               <PathwayMarker marker={p.marker} color={p.color} size="lg" />
               <div>

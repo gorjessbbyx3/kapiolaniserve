@@ -27,7 +27,7 @@ export default function SectionOverview({
               <Link
                 key={l.to}
                 to={l.to}
-                className="group border border-kalo/10 rounded-xl p-6 bg-white hover:shadow-md transition-shadow"
+                className="card-lift group border border-kalo/10 rounded-xl p-6 bg-white"
               >
                 <h2 className="font-display text-lg text-kalo">{l.title}</h2>
                 <p className="mt-2 text-sm text-ink/70 leading-relaxed">{l.blurb}</p>

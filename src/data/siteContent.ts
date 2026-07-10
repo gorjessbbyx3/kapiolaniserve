@@ -255,7 +255,7 @@ export const leafPages: LeafPage[] = [
       'The KCC Ecology Club (Nā Kiaʻi Honua, "Earth Guardians") exists to inspire and educate students in environmental science and ecology through hands-on, community-based projects.',
       'The club organizes restoration work days, campus sustainability initiatives, and Environment pathway service opportunities open to any KCC student.',
     ],
-    links: [{ label: 'Visit the Ecology Club site', href: 'https://ecologyclubatkcc.wixsite.com/kccecolgyclub' }],
+    links: [{ label: 'Visit the Ecology Club site', href: 'https://ecologyclubatkcc.wixsite.com/kccecolgyclub' }, { label: 'Join the Ecology Club (flyer PDF)', href: 'https://kapiolaniserve.weebly.com/uploads/8/5/0/6/8506005/join_ecology_poster.pdf' }],
   },
   {
     path: '/mina',
@@ -268,6 +268,7 @@ export const leafPages: LeafPage[] = [
       'MINA runs four semesters a year and welcomes students and ʻohana from any discipline or institution. First-time participants attend upland, midland, and lowland core activities \u2014 invasive species management, reforesting native species, working in loʻi, maintaining heiau, and restoring loko iʻa (fishponds).',
       'A required orientation covers the historical context of the ahupuaʻa system and program logistics before you begin. Most activities run on weekends, 8am to 1pm.',
     ],
+    links: [{ label: 'MINA Factsheet (PDF)', href: 'https://kapiolaniserve.weebly.com/uploads/8/5/0/6/8506005/mina_factsheet_fall_2023.pdf' }],
   },
   {
     path: '/policies-students',

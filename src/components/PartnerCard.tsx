@@ -3,7 +3,10 @@ import type { Partner } from '../data/partners'
 
 export default function PartnerCard({ partner, accent }: { partner: Partner; accent: string }) {
   return (
-    <div className="border border-kalo/10 rounded-xl p-6 bg-white flex flex-col gap-3">
+    <div
+      className="card-lift border border-kalo/10 rounded-xl p-6 bg-white flex flex-col gap-3 border-t-4"
+      style={{ borderTopColor: accent }}
+    >
       <div className="flex items-start justify-between gap-3">
         <h3 className="font-display text-lg text-kalo leading-snug">{partner.name}</h3>
         {partner.website && (

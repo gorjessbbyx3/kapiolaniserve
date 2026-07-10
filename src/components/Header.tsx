@@ -67,8 +67,8 @@ export default function Header() {
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <Link to="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
-            <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-ilima text-kalo-dark font-display text-lg">
-              K
+            <span className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-sand shrink-0">
+              <img src="/images/kssl-logo.png" alt="KSSLP logo" className="h-9 w-9 object-contain" />
             </span>
             <span className="font-display text-lg leading-tight">
               Kapiʻolani<span className="block text-xs eyebrow text-sand/70">Service &amp; Sustainability Learning</span>

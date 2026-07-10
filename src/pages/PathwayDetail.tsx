@@ -4,6 +4,8 @@ import { pathways } from '../data/pathways'
 import { partnersByPathway } from '../data/partners'
 import PathwayMarker from '../components/PathwayMarker'
 import PartnerCard from '../components/PartnerCard'
+import CornerLeaves from '../components/CornerLeaves'
+import { ImagePlaceholder } from '../components/Placeholders'
 
 export default function PathwayDetail() {
   const { slug } = useParams()
@@ -16,8 +18,9 @@ export default function PathwayDetail() {
 
   return (
     <div>
-      <section className="text-sand contour-field" style={{ backgroundColor: pathway.color }}>
-        <div className="mx-auto max-w-7xl px-5 lg:px-8 py-16 lg:py-20">
+      <section className="relative text-sand contour-field overflow-hidden" style={{ backgroundColor: pathway.color }}>
+        <CornerLeaves corners={['top-right', 'bottom-left']} color="#f6f1e4" size={200} opacity={0.5} />
+        <div className="relative mx-auto max-w-7xl px-5 lg:px-8 py-16 lg:py-20">
           <Link to="/pathways" className="text-sm text-sand/70 hover:text-sand">
             &larr; All pathways
           </Link>
@@ -31,6 +34,10 @@ export default function PathwayDetail() {
 
       <section className="mx-auto max-w-7xl px-5 lg:px-8 py-16 grid lg:grid-cols-4 gap-12">
         <div className="lg:col-span-3">
+          <div className="mb-10 max-w-md">
+            <ImagePlaceholder label={`${pathway.name} pathway in action`} aspect="aspect-[16/9]" accent={pathway.color} />
+          </div>
+
           <h2 className="font-display text-2xl text-kalo mb-4">What service looks like here</h2>
           <ul className="space-y-3 mb-10">
             {pathway.focus.map((f) => (
@@ -92,7 +99,7 @@ export default function PathwayDetail() {
               <Link
                 key={p.slug}
                 to={`/pathways/${p.slug}`}
-                className="flex items-center gap-3 border border-kalo/10 rounded-lg px-4 py-3 hover:bg-white transition-colors"
+                className="card-lift flex items-center gap-3 border border-kalo/10 rounded-lg px-4 py-3 bg-white/60 hover:bg-white"
               >
                 <PathwayMarker marker={p.marker} color={p.color} size="sm" />
                 <span className="text-sm text-kalo">{p.name}</span>

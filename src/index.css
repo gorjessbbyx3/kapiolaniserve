@@ -4,7 +4,9 @@
 @theme {
   --color-kalo: #2f4a3c;
   --color-kalo-dark: #1d2f26;
-  --color-papaya: #e07a35;
+  --color-papaya: #e8792b;
+  --color-hibiscus: #d43d51;
+  --color-plumeria: #f3c94f;
   --color-sand: #f6f1e4;
   --color-sand-deep: #ece2c9;
   --color-ilima: #d9a441;
@@ -61,6 +63,26 @@ a {
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
+}
+
+.card-lift {
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+}
+.card-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px -18px rgba(29, 47, 38, 0.35);
+}
+
+@keyframes gentle-float {
+  0%, 100% { transform: translateY(0px) rotate(var(--tilt, 0deg)); }
+  50% { transform: translateY(-10px) rotate(var(--tilt, 0deg)); }
+}
+.float-slow {
+  animation: gentle-float 7s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .float-slow { animation: none; }
 }
 
 /* Topographic contour texture used behind the hero, evoking the ridgelines

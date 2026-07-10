@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import PageHero from '../components/PageHero'
+import { ImagePlaceholder } from '../components/Placeholders'
 import { pathways } from '../data/pathways'
 
 export function MissionVision() {
@@ -88,7 +89,10 @@ export function MeetTheTeam() {
         </Link>
         <div className="grid sm:grid-cols-2 gap-5">
           {team.map((t) => (
-            <div key={t.name} className="border border-kalo/10 rounded-xl p-6 bg-white">
+            <div key={t.name} className="card-lift border border-kalo/10 rounded-xl p-6 bg-white">
+              <div className="mb-4 max-w-[140px]">
+                <ImagePlaceholder label={`${t.name} headshot`} aspect="aspect-square" accent="#1c6b72" />
+              </div>
               <h2 className="font-display text-lg text-kalo">{t.name}</h2>
               <p className="mt-2 text-sm text-ink/70 leading-relaxed">{t.role}</p>
             </div>
