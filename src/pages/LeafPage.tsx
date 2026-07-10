@@ -1,4 +1,5 @@
 import { useLocation, Link, Navigate } from 'react-router-dom'
+import { ExternalLink } from 'lucide-react'
 import { leafPages } from '../data/siteContent'
 import PageHero from '../components/PageHero'
 
@@ -20,6 +21,21 @@ export default function LeafPage() {
             <p key={i}>{p}</p>
           ))}
         </div>
+        {page.links && page.links.length > 0 && (
+          <div className="mt-8 pt-6 border-t border-kalo/10 flex flex-wrap gap-3">
+            {page.links.map((l) => (
+              <a
+                key={l.href}
+                href={l.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-md border border-kalo/20 text-sm text-kalo hover:border-papaya hover:text-papaya transition-colors"
+              >
+                {l.label} <ExternalLink size={14} />
+              </a>
+            ))}
+          </div>
+        )}
       </section>
     </div>
   )

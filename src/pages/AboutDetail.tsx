@@ -15,6 +15,20 @@ export function MissionVision() {
           &larr; Back to About
         </Link>
         <div>
+          <p className="font-display text-2xl italic text-kalo leading-snug">
+            &ldquo;Ma ka hana ka ʻike&rdquo;
+          </p>
+          <p className="mt-2 text-sm text-ink/60">It is in the doing that we learn — ʻŌlelo Noʻeau</p>
+        </div>
+        <div>
+          <p className="eyebrow text-papaya mb-3">Since 1995</p>
+          <p className="text-ink/75 leading-relaxed">
+            Service-learning was first integrated into Kapiʻolani Community College coursework in 1995.
+            Since then it has grown into a recognized student-engagement pedagogy, connecting classrooms,
+            campus, community, and beyond into one continuous ecology of learning.
+          </p>
+        </div>
+        <div>
           <p className="eyebrow text-papaya mb-3">Mission</p>
           <p className="text-xl font-display text-kalo leading-snug">
             To connect Kapiʻolani Community College students to sustained, reciprocal service across
@@ -22,19 +36,30 @@ export function MissionVision() {
           </p>
         </div>
         <div>
-          <p className="eyebrow text-papaya mb-3">Vision</p>
-          <p className="text-ink/75 leading-relaxed">
-            We envision every KCC student having the opportunity to learn through service before they
-            graduate &mdash; building relationships with community partners that outlast any single
-            semester, and developing a habit of civic engagement that carries beyond the classroom.
-          </p>
+          <p className="eyebrow text-papaya mb-3">Where service-learning shows up</p>
+          <div className="grid sm:grid-cols-2 gap-2">
+            {[
+              'Arts, History & Culture',
+              'P-20 Education & Support for Families',
+              'Elder Care',
+              'Environmental Awareness & Sustainability',
+              'Community Health & Public Safety',
+              'Intercultural Perspectives & Education',
+              'Resilient Neighborhoods',
+            ].map((area) => (
+              <div key={area} className="flex items-center gap-2 text-sm text-ink/75">
+                <span className="h-1.5 w-1.5 rounded-full bg-ocean shrink-0" />
+                {area}
+              </div>
+            ))}
+          </div>
         </div>
         <div>
           <p className="eyebrow text-papaya mb-3">How we work</p>
           <p className="text-ink/75 leading-relaxed">
-            KSSLP organizes service across seven pathways, each with vetted community partners and a
-            structured reflection component, so that service hours translate into real academic and
-            personal growth &mdash; not just a line on a transcript.
+            Reciprocal community partnerships built on clear communication, clearly defined roles, and
+            shared goals mean faculty and community partners take collective responsibility for student
+            learning &mdash; not just a service hour requirement checked off a list.
           </p>
         </div>
       </section>

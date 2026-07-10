@@ -5,6 +5,7 @@ export type LeafPage = {
   sectionPath: string
   blurb: string
   body: string[]
+  links?: { label: string; href: string }[]
 }
 
 export const sections = {
@@ -26,9 +27,10 @@ export const leafPages: LeafPage[] = [
     sectionPath: sections.startHere.path,
     blurb: 'What to expect at your first KSSLP orientation session.',
     body: [
-      'Every service learner begins with a required orientation covering program expectations, safety guidelines, and how to log hours through the KSSLP portal.',
-      'Sessions run at the start of each semester in ʻIliahi 231. Check the current schedule or contact the office to reserve a seat.',
+      'Orientation is required once per semester and is held over Zoom. You\u2019ll choose a session time that fits your schedule \u2014 sessions typically run Tuesday through Thursday, 10am to 2pm, over a several-week window at the start of the term.',
+      'Reminders and scheduling communication come through the KSSLP office email, so keep an eye on your inbox once you register.',
     ],
+    links: [{ label: 'Register for an orientation session', href: 'https://docs.google.com/forms/d/e/1FAIpQLSd33h5MbgQhhWdkh97ohZmrNwOm016aS-lLja9x1iBw-gVABg/viewform?usp=dialog' }],
   },
   {
     path: '/registration',
@@ -37,8 +39,9 @@ export const leafPages: LeafPage[] = [
     sectionPath: sections.startHere.path,
     blurb: 'How to register for a service-learning course or placement.',
     body: [
-      'Registration connects your course requirement to an approved community partner placement in the pathway of your choice.',
-      'Bring your course syllabus and instructor contact to the KSSLP office, or submit the online registration form once available.',
+      'After orientation, the KSSLP office emails you a Registration & Waiver form. Rename the file "Last Name, First Name \u2013 Registration & Waiver" before returning it.',
+      'Choose one main service site to be the primary focus of your hours, forms, and reflection essay \u2014 it should relate to your course and be listed under "Community Site Information" on your form. You\u2019re welcome to volunteer at additional sites if your instructor allows it, but only your main site should anchor your essay.',
+      'Your completed form needs three signatures: yours, your main site supervisor\u2019s, and your instructor\u2019s (or instructors\u2019, if more than one course requires KSSLP). Fill out every field, including the small demographic boxes \u2014 that information helps the office track and improve outreach.',
     ],
   },
   {
@@ -48,8 +51,8 @@ export const leafPages: LeafPage[] = [
     sectionPath: sections.startHere.path,
     blurb: 'Logging hours and completing your end-of-term evaluation.',
     body: [
-      'Service hours must be logged and signed off by your community partner supervisor throughout the term.',
-      'A final evaluation, completed by both the student and the partner site, is required before hours are certified.',
+      'Log each volunteer session with a brief description of the work and get your site supervisor\u2019s signature.',
+      'Once you\u2019ve completed all required hours (a minimum of 20), have your supervisor complete the final evaluation form.',
     ],
   },
   {
@@ -59,8 +62,8 @@ export const leafPages: LeafPage[] = [
     sectionPath: sections.startHere.path,
     blurb: 'Guidelines for the required end-of-term reflection essay.',
     body: [
-      'The reflection essay asks you to connect your service experience back to your coursework, your pathway, and your own community ties.',
-      'Prompts and submission details are provided by your instructor and the KSSLP office each term.',
+      'Write a reflection essay connecting your service experience to your course of study.',
+      'Your essay must reference at least one of the United Nations Sustainable Development Goals, tying your service back to a global framework for social and environmental progress.',
     ],
   },
   // Events & Opportunities
@@ -95,8 +98,8 @@ export const leafPages: LeafPage[] = [
     sectionPath: sections.library.path,
     blurb: 'KCC\u2019s on-campus food pantry supporting student food security.',
     body: [
-      'Pohukaina Food Pantry provides free groceries and essentials to KCC students facing food insecurity, staffed in part by service learners.',
-      'Open during posted campus hours \u2014 no application required.',
+      'Pohukaina Food Pantry provides free groceries and essentials to KCC students facing food insecurity, staffed in part by service learners working the Health and Resilience Neighborhoods pathways.',
+      'Open during posted campus hours \u2014 no application required. Contact the KSSLP office for the current schedule and to volunteer a shift.',
     ],
   },
   {
@@ -209,28 +212,15 @@ export const leafPages: LeafPage[] = [
   },
   // For Students
   {
-    path: '/mala-maunuunu',
-    title: 'Māla Māunuunu',
-    section: sections.students.title,
-    sectionPath: sections.students.path,
-    blurb: 'KCC\u2019s campus garden and a hub for Environment pathway service.',
-    body: ['Māla Māunuunu is KCC\u2019s student-run campus garden, offering hands-on growing, composting, and food-security service opportunities.'],
-  },
-  {
-    path: '/kcc-ecology-club',
-    title: 'KCC Ecology Club',
-    section: sections.students.title,
-    sectionPath: sections.students.path,
-    blurb: 'A student club for environmental service and advocacy.',
-    body: ['The Ecology Club organizes restoration work days, campus sustainability initiatives, and Environment pathway service opportunities for students.'],
-  },
-  {
     path: '/service-learner-types',
     title: 'Service Learner Types',
     section: sections.students.title,
     sectionPath: sections.students.path,
     blurb: 'The different ways students participate in KSSLP.',
-    body: ['Whether you\u2019re fulfilling a course requirement, pursuing a certificate, or volunteering independently, this page outlines which track fits you.'],
+    body: [
+      'Whether you\u2019re fulfilling a course requirement, pursuing a certificate, or volunteering independently through Get Involved!, this page outlines which track fits you.',
+      'Course-linked service learners register through a specific class and complete hours tied to that course\u2019s pathway. Certificate-track learners work across one or more pathways toward a KSSLP certificate. Independent volunteers can join events and opportunities without any course attached.',
+    ],
   },
   {
     path: '/student-resources-incentives',
@@ -238,15 +228,46 @@ export const leafPages: LeafPage[] = [
     section: sections.students.title,
     sectionPath: sections.students.path,
     blurb: 'Scholarships, recognition, and support available to service learners.',
-    body: ['Incentives and support \u2014 including scholarship opportunities and transcript recognition \u2014 available to active service learners.'],
+    body: [
+      'Incentives and support \u2014 including scholarship opportunities, transcript recognition, and certificate pathways \u2014 are available to active service learners in good standing.',
+      'Ask the KSSLP office about current scholarship cycles tied to sustained service, and about how logged hours can appear on your academic record.',
+    ],
+  },
+  {
+    path: '/mala-maunuunu',
+    title: 'Māla Māunuunu',
+    section: sections.students.title,
+    sectionPath: sections.students.path,
+    blurb: 'KCC\u2019s native and culturally significant plant garden, right behind the Mānele building.',
+    body: [
+      'Māla Māunuunu is an outdoor classroom for hands-on ʻāina-based learning, cultivating Native Hawaiian and culturally significant plants for lāʻau lapaʻau (Hawaiian medicine) and ancestral farming practice.',
+      'Volunteering here means getting dirty \u2014 weeding, mulching, planting, Hawaiian dry-stack stone masonry, preparing Hawaiian medicinal plants, and helping with community events and workdays. The mission is to mālama ʻāina: steward the land through traditional and modern Hawaiian knowledge.',
+      'Service hours are available weekly, Monday through Friday, 9am\u20131pm (hours may vary by season), plus periodic Saturday workdays that wrap up with a potluck. Bring closed-toe shoes, a water bottle, and clothes you don\u2019t mind getting dirty.',
+    ],
+  },
+  {
+    path: '/kcc-ecology-club',
+    title: 'KCC Ecology Club',
+    section: sections.students.title,
+    sectionPath: sections.students.path,
+    blurb: 'Nā Kiaʻi Honua — Earth Guardians — a student club for environmental service and advocacy.',
+    body: [
+      'The KCC Ecology Club (Nā Kiaʻi Honua, "Earth Guardians") exists to inspire and educate students in environmental science and ecology through hands-on, community-based projects.',
+      'The club organizes restoration work days, campus sustainability initiatives, and Environment pathway service opportunities open to any KCC student.',
+    ],
+    links: [{ label: 'Visit the Ecology Club site', href: 'https://ecologyclubatkcc.wixsite.com/kccecolgyclub' }],
   },
   {
     path: '/mina',
     title: 'MINA \u2014 M\u0101lama I N\u0101 Ahupua\u02bba',
     section: sections.students.title,
     sectionPath: sections.students.path,
-    blurb: 'A cross-campus intercollegiate service-learning gathering.',
-    body: ['MINA is organized by community partners, faculty, and student leaders across Kapiʻolani CC and other Hawaiʻi higher-ed institutions to support ahupuaʻa-based stewardship.'],
+    blurb: 'An intercollegiate ahupuaʻa stewardship program spanning UH Mānoa and KCC.',
+    body: [
+      'Mālama I Nā Ahupuaʻa (MINA) is a joint UH Mānoa\u2013KCC service-learning program, established in 1997, where students work alongside elders and cultural stewards to learn traditional land management, preservation, and restoration across Oʻahu\u2019s ahupuaʻa.',
+      'MINA runs four semesters a year and welcomes students and ʻohana from any discipline or institution. First-time participants attend upland, midland, and lowland core activities \u2014 invasive species management, reforesting native species, working in loʻi, maintaining heiau, and restoring loko iʻa (fishponds).',
+      'A required orientation covers the historical context of the ahupuaʻa system and program logistics before you begin. Most activities run on weekends, 8am to 1pm.',
+    ],
   },
   {
     path: '/policies-students',
