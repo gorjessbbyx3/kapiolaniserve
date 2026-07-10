@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Work+Sans:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-kalo: #2f4a3c;
+  --color-kalo-dark: #1d2f26;
+  --color-papaya: #e07a35;
+  --color-sand: #f6f1e4;
+  --color-sand-deep: #ece2c9;
+  --color-ilima: #d9a441;
+  --color-ocean: #1c6b72;
+  --color-ink: #23271f;
+
+  --font-display: 'Fraunces', ui-serif, Georgia, serif;
+  --font-body: 'Work Sans', ui-sans-serif, system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-sand);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+a {
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-ilima);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* Topographic contour texture used behind the hero, evoking the ridgelines
+   above Kapiʻolani CC (Diamond Head / Leahi) without using stock photography */
+.contour-field {
+  background-image:
+    repeating-radial-gradient(circle at 18% 28%, transparent 0, transparent 34px, rgba(246,241,228,0.09) 35px, transparent 36px, transparent 70px),
+    repeating-radial-gradient(circle at 82% 68%, transparent 0, transparent 46px, rgba(246,241,228,0.07) 47px, transparent 48px, transparent 92px);
+}
