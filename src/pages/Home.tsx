@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { ArrowRight, Award } from 'lucide-react'
 import ContactForm from '../components/ContactForm'
-import BotanicalScatter, { WatercolorWash } from '../components/BotanicalScatter'
+import BotanicalScatter, { WatercolorWash, GoldDust, OrnamentDivider } from '../components/BotanicalScatter'
 import { ImagePlaceholder } from '../components/Placeholders'
 import Pathway3DCarousel from '../components/Pathway3DCarousel'
 
@@ -36,17 +36,16 @@ export default function Home() {
   return (
     <div>
       {/* Hero — framed photo + caption panel, never overlapping */}
-      <section className="relative bg-kalo-dark overflow-hidden">
+      <section className="relative bg-kalo-dark foil-texture overflow-hidden">
         <WatercolorWash color="#1c6b72" size={480} top="-15%" right="-10%" opacity={0.22} />
         <WatercolorWash color="#c9a24b" size={360} bottom="-20%" left="-8%" opacity={0.12} />
+        <GoldDust count={14} />
         <BotanicalScatter
           lineColor="#c9a24b"
           items={[
             { type: 'taro-outline', bottom: '-14%', left: '-6%', size: 260, rotate: -15, opacity: 0.28 },
             { type: 'fern', top: '4%', right: '3%', size: 200, rotate: 8, opacity: 0.3 },
             { type: 'hibiscus-outline', bottom: '8%', right: '10%', size: 60, rotate: -6, opacity: 0.3, delay: 1.4 },
-            { type: 'sparkle', top: '18%', right: '30%', size: 22, rotate: 0, opacity: 0.7, delay: 0.3 },
-            { type: 'sparkle', bottom: '30%', left: '20%', size: 16, rotate: 0, opacity: 0.6, delay: 1.8 },
           ]}
         />
         <div className="relative mx-auto max-w-7xl px-5 lg:px-8 py-12 lg:py-20 grid lg:grid-cols-[1.05fr_1fr] gap-10 lg:gap-16 items-center">
@@ -96,13 +95,16 @@ export default function Home() {
 
           {/* Framed photo — always fully visible, object-contain, no crop */}
           <div className="order-1 lg:order-2 relative">
-            <div className="frame-shadow gold-hairline rounded-2xl bg-kalo p-2.5 sm:p-3">
-              <div className="rounded-xl overflow-hidden bg-kalo-dark">
-                <img
-                  src="/images/hero-diamond-head.jpg"
-                  alt="Diamond Head and Waikīkī coastline"
-                  className="w-full h-auto object-contain"
-                />
+            <div className="frame-shadow rounded-2xl bg-gradient-to-br from-koa via-kalo to-kalo-dark p-3 sm:p-4">
+              <div className="rounded-xl border border-gold/40 p-1.5 bg-kalo-dark">
+                <div className="relative rounded-lg overflow-hidden">
+                  <img
+                    src="/images/hero-diamond-head.jpg"
+                    alt="Diamond Head and Waikīkī coastline"
+                    className="w-full h-auto object-contain"
+                  />
+                  <div className="absolute inset-0 shadow-[inset_0_0_40px_rgba(0,0,0,0.25)] pointer-events-none" />
+                </div>
               </div>
             </div>
             <div className="absolute -bottom-4 -right-4 sm:-bottom-5 sm:-right-5 h-16 w-16 sm:h-20 sm:w-20 rounded-full bg-gold text-kalo-dark flex items-center justify-center font-display text-xs text-center leading-tight shadow-lg rotate-[-8deg] float-slow">
@@ -164,6 +166,10 @@ export default function Home() {
         </div>
       </section>
 
+      <div className="bg-white py-6">
+        <OrnamentDivider />
+      </div>
+
       {/* Sponsors */}
       <section className="relative bg-sand-deep overflow-hidden">
         <BotanicalScatter
@@ -186,12 +192,12 @@ export default function Home() {
       {/* Contact */}
       <section id="contact" className="relative mx-auto max-w-7xl px-5 lg:px-8 py-20 overflow-hidden">
         <WatercolorWash color="#1c6b72" size={340} top="10%" left="-8%" opacity={0.08} />
+        <GoldDust count={6} seedOffset={40} />
         <BotanicalScatter
           lineColor="#c9a24b"
           items={[
             { type: 'taro-outline', bottom: '-10%', left: '-5%', size: 220, rotate: -20, opacity: 0.22 },
             { type: 'fern', top: '0%', right: '4%', size: 170, rotate: -8, opacity: 0.24, delay: 0.5 },
-            { type: 'sparkle', top: '20%', left: '15%', size: 18, rotate: 0, opacity: 0.6, delay: 0.9 },
           ]}
         />
         <div className="relative grid lg:grid-cols-2 gap-12 items-start">

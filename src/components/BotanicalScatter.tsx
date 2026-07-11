@@ -84,25 +84,78 @@ export function FernFrond({ color = '#c9a24b', className = '' }: Props) {
   )
 }
 
-/** A tiny four-point sparkle/twinkle mark, gold, with a soft pulsing glow */
-export function Sparkle({ color = '#f3c94f', className = '' }: Props) {
+/** A refined four-point sparkle mark with a soft pulsing glow */
+export function Sparkle({ color = '#f3c94f', className = '', delay = 0 }: Props & { delay?: number }) {
   return (
-    <svg viewBox="0 0 40 40" fill="none" className={`sparkle-glow ${className}`} xmlns="http://www.w3.org/2000/svg">
+    <svg
+      viewBox="0 0 40 40"
+      fill="none"
+      className={`sparkle-glow ${className}`}
+      style={{ animationDelay: `${delay}s` }}
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <path
-        d="M20 2 C20 12 22 18 20 20 C18 22 12 20 2 20 C12 20 18 22 20 20 C22 18 20 12 20 2Z"
+        d="M20 1C20.8 12 21 19 24 22C27 25 30.5 26.2 39 20C30.5 26.2 27 27.5 24 30.5C21 33.5 20.8 39 20 39C19.2 39 19 33.5 16 30.5C13 27.5 9.5 26.2 1 20C9.5 26.2 13 25 16 22C19 19 19.2 12 20 1Z"
         fill={color}
-      />
-      <path
-        d="M20 20C20 28 20 32 20 38M20 20C24 20 30 20 38 20M20 20C20 24 20 28 20 20"
-        stroke={color}
-        strokeWidth="1"
-        opacity="0.6"
       />
     </svg>
   )
 }
 
-/** Soft blurred color wash — a CSS stand-in for a watercolor bloom, no raster image needed */
+/** A field of small gold-dust sparkles at varied sizes/opacities — reads as scattered glimmer rather than isolated icons */
+export function GoldDust({
+  count = 10,
+  seedOffset = 0,
+  areaTop = '0%',
+  areaHeight = '100%',
+}: {
+  count?: number
+  seedOffset?: number
+  areaTop?: string
+  areaHeight?: string
+}) {
+  const items = Array.from({ length: count }, (_, i) => {
+    const n = i + seedOffset
+    const pseudoRandom = (seed: number) => {
+      const x = Math.sin(seed * 12.9898) * 43758.5453
+      return x - Math.floor(x)
+    }
+    return {
+      left: `${(pseudoRandom(n * 3.1) * 100).toFixed(1)}%`,
+      top: `${(pseudoRandom(n * 5.7) * 100).toFixed(1)}%`,
+      size: 6 + pseudoRandom(n * 7.3) * 14,
+      opacity: 0.25 + pseudoRandom(n * 2.2) * 0.5,
+      delay: pseudoRandom(n * 4.4) * 3,
+    }
+  })
+  return (
+    <div
+      className="pointer-events-none absolute inset-0 overflow-hidden"
+      style={{ top: areaTop, height: areaHeight }}
+      aria-hidden="true"
+    >
+      {items.map((it, i) => (
+        <div key={i} className="absolute" style={{ left: it.left, top: it.top, width: it.size, height: it.size, opacity: it.opacity }}>
+          <Sparkle delay={it.delay} />
+        </div>
+      ))}
+    </div>
+  )
+}
+
+/** A thin gold hairline divider with a centered diamond ornament, for elegant section transitions */
+export function OrnamentDivider({ tone = '#c9a24b', className = '' }: { tone?: string; className?: string }) {
+  return (
+    <div className={`flex items-center justify-center gap-3 ${className}`} aria-hidden="true">
+      <span className="h-px w-full max-w-[120px]" style={{ background: `linear-gradient(to left, ${tone}, transparent)` }} />
+      <span
+        className="h-2 w-2 rotate-45 shrink-0"
+        style={{ background: tone, boxShadow: `0 0 8px ${tone}99` }}
+      />
+      <span className="h-px w-full max-w-[120px]" style={{ background: `linear-gradient(to right, ${tone}, transparent)` }} />
+    </div>
+  )
+}
 export function WatercolorWash({
   color,
   size,
@@ -180,7 +233,7 @@ export default function BotanicalScatter({
           {item.type === 'taro-outline' && <TaroLeafOutline color={lineColor} />}
           {item.type === 'hibiscus-outline' && <HibiscusOutline color={lineColor} />}
           {item.type === 'fern' && <FernFrond color={lineColor} />}
-          {item.type === 'sparkle' && <Sparkle />}
+          {item.type === 'sparkle' && <Sparkle delay={item.delay ?? 0} />}
         </div>
       ))}
     </div>

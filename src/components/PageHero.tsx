@@ -1,4 +1,4 @@
-import BotanicalScatter, { WatercolorWash } from './BotanicalScatter'
+import BotanicalScatter, { WatercolorWash, GoldDust } from './BotanicalScatter'
 
 export default function PageHero({
   eyebrow,
@@ -12,14 +12,14 @@ export default function PageHero({
   accent?: string
 }) {
   return (
-    <section className="relative bg-kalo text-sand contour-field overflow-hidden">
+    <section className="relative bg-kalo text-sand contour-field foil-texture overflow-hidden">
       <WatercolorWash color="#1c6b72" size={300} top="-20%" right="-6%" opacity={0.16} />
+      <GoldDust count={8} seedOffset={120} />
       <BotanicalScatter
         lineColor="#c9a24b"
         items={[
           { type: 'taro-outline', top: '-14%', right: '-5%', size: 190, rotate: 16, opacity: 0.26 },
           { type: 'fern', bottom: '-8%', left: '2%', size: 150, rotate: -100, opacity: 0.24, delay: 0.5 },
-          { type: 'sparkle', top: '35%', right: '20%', size: 16, rotate: 0, opacity: 0.6, delay: 1 },
         ]}
       />
       <div className="relative mx-auto max-w-7xl px-5 lg:px-8 py-16 lg:py-20">

@@ -4,7 +4,7 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { pathways } from '../data/pathways'
 import PathwayMarker from './PathwayMarker'
-import BotanicalScatter, { WatercolorWash } from './BotanicalScatter'
+import BotanicalScatter, { WatercolorWash, GoldDust } from './BotanicalScatter'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -107,19 +107,18 @@ export default function Pathway3DCarousel() {
   return (
     <section
       ref={sectionRef}
-      className="relative h-screen overflow-hidden bg-kalo-dark text-sand flex items-center justify-center"
+      className="relative h-screen overflow-hidden bg-kalo-dark foil-texture text-sand flex items-center justify-center"
     >
       <div className="absolute inset-0 bg-gradient-to-b from-kalo-dark via-kalo-dark to-[#0f1a14]" />
       <WatercolorWash color="#1c6b72" size={420} top="-10%" left="-10%" opacity={0.18} />
       <WatercolorWash color="#c9a24b" size={300} bottom="-15%" right="-8%" opacity={0.12} />
+      <GoldDust count={16} seedOffset={80} />
       <BotanicalScatter
         lineColor="#c9a24b"
         items={[
           { type: 'taro-outline', top: '6%', left: '4%', size: 150, rotate: -12, opacity: 0.22 },
           { type: 'hibiscus-outline', bottom: '8%', right: '6%', size: 110, rotate: 10, opacity: 0.22, delay: 1.3 },
           { type: 'fern', top: '2%', right: '4%', size: 150, rotate: 100, opacity: 0.2, delay: 0.4 },
-          { type: 'sparkle', top: '30%', left: '20%', size: 20, rotate: 0, opacity: 0.7, delay: 0.6 },
-          { type: 'sparkle', bottom: '25%', right: '22%', size: 16, rotate: 0, opacity: 0.6, delay: 2 },
         ]}
       />
       <div className="z-10 text-center px-5 absolute top-14 sm:top-20 left-0 right-0">
@@ -152,7 +151,7 @@ export default function Pathway3DCarousel() {
             >
               <Link
                 to={`/pathways/${p.slug}`}
-                className="overflow-hidden block w-full h-full rounded-2xl p-6 flex flex-col gap-3 border border-sand/10 backdrop-blur-sm transition-transform hover:scale-[1.03]"
+                className="overflow-hidden block w-full h-full rounded-2xl p-6 flex flex-col gap-3 border border-gold/30 shadow-[0_0_30px_-8px_rgba(201,162,75,0.25)] backdrop-blur-sm transition-transform hover:scale-[1.03]"
                 style={{
                   backgroundColor: `${p.color}dd`,
                   transform: 'scale(var(--card-scale, 1))',
