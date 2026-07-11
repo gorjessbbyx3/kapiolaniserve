@@ -84,18 +84,18 @@ export default function Pathway3DCarousel() {
             <p className="eyebrow text-gold mb-3">Seven trailheads, one journey</p>
             <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl">Which pathway is yours?</h2>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5">
             {pathways.map((p) => (
               <Link
                 key={p.slug}
                 to={`/pathways/${p.slug}`}
-                className="card-lift rounded-2xl p-6 flex flex-col gap-4 border border-sand/10"
+                className="card-lift rounded-2xl p-4 sm:p-6 flex flex-col gap-2 sm:gap-4 border border-sand/10"
                 style={{ backgroundColor: `${p.color}dd` }}
               >
-                <PathwayMarker marker={p.marker} color="rgba(255,255,255,0.2)" />
-                <h3 className="font-display text-lg leading-snug">{p.name}</h3>
-                <p className="text-xs text-sand/75 leading-relaxed">{p.short}</p>
-                <span className="mt-auto text-xs font-medium text-gold">View pathway →</span>
+                <PathwayMarker marker={p.marker} color="rgba(255,255,255,0.2)" size="sm" />
+                <h3 className="font-display text-sm sm:text-lg leading-snug">{p.name}</h3>
+                <p className="hidden sm:block text-xs text-sand/75 leading-relaxed">{p.short}</p>
+                <span className="mt-auto text-xs font-medium text-gold">View →</span>
               </Link>
             ))}
           </div>
