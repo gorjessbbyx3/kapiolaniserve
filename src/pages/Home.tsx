@@ -1,7 +1,5 @@
 import { Link } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
-import { pathways } from '../data/pathways'
-import PathwayMarker from '../components/PathwayMarker'
 import ContactForm from '../components/ContactForm'
 import CornerLeaves from '../components/CornerLeaves'
 import { ImagePlaceholder } from '../components/Placeholders'
@@ -114,50 +112,6 @@ export default function Home() {
             Classification for 2015&ndash;2025, honoring our commitment to community partnership and
             service-based learning.
           </p>
-        </div>
-      </section>
-
-      {/* Pathways — signature trailhead grid */}
-      <section className="relative mx-auto max-w-7xl px-5 lg:px-8 py-20 overflow-hidden">
-        <CornerLeaves corners={['top-right']} color="#2f4a3c" size={220} opacity={0.5} />
-        <div className="relative max-w-2xl mb-12">
-          <p className="eyebrow text-papaya mb-3">Seven pathways</p>
-          <h2 className="font-display text-3xl sm:text-4xl text-kalo">Find where your service fits.</h2>
-          <p className="mt-4 text-ink/70 leading-relaxed">
-            Every KSSLP placement sits on one of seven pathways, each pointing toward different
-            partners, skills, and communities. Think of them as trailheads &mdash; pick the one
-            that matches where you want to go.
-          </p>
-        </div>
-        <div className="relative grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {pathways.map((p) => (
-            <Link
-              key={p.slug}
-              to={`/pathways/${p.slug}`}
-              className="card-lift group border border-kalo/10 rounded-xl p-6 bg-white/70 hover:bg-white flex flex-col gap-4"
-            >
-              <PathwayMarker marker={p.marker} color={p.color} />
-              <div>
-                <h3 className="font-display text-lg text-kalo">{p.name}</h3>
-                <p className="mt-2 text-sm text-ink/70 leading-relaxed">{p.summary}</p>
-              </div>
-              <span className="mt-auto inline-flex items-center gap-1 text-sm text-papaya font-medium">
-                View pathway <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
-              </span>
-            </Link>
-          ))}
-          <Link
-            to="/become-certified"
-            className="card-lift rounded-xl p-6 bg-kalo text-sand flex flex-col justify-between gap-4"
-          >
-            <p className="font-display text-lg">Ready to go deeper?</p>
-            <p className="text-sm text-sand/80 leading-relaxed">
-              Turn sustained service into a KSSLP certificate through our training programs.
-            </p>
-            <span className="inline-flex items-center gap-1 text-sm text-ilima font-medium">
-              Become certified <ArrowRight size={14} />
-            </span>
-          </Link>
         </div>
       </section>
 

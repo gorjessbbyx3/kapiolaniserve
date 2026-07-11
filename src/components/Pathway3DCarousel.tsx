@@ -20,11 +20,19 @@ export default function Pathway3DCarousel() {
 
     const count = pathways.length
     const step = 360 / count
-    const radius = window.innerWidth < 640 ? 190 : window.innerWidth < 1024 ? 280 : 360
+    const isMobile = window.innerWidth < 640
+    const isTablet = window.innerWidth >= 640 && window.innerWidth < 1024
+    const radius = isMobile ? 230 : isTablet ? 320 : 420
+    const cardW = isMobile ? 190 : isTablet ? 230 : 260
+    const cardH = isMobile ? 260 : isTablet ? 320 : 380
 
     cardRefs.current.forEach((card, i) => {
       if (!card) return
       const angle = i * step
+      card.style.width = `${cardW}px`
+      card.style.height = `${cardH}px`
+      card.style.left = `${-cardW / 2}px`
+      card.style.top = `${-cardH / 2}px`
       card.style.transform = `rotateY(${angle}deg) translateZ(${radius}px)`
     })
 
@@ -101,10 +109,15 @@ export default function Pathway3DCarousel() {
       className="relative h-screen overflow-hidden bg-kalo-dark text-sand flex items-center justify-center"
     >
       <div className="absolute inset-0 bg-gradient-to-b from-kalo-dark via-kalo-dark to-[#0f1a14]" />
-      <div className="z-10 text-center px-5 absolute top-16 sm:top-20 left-0 right-0">
+      <div className="z-10 text-center px-5 absolute top-14 sm:top-20 left-0 right-0">
         <p className="eyebrow text-gold mb-3">Seven trailheads, one journey</p>
         <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl mb-2">Which pathway is yours?</h2>
-        <p className="text-sand/60 text-sm">Keep scrolling to spin the wheel</p>
+        <p className="text-sand/60 text-sm">
+          Keep scrolling to spin the wheel, or{' '}
+          <Link to="/become-certified" className="text-gold underline underline-offset-4 hover:text-plumeria">
+            go straight to becoming certified
+          </Link>
+        </p>
       </div>
 
       <div className="perspective-1200 absolute inset-0 flex items-center justify-center">
@@ -117,10 +130,10 @@ export default function Pathway3DCarousel() {
               }}
               className="absolute preserve-3d"
               style={{
-                width: 220,
-                height: 280,
-                left: -110,
-                top: -140,
+                width: 260,
+                height: 380,
+                left: -130,
+                top: -190,
                 transform: 'translateZ(0)',
               }}
             >
@@ -134,7 +147,7 @@ export default function Pathway3DCarousel() {
               >
                 <PathwayMarker marker={p.marker} color="rgba(255,255,255,0.2)" />
                 <h3 className="font-display text-lg leading-snug">{p.name}</h3>
-                <p className="text-xs text-sand/75 leading-relaxed line-clamp-4">{p.summary}</p>
+                <p className="text-xs text-sand/75 leading-relaxed">{p.summary}</p>
                 <span className="mt-auto text-xs font-medium text-gold">View pathway →</span>
               </Link>
             </div>
