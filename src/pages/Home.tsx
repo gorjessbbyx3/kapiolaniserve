@@ -5,6 +5,7 @@ import PathwayMarker from '../components/PathwayMarker'
 import ContactForm from '../components/ContactForm'
 import CornerLeaves from '../components/CornerLeaves'
 import { ImagePlaceholder } from '../components/Placeholders'
+import Pathway3DCarousel from '../components/Pathway3DCarousel'
 
 const programs = [
   {
@@ -36,58 +37,70 @@ const programs = [
 export default function Home() {
   return (
     <div>
-      {/* Hero */}
-      <section className="relative overflow-hidden">
-        <img
-          src="/images/hero-diamond-head.jpg"
-          alt="Diamond Head and Waikīkī coastline"
-          className="absolute inset-0 h-full w-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-kalo-dark via-kalo-dark/75 to-kalo-dark/30" />
-        <div className="absolute inset-0 bg-gradient-to-r from-kalo-dark/60 via-transparent to-transparent" />
+      {/* Hero — framed photo + caption panel, never overlapping */}
+      <section className="relative bg-kalo-dark overflow-hidden">
+        <CornerLeaves corners={['top-left', 'bottom-right']} color="#c9a24b" size={200} opacity={0.18} />
+        <div className="relative mx-auto max-w-7xl px-5 lg:px-8 py-12 lg:py-20 grid lg:grid-cols-[1.05fr_1fr] gap-10 lg:gap-16 items-center">
+          {/* Caption panel — all text lives here, never on top of the photo */}
+          <div className="order-2 lg:order-1 text-sand">
+            <div className="flex items-center gap-3 mb-7">
+              <img src="/images/kssl-logo.png" alt="" className="h-12 w-12 rounded-full bg-sand/95 p-1.5 shadow-lg shrink-0" />
+              <p className="eyebrow text-gold">Kapiʻolani Community College</p>
+            </div>
 
-        <div className="relative mx-auto max-w-7xl px-5 lg:px-8 pt-16 pb-20 lg:pt-24 lg:pb-28 text-sand">
-          <div className="flex items-center gap-3 mb-8">
-            <img src="/images/kssl-logo.png" alt="" className="h-14 w-14 rounded-full bg-sand/95 p-1.5 shadow-lg" />
-            <p className="eyebrow text-plumeria">Kapiʻolani Community College</p>
+            <h1 className="font-display leading-[0.95]">
+              <span className="block text-4xl sm:text-5xl lg:text-6xl tracking-tight">Kapiʻolani</span>
+              <span className="block text-xl sm:text-2xl lg:text-3xl font-semibold text-plumeria mt-1">
+                Service &amp; Sustainability
+              </span>
+              <span className="block text-3xl sm:text-4xl lg:text-5xl italic font-normal mt-1">Learning</span>
+            </h1>
+
+            <div className="mt-5 flex flex-wrap items-center gap-x-3 gap-y-2 text-xs sm:text-sm font-medium tracking-wide text-sand/90">
+              <span>SERVE.</span>
+              <span className="text-hibiscus">●</span>
+              <span>SUSTAIN.</span>
+              <span className="text-hibiscus">●</span>
+              <span>INSPIRE.</span>
+            </div>
+
+            <p className="mt-6 max-w-md text-base sm:text-lg text-sand/80 leading-relaxed">
+              KSSLP connects students to sustained, reciprocal service across seven pathways &mdash;
+              from restoring native ecosystems to supporting kūpuna &mdash; and turns that work into
+              academic credit, certification, and real community relationships.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-4">
+              <Link
+                to="/pathways"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-hibiscus text-sand font-medium shadow-lg shadow-hibiscus/30 hover:brightness-110 hover:-translate-y-0.5 transition-all"
+              >
+                Explore the pathways <ArrowRight size={18} />
+              </Link>
+              <Link
+                to="/service-learners-start-here"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full border-2 border-sand/40 text-sand hover:bg-white/10 hover:-translate-y-0.5 transition-all"
+              >
+                Start here as a student
+              </Link>
+            </div>
           </div>
 
-          <h1 className="font-display leading-[0.95]">
-            <span className="block text-5xl sm:text-6xl lg:text-7xl tracking-tight" style={{ textShadow: '0 2px 24px rgba(0,0,0,0.35)' }}>
-              Kapiʻolani
-            </span>
-            <span className="block text-2xl sm:text-3xl lg:text-4xl font-semibold text-plumeria mt-1">
-              Service &amp; Sustainability
-            </span>
-            <span className="block text-4xl sm:text-5xl lg:text-6xl italic font-normal mt-1">Learning</span>
-          </h1>
-
-          <div className="mt-6 flex flex-wrap items-center gap-x-3 gap-y-2 text-sm sm:text-base font-medium tracking-wide">
-            <span>SERVE.</span>
-            <span className="text-hibiscus">●</span>
-            <span>SUSTAIN.</span>
-            <span className="text-hibiscus">●</span>
-            <span>INSPIRE.</span>
-          </div>
-
-          <p className="mt-6 max-w-xl text-lg text-sand/85 leading-relaxed">
-            KSSLP connects students to sustained, reciprocal service across seven pathways &mdash;
-            from restoring native ecosystems to supporting kūpuna &mdash; and turns that work into
-            academic credit, certification, and real community relationships.
-          </p>
-          <div className="mt-9 flex flex-wrap gap-4">
-            <Link
-              to="/pathways"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-hibiscus text-sand font-medium shadow-lg shadow-hibiscus/30 hover:brightness-110 hover:-translate-y-0.5 transition-all"
-            >
-              Explore the pathways <ArrowRight size={18} />
-            </Link>
-            <Link
-              to="/service-learners-start-here"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full border-2 border-sand/40 text-sand hover:bg-white/10 hover:-translate-y-0.5 transition-all"
-            >
-              Start here as a student
-            </Link>
+          {/* Framed photo — always fully visible, object-contain, no crop */}
+          <div className="order-1 lg:order-2 relative">
+            <div className="frame-shadow gold-hairline rounded-2xl bg-kalo p-2.5 sm:p-3">
+              <div className="rounded-xl overflow-hidden bg-kalo-dark">
+                <img
+                  src="/images/hero-diamond-head.jpg"
+                  alt="Diamond Head and Waikīkī coastline"
+                  className="w-full h-auto object-contain"
+                />
+              </div>
+            </div>
+            <div className="absolute -bottom-4 -right-4 sm:-bottom-5 sm:-right-5 h-16 w-16 sm:h-20 sm:w-20 rounded-full bg-gold text-kalo-dark flex items-center justify-center font-display text-xs text-center leading-tight shadow-lg rotate-[-8deg] float-slow">
+              Since
+              <br />
+              1995
+            </div>
           </div>
         </div>
       </section>
@@ -178,6 +191,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Signature 3D moment */}
+      <Pathway3DCarousel />
 
       {/* Contact */}
       <section id="contact" className="relative mx-auto max-w-7xl px-5 lg:px-8 py-20 overflow-hidden">

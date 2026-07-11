@@ -10,6 +10,8 @@
   --color-sand: #f6f1e4;
   --color-sand-deep: #ece2c9;
   --color-ilima: #d9a441;
+  --color-gold: #c9a24b;
+  --color-koa: #6b4226;
   --color-ocean: #1c6b72;
   --color-ink: #23271f;
 
@@ -55,6 +57,32 @@ a {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+.frame-shadow {
+  box-shadow:
+    0 2px 0 0 rgba(201, 162, 75, 0.9),
+    0 30px 60px -20px rgba(29, 47, 38, 0.45),
+    0 10px 24px -10px rgba(107, 66, 38, 0.3);
+}
+
+.gold-hairline {
+  position: relative;
+}
+.gold-hairline::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 1px solid rgba(201, 162, 75, 0.5);
+  pointer-events: none;
+}
+
+.perspective-1200 {
+  perspective: 1200px;
+}
+.preserve-3d {
+  transform-style: preserve-3d;
 }
 
 .eyebrow {
