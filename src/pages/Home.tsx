@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, Award } from 'lucide-react'
 import ContactForm from '../components/ContactForm'
 import BotanicalScatter from '../components/BotanicalScatter'
 import { ImagePlaceholder } from '../components/Placeholders'
@@ -112,15 +112,27 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Carnegie note */}
-      <section className="bg-sand-deep">
-        <div className="mx-auto max-w-7xl px-5 lg:px-8 py-6 flex flex-col sm:flex-row items-start sm:items-center gap-3 text-sm text-kalo/80">
-          <span className="eyebrow text-kalo shrink-0">Recognized</span>
-          <p>
-            Kapiʻolani Community College holds the Carnegie Foundation&rsquo;s Community Engagement
-            Classification for 2015&ndash;2025, honoring our commitment to community partnership and
-            service-based learning.
-          </p>
+      {/* Carnegie recognition seal */}
+      <section className="bg-sand-deep py-10">
+        <div className="mx-auto max-w-4xl px-5 lg:px-8">
+          <div className="gold-hairline rounded-2xl bg-white/70 px-6 py-6 sm:px-10 sm:py-7 flex flex-col sm:flex-row items-center gap-6 text-center sm:text-left">
+            <div className="shrink-0 relative">
+              <div className="h-20 w-20 rounded-full bg-kalo flex items-center justify-center ring-4 ring-gold/30">
+                <Award size={34} className="text-gold" strokeWidth={1.5} />
+              </div>
+              <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 text-[9px] font-medium tracking-wide text-kalo-dark bg-gold rounded-full px-2 py-0.5 whitespace-nowrap">
+                2015&ndash;2025
+              </span>
+            </div>
+            <div>
+              <p className="eyebrow text-papaya mb-1.5">Carnegie Community Engagement Classification</p>
+              <p className="text-sm text-ink/70 leading-relaxed">
+                Kapiʻolani Community College is proud to hold the Carnegie Foundation&rsquo;s Community
+                Engagement Classification, honoring our sustained commitment to community partnership
+                and service-based learning.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
