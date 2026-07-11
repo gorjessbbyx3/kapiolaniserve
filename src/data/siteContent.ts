@@ -193,7 +193,17 @@ export const leafPages: LeafPage[] = [
     section: sections.library.title,
     sectionPath: sections.library.path,
     blurb: 'Background on the global and local plastic pollution crisis.',
-    body: ['Context and data behind KSSLP\u2019s beach cleanup and waste-reduction service opportunities.'],
+    body: [
+      'Half of all plastic ever manufactured has been made in just the last 15 years, and production keeps accelerating \u2014 from 2.3 million tons in 1950 to 448 million tons by 2015, with output expected to double again by 2050.',
+      'An estimated 8 million tons of plastic waste enters the oceans every year from coastal nations. Once at sea, sunlight and wave action break it down into microplastics that have been found everywhere from Mount Everest to the Mariana Trench, and nearly 700 marine species are known to be harmed by plastic debris, mostly through entanglement or starvation.',
+      'Most ocean plastic starts on land and travels downstream via rivers before currents scatter it worldwide \u2014 debris from Russia, the US, Europe, and Asia has turned up on uninhabited Pacific atolls thousands of miles from any of it. Because microplastics are nearly impossible to recover once in the open ocean, the most effective fix is stopping plastic waste at the source: better waste management, smarter product design, and cutting unnecessary single-use plastic.',
+      'This context underpins KSSLP\u2019s beach cleanup and waste-reduction service opportunities within the Environment pathway.',
+    ],
+    links: [
+      { label: 'National Geographic: the plastic pollution crisis explained', href: 'https://www.nationalgeographic.com/environment/article/plastic-pollution' },
+      { label: 'UN: Reducing Single-Use Plastic Pollution', href: 'https://www.un.org/en/un-chronicle/reducing-single-use-plastic-pollution-unified-approach' },
+      { label: 'EPA: Reducing Waste — What You Can Do', href: 'https://www.epa.gov/recycle/reducing-waste-what-you-can-do' },
+    ],
   },
   {
     path: '/environmental-asbestos-exposure',
@@ -230,7 +240,24 @@ export const leafPages: LeafPage[] = [
     section: sections.about.title,
     sectionPath: sections.about.path,
     blurb: 'Annual program assessment and outcomes reports.',
-    body: ['Archive of past KSSLP assessment reports documenting service hours, partner counts, and program outcomes by year.'],
+    body: [
+      'Archive of past KSSLP service-learning fact sheets, documenting service hours, partner counts, and program outcomes going back to 2011.',
+    ],
+    links: [
+      { label: '2023–24 Fact Sheet', href: 'https://kapiolaniserve.weebly.com/uploads/8/5/0/6/8506005/23-24.pdf' },
+      { label: '2022–23 Fact Sheet', href: 'https://kapiolaniserve.weebly.com/uploads/8/5/0/6/8506005/22-23.pdf' },
+      { label: '2021–22 Fact Sheet', href: 'https://kapiolaniserve.weebly.com/uploads/8/5/0/6/8506005/2021-22.pdf' },
+      { label: '2020–21 Fact Sheet', href: 'https://kapiolaniserve.weebly.com/uploads/8/5/0/6/8506005/2020-2021_fact_sheet.pdf' },
+      { label: '2019–20 Fact Sheet', href: 'https://kapiolaniserve.weebly.com/uploads/8/5/0/6/8506005/kssl_fact_sheet_2019-2020_11.pdf' },
+      { label: '2018–19 Fact Sheet', href: 'https://kapiolaniserve.weebly.com/uploads/8/5/0/6/8506005/kssl_fact_sheet_fa18-sp19.pdf' },
+      { label: '2017–18 Fact Sheet', href: 'https://kapiolaniserve.weebly.com/uploads/8/5/0/6/8506005/kssl_fact_sheet_fa17-sp18.pdf' },
+      { label: '2016–17 Fact Sheet', href: 'https://kapiolaniserve.weebly.com/uploads/8/5/0/6/8506005/kssl_fa16-sp17_fact_sheet.pdf' },
+      { label: '2015–16 Fact Sheet', href: 'https://kapiolaniserve.weebly.com/uploads/8/5/0/6/8506005/kssl_fact_sheet_2015-16.pdf' },
+      { label: '2014–15 Fact Sheet', href: 'https://kapiolaniserve.weebly.com/uploads/8/5/0/6/8506005/kssl_fact_sheet_2014-15.pdf' },
+      { label: '2013–14 Fact Sheet', href: 'https://kapiolaniserve.weebly.com/uploads/8/5/0/6/8506005/ksl_fact_sheet_2013-2014.pdf' },
+      { label: '2012–13 Fact Sheet', href: 'https://kapiolaniserve.weebly.com/uploads/8/5/0/6/8506005/kssl_fact_sheet_2012-2013.pdf' },
+      { label: 'Summer/Fall 2011 Fact Sheet', href: 'https://kapiolaniserve.weebly.com/uploads/8/5/0/6/8506005/fact_sheet_summer_fall_2011.pdf' },
+    ],
   },
   // For Students
   {
@@ -330,8 +357,17 @@ export const leafPages: LeafPage[] = [
     title: 'Faculty Resources',
     section: sections.faculty.title,
     sectionPath: sections.faculty.path,
-    blurb: 'Syllabus language, rubrics, and planning tools for faculty.',
-    body: ['Sample syllabus language, reflection rubrics, and planning templates for embedding service-learning into a course.'],
+    blurb: 'Curated reading, research, and planning tools for faculty embedding service-learning.',
+    body: [
+      'A curated set of external reading and planning resources for faculty designing or refining a service-learning component \u2014 covering pedagogy, equity in community-engaged teaching, and Kapiʻolani\u2019s own sustainability initiatives.',
+    ],
+    links: [
+      { label: 'KapCC Sustainability Resource Page', href: 'https://news.kapiolani.hawaii.edu/introducting-the-sustainability-resource-page/' },
+      { label: 'Service-Learning and Under-represented Groups', href: 'https://quod.lib.umich.edu/cgi/t/text/text-idx?cc=mjcsloa;c=mjcsl;c=mjcsloa;idno=3239521.0024.103;view=text;rgn=main;xc=1;g=mjcslg' },
+      { label: 'Teaching to Big Questions', href: 'https://teachingtobigquestions.wordpress.com/' },
+      { label: 'SENCER (science education & civic engagement)', href: 'http://sencer.net' },
+      { label: 'KCC Faculty Senate Sustainability Committee', href: 'https://ohana.kapiolani.hawaii.edu/faculty-senate-sustainability-committee/' },
+    ],
   },
   // Community partners
   {
