@@ -1,4 +1,4 @@
-import CornerLeaves from './CornerLeaves'
+import BotanicalScatter from './BotanicalScatter'
 
 export default function PageHero({
   eyebrow,
@@ -13,7 +13,14 @@ export default function PageHero({
 }) {
   return (
     <section className="relative bg-kalo text-sand contour-field overflow-hidden">
-      <CornerLeaves corners={['top-right']} color="#f6f1e4" size={160} opacity={0.4} />
+      <BotanicalScatter
+        taroColor="#c9a24b"
+        hibiscusColor="#d43d51"
+        items={[
+          { type: 'taro', top: '-10%', right: '-4%', size: 170, rotate: 16, opacity: 0.14 },
+          { type: 'hibiscus', bottom: '-12%', left: '4%', size: 90, rotate: -8, opacity: 0.12, delay: 1 },
+        ]}
+      />
       <div className="relative mx-auto max-w-7xl px-5 lg:px-8 py-16 lg:py-20">
         <p className="eyebrow mb-4" style={{ color: accent ?? '#d9a441' }}>
           {eyebrow}

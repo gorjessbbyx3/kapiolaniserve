@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
 import ContactForm from '../components/ContactForm'
-import CornerLeaves from '../components/CornerLeaves'
+import BotanicalScatter from '../components/BotanicalScatter'
 import { ImagePlaceholder } from '../components/Placeholders'
 import Pathway3DCarousel from '../components/Pathway3DCarousel'
 
@@ -37,7 +37,16 @@ export default function Home() {
     <div>
       {/* Hero — framed photo + caption panel, never overlapping */}
       <section className="relative bg-kalo-dark overflow-hidden">
-        <CornerLeaves corners={['top-left', 'bottom-right']} color="#c9a24b" size={200} opacity={0.18} />
+        <BotanicalScatter
+          taroColor="#c9a24b"
+          hibiscusColor="#d43d51"
+          items={[
+            { type: 'taro', top: '-6%', left: '-4%', size: 200, rotate: -18, opacity: 0.14 },
+            { type: 'hibiscus', bottom: '4%', left: '6%', size: 90, rotate: 8, opacity: 0.2, delay: 1.2 },
+            { type: 'taro', bottom: '-8%', right: '-3%', size: 220, rotate: 24, opacity: 0.12, delay: 0.6 },
+            { type: 'hibiscus', top: '8%', right: '10%', size: 70, rotate: -12, opacity: 0.16, delay: 2 },
+          ]}
+        />
         <div className="relative mx-auto max-w-7xl px-5 lg:px-8 py-12 lg:py-20 grid lg:grid-cols-[1.05fr_1fr] gap-10 lg:gap-16 items-center">
           {/* Caption panel — all text lives here, never on top of the photo */}
           <div className="order-2 lg:order-1 text-sand">
@@ -116,8 +125,16 @@ export default function Home() {
       </section>
 
       {/* Campus programs */}
-      <section className="bg-white">
-        <div className="mx-auto max-w-7xl px-5 lg:px-8 py-20">
+      <section className="relative bg-white overflow-hidden">
+        <BotanicalScatter
+          taroColor="#2f4a3c"
+          hibiscusColor="#d43d51"
+          items={[
+            { type: 'taro', top: '4%', right: '-5%', size: 240, rotate: 15, opacity: 0.05 },
+            { type: 'hibiscus', bottom: '2%', left: '-4%', size: 130, rotate: -10, opacity: 0.06, delay: 1.5 },
+          ]}
+        />
+        <div className="relative mx-auto max-w-7xl px-5 lg:px-8 py-20">
           <p className="eyebrow text-ocean mb-3">Campus programs</p>
           <h2 className="font-display text-3xl sm:text-4xl text-kalo mb-10">Where students show up every week.</h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -135,8 +152,13 @@ export default function Home() {
       </section>
 
       {/* Sponsors */}
-      <section className="bg-sand-deep">
-        <div className="mx-auto max-w-7xl px-5 lg:px-8 py-14">
+      <section className="relative bg-sand-deep overflow-hidden">
+        <BotanicalScatter
+          taroColor="#2f4a3c"
+          hibiscusColor="#d43d51"
+          items={[{ type: 'taro', top: '-15%', left: '42%', size: 160, rotate: 5, opacity: 0.06 }]}
+        />
+        <div className="relative mx-auto max-w-7xl px-5 lg:px-8 py-14">
           <p className="eyebrow text-kalo/60 mb-4 text-center">Proudly sponsored by</p>
           <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-3 text-kalo/70 font-display text-lg">
             <span>State Farm &mdash; Environmental Sustainability</span>
@@ -151,7 +173,14 @@ export default function Home() {
 
       {/* Contact */}
       <section id="contact" className="relative mx-auto max-w-7xl px-5 lg:px-8 py-20 overflow-hidden">
-        <CornerLeaves corners={['bottom-left']} color="#e8792b" size={200} opacity={0.35} />
+        <BotanicalScatter
+          taroColor="#2f4a3c"
+          hibiscusColor="#e8792b"
+          items={[
+            { type: 'taro', bottom: '-10%', left: '-5%', size: 220, rotate: -20, opacity: 0.14 },
+            { type: 'hibiscus', top: '2%', right: '4%', size: 100, rotate: 12, opacity: 0.18, delay: 1 },
+          ]}
+        />
         <div className="relative grid lg:grid-cols-2 gap-12 items-start">
           <div>
             <p className="eyebrow text-papaya mb-3">Get in touch</p>

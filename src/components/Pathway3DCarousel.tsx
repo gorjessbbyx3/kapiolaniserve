@@ -4,6 +4,7 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { pathways } from '../data/pathways'
 import PathwayMarker from './PathwayMarker'
+import BotanicalScatter from './BotanicalScatter'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -109,6 +110,14 @@ export default function Pathway3DCarousel() {
       className="relative h-screen overflow-hidden bg-kalo-dark text-sand flex items-center justify-center"
     >
       <div className="absolute inset-0 bg-gradient-to-b from-kalo-dark via-kalo-dark to-[#0f1a14]" />
+      <BotanicalScatter
+        taroColor="#c9a24b"
+        hibiscusColor="#d43d51"
+        items={[
+          { type: 'taro', top: '6%', left: '4%', size: 150, rotate: -12, opacity: 0.1 },
+          { type: 'hibiscus', bottom: '8%', right: '6%', size: 110, rotate: 10, opacity: 0.12, delay: 1.3 },
+        ]}
+      />
       <div className="z-10 text-center px-5 absolute top-14 sm:top-20 left-0 right-0">
         <p className="eyebrow text-gold mb-3">Seven trailheads, one journey</p>
         <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl mb-2">Which pathway is yours?</h2>
