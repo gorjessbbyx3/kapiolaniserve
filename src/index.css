@@ -84,10 +84,6 @@ a {
 .preserve-3d {
   transform-style: preserve-3d;
 }
-.backface-hidden {
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-}
 
 .eyebrow {
   font-family: var(--font-body);

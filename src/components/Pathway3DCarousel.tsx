@@ -93,7 +93,7 @@ export default function Pathway3DCarousel() {
               >
                 <PathwayMarker marker={p.marker} color="rgba(255,255,255,0.2)" />
                 <h3 className="font-display text-lg leading-snug">{p.name}</h3>
-                <p className="text-xs text-sand/75 leading-relaxed">{p.summary}</p>
+                <p className="text-xs text-sand/75 leading-relaxed">{p.short}</p>
                 <span className="mt-auto text-xs font-medium text-gold">View pathway →</span>
               </Link>
             ))}
@@ -128,7 +128,7 @@ export default function Pathway3DCarousel() {
               ref={(el) => {
                 cardRefs.current[i] = el
               }}
-              className="absolute preserve-3d backface-hidden"
+              className="absolute preserve-3d"
               style={{
                 width: 260,
                 height: 380,
@@ -139,7 +139,7 @@ export default function Pathway3DCarousel() {
             >
               <Link
                 to={`/pathways/${p.slug}`}
-                className="backface-hidden overflow-hidden block w-full h-full rounded-2xl p-6 flex flex-col gap-3 border border-sand/10 backdrop-blur-sm transition-transform hover:scale-[1.03]"
+                className="overflow-hidden block w-full h-full rounded-2xl p-6 flex flex-col gap-3 border border-sand/10 backdrop-blur-sm transition-transform hover:scale-[1.03]"
                 style={{
                   backgroundColor: `${p.color}dd`,
                   transform: 'scale(var(--card-scale, 1))',
@@ -147,7 +147,7 @@ export default function Pathway3DCarousel() {
               >
                 <PathwayMarker marker={p.marker} color="rgba(255,255,255,0.2)" />
                 <h3 className="font-display text-lg leading-snug">{p.name}</h3>
-                <p className="text-xs text-sand/75 leading-relaxed line-clamp-4">{p.summary}</p>
+                <p className="text-xs text-sand/75 leading-relaxed line-clamp-3">{p.short}</p>
                 <span className="mt-auto text-xs font-medium text-gold">View pathway →</span>
               </Link>
             </div>
