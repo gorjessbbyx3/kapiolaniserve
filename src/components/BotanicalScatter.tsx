@@ -1,92 +1,117 @@
 type Props = { color?: string; className?: string }
 
-/** Peltate heart-shaped kalo (taro) leaf — echoes the KSSLP logo emblem */
+/** Refined peltate kalo (taro) leaf silhouette with fine gold-hairline venation */
 export function TaroLeaf({ color = '#2f4a3c', className = '' }: Props) {
   return (
     <svg viewBox="0 0 120 140" fill="none" className={className} xmlns="http://www.w3.org/2000/svg">
       <path
-        d="M60 8C90 8 112 34 112 64C112 96 90 118 60 132C30 118 8 96 8 64C8 34 30 8 60 8Z"
+        d="M60 18
+           C 52 12 42 12 35 17
+           C 18 28 8 48 9 68
+           C 10 94 26 114 60 132
+           C 94 114 110 94 111 68
+           C 112 48 102 28 85 17
+           C 78 12 68 12 60 18 Z"
         fill={color}
       />
-      <path d="M60 8V132" stroke="#00000022" strokeWidth="2" />
-      <path d="M60 40C48 55 34 62 20 66" stroke="#00000022" strokeWidth="1.5" />
-      <path d="M60 40C72 55 86 62 100 66" stroke="#00000022" strokeWidth="1.5" />
-      <path d="M60 70C50 82 40 88 28 92" stroke="#00000022" strokeWidth="1.5" />
-      <path d="M60 70C70 82 80 88 92 92" stroke="#00000022" strokeWidth="1.5" />
+      <path
+        d="M60 22 C 57 46 58 90 60 126"
+        stroke="#f6f1e4"
+        strokeWidth="1"
+        strokeLinecap="round"
+        opacity="0.35"
+      />
+      <path d="M59 34C48 44 34 50 22 53" stroke="#f6f1e4" strokeWidth="0.75" opacity="0.3" strokeLinecap="round" />
+      <path d="M61 34C72 44 86 50 98 53" stroke="#f6f1e4" strokeWidth="0.75" opacity="0.3" strokeLinecap="round" />
+      <path d="M59 62C50 74 40 81 27 86" stroke="#f6f1e4" strokeWidth="0.75" opacity="0.3" strokeLinecap="round" />
+      <path d="M61 62C70 74 80 81 93 86" stroke="#f6f1e4" strokeWidth="0.75" opacity="0.3" strokeLinecap="round" />
+      <path d="M60 92C54 100 48 105 40 110" stroke="#f6f1e4" strokeWidth="0.75" opacity="0.3" strokeLinecap="round" />
+      <path d="M60 92C66 100 72 105 80 110" stroke="#f6f1e4" strokeWidth="0.75" opacity="0.3" strokeLinecap="round" />
     </svg>
   )
 }
 
-/** Stroke-only kalo leaf — the line-art / sketchbook counterpart to the filled TaroLeaf */
+/** Stroke-only kalo leaf — the engraved / botanical-plate counterpart to the filled TaroLeaf */
 export function TaroLeafOutline({ color = '#f6f1e4', className = '' }: Props) {
   return (
     <svg viewBox="0 0 120 140" fill="none" className={className} xmlns="http://www.w3.org/2000/svg">
       <path
-        d="M60 8C90 8 112 34 112 64C112 96 90 118 60 132C30 118 8 96 8 64C8 34 30 8 60 8Z"
+        d="M60 18
+           C 52 12 42 12 35 17
+           C 18 28 8 48 9 68
+           C 10 94 26 114 60 132
+           C 94 114 110 94 111 68
+           C 112 48 102 28 85 17
+           C 78 12 68 12 60 18 Z"
         stroke={color}
-        strokeWidth="2"
+        strokeWidth="1.25"
       />
-      <path d="M60 8V132" stroke={color} strokeWidth="1.2" opacity="0.7" />
-      <path d="M60 40C48 55 34 62 20 66" stroke={color} strokeWidth="1" opacity="0.7" />
-      <path d="M60 40C72 55 86 62 100 66" stroke={color} strokeWidth="1" opacity="0.7" />
-      <path d="M60 70C50 82 40 88 28 92" stroke={color} strokeWidth="1" opacity="0.7" />
-      <path d="M60 70C70 82 80 88 92 92" stroke={color} strokeWidth="1" opacity="0.7" />
+      <path d="M60 22 C 57 46 58 90 60 126" stroke={color} strokeWidth="0.75" opacity="0.6" />
+      <path d="M59 34C48 44 34 50 22 53" stroke={color} strokeWidth="0.6" opacity="0.55" />
+      <path d="M61 34C72 44 86 50 98 53" stroke={color} strokeWidth="0.6" opacity="0.55" />
+      <path d="M59 62C50 74 40 81 27 86" stroke={color} strokeWidth="0.6" opacity="0.55" />
+      <path d="M61 62C70 74 80 81 93 86" stroke={color} strokeWidth="0.6" opacity="0.55" />
     </svg>
   )
 }
 
-/** Simple 5-petal hibiscus bloom with center stamen */
+/** Hibiscus bloom with soft overlapping teardrop petals and a fine stamen */
 export function Hibiscus({ color = '#d43d51', className = '' }: Props) {
   return (
     <svg viewBox="0 0 120 120" fill="none" className={className} xmlns="http://www.w3.org/2000/svg">
       {[0, 72, 144, 216, 288].map((angle) => (
-        <ellipse
+        <path
           key={angle}
-          cx="60"
-          cy="32"
-          rx="16"
-          ry="26"
+          d="M60 60 C 48 48 44 28 58 12 C 72 28 68 48 60 60 Z"
           fill={color}
+          fillOpacity="0.92"
           transform={`rotate(${angle} 60 60)`}
-          fillOpacity="0.9"
         />
       ))}
-      <circle cx="60" cy="60" r="7" fill="#f3c94f" />
-      <line x1="60" y1="60" x2="60" y2="84" stroke="#f3c94f" strokeWidth="3" strokeLinecap="round" />
+      <circle cx="60" cy="60" r="5" fill="#f3c94f" />
+      <path d="M60 60 C 58 68 58 76 60 86" stroke="#f3c94f" strokeWidth="2" strokeLinecap="round" />
+      <circle cx="60" cy="87" r="2" fill="#f3c94f" />
     </svg>
   )
 }
 
-/** Concentric quarter-arc rings — a quiet decorative flourish, like a rising-sun sketch mark */
-export function ArcRings({ color = '#f6f1e4', className = '' }: Props) {
+/** A single elegant fern frond — engraving-style line art, standing in for a decorative flourish */
+export function FernFrond({ color = '#f6f1e4', className = '' }: Props) {
+  const leaflets = [
+    { t: 0.18, side: 1, s: 0.55 },
+    { t: 0.18, side: -1, s: 0.55 },
+    { t: 0.34, side: 1, s: 0.72 },
+    { t: 0.34, side: -1, s: 0.72 },
+    { t: 0.5, side: 1, s: 0.85 },
+    { t: 0.5, side: -1, s: 0.85 },
+    { t: 0.66, side: 1, s: 0.7 },
+    { t: 0.66, side: -1, s: 0.7 },
+    { t: 0.82, side: 1, s: 0.45 },
+    { t: 0.82, side: -1, s: 0.45 },
+  ]
+  // stem follows a gentle curve from bottom-left to top-right
+  const stem = (t: number) => ({
+    x: 12 + t * 96,
+    y: 190 - t * 170 - Math.sin(t * Math.PI) * 20,
+  })
   return (
-    <svg viewBox="0 0 160 160" fill="none" className={className} xmlns="http://www.w3.org/2000/svg">
-      {[30, 55, 80, 105].map((r) => (
-        <path
-          key={r}
-          d={`M ${160 - r} 160 A ${r} ${r} 0 0 0 160 ${160 - r}`}
-          stroke={color}
-          strokeWidth="1.5"
-          opacity="0.8"
-        />
-      ))}
-    </svg>
-  )
-}
-
-/** A few stacked wavy lines — evokes water, wind, or a horizon line */
-export function WaveLines({ color = '#f6f1e4', className = '' }: Props) {
-  return (
-    <svg viewBox="0 0 300 60" fill="none" className={className} xmlns="http://www.w3.org/2000/svg">
-      {[10, 26, 42].map((y) => (
-        <path
-          key={y}
-          d={`M0 ${y} Q 25 ${y - 12} 50 ${y} T 100 ${y} T 150 ${y} T 200 ${y} T 250 ${y} T 300 ${y}`}
-          stroke={color}
-          strokeWidth="1.5"
-          opacity="0.7"
-        />
-      ))}
+    <svg viewBox="0 0 120 190" fill="none" className={className} xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 190 Q 60 120 108 10" stroke={color} strokeWidth="1.25" opacity="0.75" />
+      {leaflets.map((l, i) => {
+        const p = stem(l.t)
+        const angle = l.side * 35
+        const len = 22 * l.s
+        return (
+          <path
+            key={i}
+            d={`M${p.x} ${p.y} Q ${p.x + l.side * len * 0.6} ${p.y - len * 0.3} ${p.x + l.side * len} ${p.y - len * 0.6}`}
+            stroke={color}
+            strokeWidth="0.85"
+            opacity="0.55"
+            transform={`rotate(${angle} ${p.x} ${p.y})`}
+          />
+        )
+      })}
     </svg>
   )
 }
@@ -128,7 +153,7 @@ export function WatercolorWash({
 }
 
 type ScatterItem = {
-  type: 'taro' | 'hibiscus' | 'taro-outline' | 'arcs' | 'waves'
+  type: 'taro' | 'hibiscus' | 'taro-outline' | 'fern'
   top?: string
   bottom?: string
   left?: string
@@ -139,7 +164,7 @@ type ScatterItem = {
   delay?: number
 }
 
-/** Tasteful, low-opacity botanical texture layer — pointer-events-none, sits behind content */
+/** Restrained, gallery-quality botanical texture layer — pointer-events-none, sits behind content */
 export default function BotanicalScatter({
   items,
   taroColor = '#2f4a3c',
@@ -162,8 +187,8 @@ export default function BotanicalScatter({
             bottom: item.bottom,
             left: item.left,
             right: item.right,
-            width: item.size,
-            height: item.type === 'waves' ? item.size / 5 : item.size,
+            width: item.type === 'fern' ? item.size * 0.63 : item.size,
+            height: item.size,
             opacity: item.opacity,
             transform: `rotate(${item.rotate}deg)`,
             animationDelay: `${item.delay ?? 0}s`,
@@ -173,8 +198,7 @@ export default function BotanicalScatter({
           {item.type === 'taro' && <TaroLeaf color={taroColor} />}
           {item.type === 'hibiscus' && <Hibiscus color={hibiscusColor} />}
           {item.type === 'taro-outline' && <TaroLeafOutline color={lineColor} />}
-          {item.type === 'arcs' && <ArcRings color={lineColor} />}
-          {item.type === 'waves' && <WaveLines color={lineColor} />}
+          {item.type === 'fern' && <FernFrond color={lineColor} />}
         </div>
       ))}
     </div>

@@ -119,7 +119,7 @@ export default function Pathway3DCarousel() {
         items={[
           { type: 'taro', top: '6%', left: '4%', size: 150, rotate: -12, opacity: 0.1 },
           { type: 'hibiscus', bottom: '8%', right: '6%', size: 110, rotate: 10, opacity: 0.12, delay: 1.3 },
-          { type: 'arcs', top: '4%', right: '5%', size: 110, rotate: 90, opacity: 0.2, delay: 0.4 },
+          { type: 'fern', top: '2%', right: '4%', size: 150, rotate: 100, opacity: 0.14, delay: 0.4 },
         ]}
       />
       <div className="z-10 text-center px-5 absolute top-14 sm:top-20 left-0 right-0">

@@ -44,13 +44,9 @@ export default function Home() {
           hibiscusColor="#d43d51"
           lineColor="#f6f1e4"
           items={[
-            { type: 'arcs', top: '6%', left: '3%', size: 130, rotate: 0, opacity: 0.3 },
-            { type: 'taro', top: '-6%', left: '-4%', size: 200, rotate: -18, opacity: 0.14 },
-            { type: 'hibiscus', bottom: '4%', left: '6%', size: 90, rotate: 8, opacity: 0.2, delay: 1.2 },
-            { type: 'taro', bottom: '-8%', right: '-3%', size: 220, rotate: 24, opacity: 0.12, delay: 0.6 },
-            { type: 'taro-outline', bottom: '10%', right: '4%', size: 130, rotate: -10, opacity: 0.3, delay: 0.8 },
-            { type: 'hibiscus', top: '8%', right: '10%', size: 70, rotate: -12, opacity: 0.16, delay: 2 },
-            { type: 'waves', bottom: '2%', left: '30%', size: 260, rotate: 0, opacity: 0.25, delay: 1.6 },
+            { type: 'taro', bottom: '-14%', left: '-6%', size: 260, rotate: -15, opacity: 0.1 },
+            { type: 'fern', top: '4%', right: '3%', size: 200, rotate: 8, opacity: 0.22 },
+            { type: 'hibiscus', bottom: '6%', right: '8%', size: 64, rotate: -6, opacity: 0.16, delay: 1.4 },
           ]}
         />
         <div className="relative mx-auto max-w-7xl px-5 lg:px-8 py-12 lg:py-20 grid lg:grid-cols-[1.05fr_1fr] gap-10 lg:gap-16 items-center">
@@ -198,8 +194,7 @@ export default function Home() {
           lineColor="#2f4a3c"
           items={[
             { type: 'taro', bottom: '-10%', left: '-5%', size: 220, rotate: -20, opacity: 0.14 },
-            { type: 'hibiscus', top: '2%', right: '4%', size: 100, rotate: 12, opacity: 0.18, delay: 1 },
-            { type: 'arcs', bottom: '4%', right: '6%', size: 100, rotate: 180, opacity: 0.15, delay: 0.5 },
+            { type: 'fern', top: '0%', right: '4%', size: 170, rotate: -8, opacity: 0.16, delay: 0.5 },
           ]}
         />
         <div className="relative grid lg:grid-cols-2 gap-12 items-start">
