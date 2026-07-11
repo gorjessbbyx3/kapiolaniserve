@@ -20,11 +20,11 @@ export default function PathwayDetail() {
     <div>
       <section className="relative text-sand contour-field overflow-hidden" style={{ backgroundColor: pathway.color }}>
         <BotanicalScatter
-          taroColor="#f6f1e4"
-          hibiscusColor="#f6f1e4"
+          lineColor="#c9a24b"
           items={[
-            { type: 'taro', top: '-12%', right: '-5%', size: 190, rotate: 18, opacity: 0.16 },
-            { type: 'hibiscus', bottom: '-10%', left: '2%', size: 100, rotate: -10, opacity: 0.14, delay: 1 },
+            { type: 'taro-outline', top: '-12%', right: '-5%', size: 190, rotate: 18, opacity: 0.28 },
+            { type: 'hibiscus-outline', bottom: '-10%', left: '2%', size: 100, rotate: -10, opacity: 0.26, delay: 1 },
+            { type: 'sparkle', top: '30%', right: '25%', size: 16, rotate: 0, opacity: 0.6, delay: 0.7 },
           ]}
         />
         <div className="relative mx-auto max-w-7xl px-5 lg:px-8 py-16 lg:py-20">

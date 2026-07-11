@@ -110,16 +110,16 @@ export default function Pathway3DCarousel() {
       className="relative h-screen overflow-hidden bg-kalo-dark text-sand flex items-center justify-center"
     >
       <div className="absolute inset-0 bg-gradient-to-b from-kalo-dark via-kalo-dark to-[#0f1a14]" />
-      <WatercolorWash color="#1c6b72" size={420} top="-10%" left="-10%" opacity={0.2} />
-      <WatercolorWash color="#d43d51" size={300} bottom="-15%" right="-8%" opacity={0.1} />
+      <WatercolorWash color="#1c6b72" size={420} top="-10%" left="-10%" opacity={0.18} />
+      <WatercolorWash color="#c9a24b" size={300} bottom="-15%" right="-8%" opacity={0.12} />
       <BotanicalScatter
-        taroColor="#c9a24b"
-        hibiscusColor="#d43d51"
-        lineColor="#f6f1e4"
+        lineColor="#c9a24b"
         items={[
-          { type: 'taro', top: '6%', left: '4%', size: 150, rotate: -12, opacity: 0.1 },
-          { type: 'hibiscus', bottom: '8%', right: '6%', size: 110, rotate: 10, opacity: 0.12, delay: 1.3 },
-          { type: 'fern', top: '2%', right: '4%', size: 150, rotate: 100, opacity: 0.14, delay: 0.4 },
+          { type: 'taro-outline', top: '6%', left: '4%', size: 150, rotate: -12, opacity: 0.22 },
+          { type: 'hibiscus-outline', bottom: '8%', right: '6%', size: 110, rotate: 10, opacity: 0.22, delay: 1.3 },
+          { type: 'fern', top: '2%', right: '4%', size: 150, rotate: 100, opacity: 0.2, delay: 0.4 },
+          { type: 'sparkle', top: '30%', left: '20%', size: 20, rotate: 0, opacity: 0.7, delay: 0.6 },
+          { type: 'sparkle', bottom: '25%', right: '22%', size: 16, rotate: 0, opacity: 0.6, delay: 2 },
         ]}
       />
       <div className="z-10 text-center px-5 absolute top-14 sm:top-20 left-0 right-0">

@@ -13,14 +13,13 @@ export default function PageHero({
 }) {
   return (
     <section className="relative bg-kalo text-sand contour-field overflow-hidden">
-      <WatercolorWash color="#1c6b72" size={300} top="-20%" right="-6%" opacity={0.2} />
+      <WatercolorWash color="#1c6b72" size={300} top="-20%" right="-6%" opacity={0.16} />
       <BotanicalScatter
-        taroColor="#c9a24b"
-        hibiscusColor="#d43d51"
-        lineColor="#f6f1e4"
+        lineColor="#c9a24b"
         items={[
-          { type: 'taro', top: '-14%', right: '-5%', size: 190, rotate: 16, opacity: 0.13 },
-          { type: 'fern', bottom: '-8%', left: '2%', size: 150, rotate: -100, opacity: 0.16, delay: 0.5 },
+          { type: 'taro-outline', top: '-14%', right: '-5%', size: 190, rotate: 16, opacity: 0.26 },
+          { type: 'fern', bottom: '-8%', left: '2%', size: 150, rotate: -100, opacity: 0.24, delay: 0.5 },
+          { type: 'sparkle', top: '35%', right: '20%', size: 16, rotate: 0, opacity: 0.6, delay: 1 },
         ]}
       />
       <div className="relative mx-auto max-w-7xl px-5 lg:px-8 py-16 lg:py-20">

@@ -85,6 +85,17 @@ a {
   transform-style: preserve-3d;
 }
 
+@keyframes shimmer {
+  0%, 100% { opacity: 0.4; filter: drop-shadow(0 0 2px rgba(243, 201, 79, 0.3)); }
+  50% { opacity: 1; filter: drop-shadow(0 0 6px rgba(243, 201, 79, 0.8)); }
+}
+.sparkle-glow {
+  animation: shimmer 2.8s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .sparkle-glow { animation: none; opacity: 0.7; }
+}
+
 .eyebrow {
   font-family: var(--font-body);
   font-size: 0.75rem;

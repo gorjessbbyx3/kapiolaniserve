@@ -37,16 +37,16 @@ export default function Home() {
     <div>
       {/* Hero — framed photo + caption panel, never overlapping */}
       <section className="relative bg-kalo-dark overflow-hidden">
-        <WatercolorWash color="#1c6b72" size={480} top="-15%" right="-10%" opacity={0.25} />
-        <WatercolorWash color="#c9a24b" size={360} bottom="-20%" left="-8%" opacity={0.15} />
+        <WatercolorWash color="#1c6b72" size={480} top="-15%" right="-10%" opacity={0.22} />
+        <WatercolorWash color="#c9a24b" size={360} bottom="-20%" left="-8%" opacity={0.12} />
         <BotanicalScatter
-          taroColor="#c9a24b"
-          hibiscusColor="#d43d51"
-          lineColor="#f6f1e4"
+          lineColor="#c9a24b"
           items={[
-            { type: 'taro', bottom: '-14%', left: '-6%', size: 260, rotate: -15, opacity: 0.1 },
-            { type: 'fern', top: '4%', right: '3%', size: 200, rotate: 8, opacity: 0.22 },
-            { type: 'hibiscus', bottom: '6%', right: '8%', size: 64, rotate: -6, opacity: 0.16, delay: 1.4 },
+            { type: 'taro-outline', bottom: '-14%', left: '-6%', size: 260, rotate: -15, opacity: 0.28 },
+            { type: 'fern', top: '4%', right: '3%', size: 200, rotate: 8, opacity: 0.3 },
+            { type: 'hibiscus-outline', bottom: '8%', right: '10%', size: 60, rotate: -6, opacity: 0.3, delay: 1.4 },
+            { type: 'sparkle', top: '18%', right: '30%', size: 22, rotate: 0, opacity: 0.7, delay: 0.3 },
+            { type: 'sparkle', bottom: '30%', left: '20%', size: 16, rotate: 0, opacity: 0.6, delay: 1.8 },
           ]}
         />
         <div className="relative mx-auto max-w-7xl px-5 lg:px-8 py-12 lg:py-20 grid lg:grid-cols-[1.05fr_1fr] gap-10 lg:gap-16 items-center">
@@ -141,11 +141,10 @@ export default function Home() {
       {/* Campus programs */}
       <section className="relative bg-white overflow-hidden">
         <BotanicalScatter
-          taroColor="#2f4a3c"
-          hibiscusColor="#d43d51"
+          lineColor="#c9a24b"
           items={[
-            { type: 'taro', top: '4%', right: '-5%', size: 240, rotate: 15, opacity: 0.05 },
-            { type: 'hibiscus', bottom: '2%', left: '-4%', size: 130, rotate: -10, opacity: 0.06, delay: 1.5 },
+            { type: 'taro-outline', top: '4%', right: '-5%', size: 240, rotate: 15, opacity: 0.14 },
+            { type: 'hibiscus-outline', bottom: '2%', left: '-4%', size: 130, rotate: -10, opacity: 0.14, delay: 1.5 },
           ]}
         />
         <div className="relative mx-auto max-w-7xl px-5 lg:px-8 py-20">
@@ -168,9 +167,8 @@ export default function Home() {
       {/* Sponsors */}
       <section className="relative bg-sand-deep overflow-hidden">
         <BotanicalScatter
-          taroColor="#2f4a3c"
-          hibiscusColor="#d43d51"
-          items={[{ type: 'taro', top: '-15%', left: '42%', size: 160, rotate: 5, opacity: 0.06 }]}
+          lineColor="#c9a24b"
+          items={[{ type: 'taro-outline', top: '-15%', left: '42%', size: 160, rotate: 5, opacity: 0.15 }]}
         />
         <div className="relative mx-auto max-w-7xl px-5 lg:px-8 py-14">
           <p className="eyebrow text-kalo/60 mb-4 text-center">Proudly sponsored by</p>
@@ -187,14 +185,13 @@ export default function Home() {
 
       {/* Contact */}
       <section id="contact" className="relative mx-auto max-w-7xl px-5 lg:px-8 py-20 overflow-hidden">
-        <WatercolorWash color="#1c6b72" size={340} top="10%" left="-8%" opacity={0.1} />
+        <WatercolorWash color="#1c6b72" size={340} top="10%" left="-8%" opacity={0.08} />
         <BotanicalScatter
-          taroColor="#2f4a3c"
-          hibiscusColor="#e8792b"
-          lineColor="#2f4a3c"
+          lineColor="#c9a24b"
           items={[
-            { type: 'taro', bottom: '-10%', left: '-5%', size: 220, rotate: -20, opacity: 0.14 },
-            { type: 'fern', top: '0%', right: '4%', size: 170, rotate: -8, opacity: 0.16, delay: 0.5 },
+            { type: 'taro-outline', bottom: '-10%', left: '-5%', size: 220, rotate: -20, opacity: 0.22 },
+            { type: 'fern', top: '0%', right: '4%', size: 170, rotate: -8, opacity: 0.24, delay: 0.5 },
+            { type: 'sparkle', top: '20%', left: '15%', size: 18, rotate: 0, opacity: 0.6, delay: 0.9 },
           ]}
         />
         <div className="relative grid lg:grid-cols-2 gap-12 items-start">
