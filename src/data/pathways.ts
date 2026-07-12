@@ -6,6 +6,7 @@ export type Pathway = {
   summary: string
   short: string
   focus: string[]
+  photo?: string
   culturalNote?: { heading: string; values: { term: string; meaning: string }[] }
 }
 
@@ -19,6 +20,7 @@ export const pathways: Pathway[] = [
       'Restoration, native ecosystems, and climate resilience work across Oʻahu — from loʻi to invasive species removal.',
     short: 'Ecosystem restoration and native plant stewardship across Oʻahu.',
     focus: ['Ecosystem restoration', 'Native plant stewardship', 'Climate & sustainability'],
+    photo: '/images/programs/mala-maunuunu-garden.jpg',
   },
   {
     slug: 'health',

@@ -16,7 +16,7 @@ const programs = [
     name: 'Māla Māunuunu',
     to: '/mala-maunuunu',
     blurb: 'The campus garden anchoring hands-on Environment pathway work.',
-    photo: null,
+    photo: '/images/programs/mala-maunuunu-workday.jpg',
   },
   {
     name: 'KCC Ecology Club',

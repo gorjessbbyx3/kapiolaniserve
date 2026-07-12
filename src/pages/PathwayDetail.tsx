@@ -42,7 +42,13 @@ export default function PathwayDetail() {
       <section className="mx-auto max-w-7xl px-5 lg:px-8 py-16 grid lg:grid-cols-4 gap-12" style={{ backgroundColor: tint(pathway.color, 8) }}>
         <div className="lg:col-span-3">
           <div className="mb-10 max-w-md">
-            <ImagePlaceholder label={`${pathway.name} pathway in action`} aspect="aspect-[16/9]" accent={pathway.color} />
+            {pathway.photo ? (
+              <div className="aspect-[16/9] w-full rounded-xl overflow-hidden gold-hairline">
+                <img src={pathway.photo} alt={`${pathway.name} pathway`} className="w-full h-full object-cover" loading="lazy" />
+              </div>
+            ) : (
+              <ImagePlaceholder label={`${pathway.name} pathway in action`} aspect="aspect-[16/9]" accent={pathway.color} />
+            )}
           </div>
 
           <h2 className="font-display text-2xl text-kalo mb-4">What service looks like here</h2>
