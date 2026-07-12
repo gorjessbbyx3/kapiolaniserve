@@ -39,7 +39,7 @@ export default function PathwayDetail() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-5 lg:px-8 py-16 grid lg:grid-cols-4 gap-12" style={{ backgroundColor: tint(pathway.color, 3) }}>
+      <section className="mx-auto max-w-7xl px-5 lg:px-8 py-16 grid lg:grid-cols-4 gap-12" style={{ backgroundColor: tint(pathway.color, 8) }}>
         <div className="lg:col-span-3">
           <div className="mb-10 max-w-md">
             <ImagePlaceholder label={`${pathway.name} pathway in action`} aspect="aspect-[16/9]" accent={pathway.color} />

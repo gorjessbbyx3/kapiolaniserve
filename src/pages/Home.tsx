@@ -107,7 +107,10 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="absolute -bottom-4 -right-4 sm:-bottom-5 sm:-right-5 h-16 w-16 sm:h-20 sm:w-20 rounded-full bg-gold text-kalo-dark flex items-center justify-center font-display text-xs text-center leading-tight shadow-lg rotate-[-8deg] float-slow">
+            <div
+              className="absolute -bottom-4 -right-4 sm:-bottom-5 sm:-right-5 h-16 w-16 sm:h-20 sm:w-20 rounded-full bg-gold text-kalo-dark flex items-center justify-center font-display text-xs text-center leading-tight shadow-lg float-slow"
+              style={{ ['--tilt' as string]: '-8deg' }}
+            >
               Since
               <br />
               1995
