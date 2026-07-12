@@ -98,10 +98,10 @@ export default function Hero() {
           { type: 'hibiscus-outline', bottom: '8%', right: '10%', size: 60, rotate: -6, opacity: 0.3, delay: 1.4 },
         ]}
       />
-      <div className="relative mx-auto max-w-7xl px-5 lg:px-8 pt-12 pb-16 lg:pt-20 lg:pb-16 grid lg:grid-cols-[1.05fr_1fr] gap-10 lg:gap-16 items-center">
-        {/* Caption panel — all text lives here, never on top of the photo */}
-        <div className="order-2 lg:order-1 text-sand">
-          <div className="hero-badge flex items-center gap-3 mb-7">
+      <div className="relative mx-auto max-w-6xl px-5 lg:px-8 pt-14 pb-12 lg:pt-20 lg:pb-16">
+        {/* Text block — centered, sits entirely above the photo, never overlapping it */}
+        <div className="text-sand text-center max-w-2xl mx-auto">
+          <div className="hero-badge flex items-center justify-center gap-3 mb-6">
             <img src="/images/kssl-logo.png" alt="" className="h-12 w-12 rounded-full bg-sand/95 p-1.5 shadow-lg shrink-0" />
             <p className="eyebrow text-gold">Kapiʻolani Community College</p>
           </div>
@@ -114,7 +114,7 @@ export default function Hero() {
             <span className="hero-line block text-3xl sm:text-4xl lg:text-5xl italic font-normal mt-1">Learning</span>
           </h1>
 
-          <div className="hero-tagline mt-5 flex flex-wrap items-center gap-x-3 gap-y-2 text-xs sm:text-sm font-medium tracking-wide text-sand/90">
+          <div className="hero-tagline mt-5 flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-xs sm:text-sm font-medium tracking-wide text-sand/90">
             <span>SERVE.</span>
             <span className="text-hibiscus">●</span>
             <span>SUSTAIN.</span>
@@ -122,12 +122,12 @@ export default function Hero() {
             <span>INSPIRE.</span>
           </div>
 
-          <p className="hero-copy mt-6 max-w-md text-base sm:text-lg text-sand/80 leading-relaxed">
+          <p className="hero-copy mt-6 text-base sm:text-lg text-sand/80 leading-relaxed mx-auto">
             KSSLP connects students to sustained, reciprocal service across seven pathways &mdash;
             from restoring native ecosystems to supporting kūpuna &mdash; and turns that work into
             academic credit, certification, and real community relationships.
           </p>
-          <div className="mt-8 flex flex-wrap gap-4">
+          <div className="mt-8 flex flex-wrap justify-center gap-4">
             <Link
               to="/pathways"
               className="hero-cta press inline-flex items-center gap-2 px-6 py-3 rounded-full bg-hibiscus text-sand font-medium shadow-lg shadow-hibiscus/30 hover:brightness-110 hover:-translate-y-0.5 transition-all"
@@ -143,8 +143,8 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Framed photo — always fully visible, object-contain, no crop, tilts gently toward your cursor */}
-        <div ref={frameWrapRef} className="order-1 lg:order-2 relative perspective-1200">
+        {/* Framed photo — big, full-width, always fully visible, tilts gently toward your cursor */}
+        <div ref={frameWrapRef} className="relative perspective-1200 mt-12 lg:mt-16 max-w-5xl mx-auto">
           <div ref={frameInnerRef} className="preserve-3d">
             <div className="frame-shadow rounded-2xl bg-gradient-to-br from-koa via-kalo to-kalo-dark p-3 sm:p-4">
               <div className="rounded-xl border border-gold/40 p-1.5 bg-kalo-dark">
@@ -162,7 +162,7 @@ export default function Hero() {
             </div>
           </div>
           <div
-            className="absolute -bottom-4 -right-4 sm:-bottom-5 sm:-right-5 h-16 w-16 sm:h-20 sm:w-20 rounded-full bg-gold text-kalo-dark flex items-center justify-center font-display text-xs text-center leading-tight shadow-lg float-slow"
+            className="absolute -bottom-4 -right-4 sm:-bottom-6 sm:-right-6 h-16 w-16 sm:h-24 sm:w-24 rounded-full bg-gold text-kalo-dark flex items-center justify-center font-display text-xs sm:text-sm text-center leading-tight shadow-lg float-slow"
             style={{ ['--tilt' as string]: '-8deg' }}
           >
             Since
