@@ -7,19 +7,23 @@ Tracking list for what's left before this site is 100% ready to fully replace th
 - [x] **Assessment Reports Archive** — real 13-year fact sheet archive (2011–2024) now linked, pulled from legacy site
 - [x] **Faculty Resources** — real curated reading list now added (dropped stale 2021 Campus Compact event announcements as no longer current)
 - [x] **Plastic Pollution World Crisis** — real facts and external resource links added
-- [ ] **Meet the Team** — currently generic role titles (Program Director, Coordinator, etc.) with no real names; need actual staff names + bios
-- [ ] Confirm current **Denise Pierson** (mentioned in a 2024 campus news article as Civic and Community Engagement Outreach Coordinator) is still the right contact/title to use on Meet the Team
+- [x] **Meet the Team** — real names/roles/bios now in place (Denise Pierson, Krista Hiser, plus 4 student pathway leaders), with real photos for Denise & Krista
 
 ## Photos needed (placeholders currently in place)
 
-- [ ] Home page campus program cards: Pohukaina Food Pantry, Māla Māunuunu, KCC Ecology Club, MINA
+See **[PHOTO_SHOTLIST.md](./PHOTO_SHOTLIST.md)** for the full breakdown with framing suggestions. Short version:
+
+- [x] Pohukaina Food Pantry, KCC Ecology Club, MINA — real photos now in place (hotlinked from legacy site, see rehosting note below)
+- [ ] Māla Māunuunu campus program photo — not found on legacy site, needs a new photo
 - [ ] One hero photo per pathway page (7 total)
-- [ ] Team member headshots on Meet the Team
+- [ ] 4 student pathway leader headshots (Darlene Michubu, Barbara Keola, Kai Yamasato, Ari Smith)
+- [ ] State Farm & Hawaiian Electric sponsor logos — couldn't extract from legacy site (rendered via a slideshow widget); need official files directly from the sponsors
 
 ## Files to rehost
 
 - [ ] **Ecology Club flyer PDF** and **MINA Factsheet PDF** currently link directly to the legacy Weebly file host (`kapiolaniserve.weebly.com/uploads/...`) — these need to be rehosted (e.g. Google Drive, like the Civic Action Plan and Sustainability Plan links) before the old site is retired, or the links will break
 - [ ] **All 13 Assessment Reports Archive PDFs** (2011–2024) are also on the legacy Weebly file host — same rehosting need, ideally in bulk before Weebly is retired
+- [ ] **All newly added real photos are hotlinked from the legacy Weebly host too**: Pohukaina Food Pantry, KCC Ecology Club, and MINA photos, the Carnegie Foundation logo, and Denise Pierson & Krista Hiser's headshots. Highest-priority rehost — download these and drop them into `/public/images` before Weebly retires, or the whole site loses its photos at once.
 
 ## Functionality
 
