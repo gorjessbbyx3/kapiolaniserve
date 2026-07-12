@@ -12,24 +12,41 @@ export default function Hero() {
     () => typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches
   )
 
-  // Grand-entrance reveal
+  // Grand-entrance reveal — waits for the splash screen to clear first
   useEffect(() => {
     if (reducedMotion || !rootRef.current) return
-    const ctx = gsap.context(() => {
-      const tl = gsap.timeline({ defaults: { ease: 'power3.out' } })
-      tl.from('.hero-badge', { opacity: 0, y: -12, scale: 0.8, duration: 0.6 })
-        .from('.hero-line', { opacity: 0, y: 28, duration: 0.7, stagger: 0.12 }, '-=0.35')
-        .from('.hero-tagline', { opacity: 0, y: 12, duration: 0.5 }, '-=0.25')
-        .from('.hero-copy', { opacity: 0, y: 12, duration: 0.5 }, '-=0.3')
-        .from('.hero-cta', { opacity: 0, y: 12, duration: 0.5, stagger: 0.1 }, '-=0.3')
-        .from(
-          frameWrapRef.current,
-          { opacity: 0, scale: 0.92, rotateY: -8, rotateX: 4, duration: 1, ease: 'power2.out' },
-          '-=0.9'
-        )
-        .from('.hero-scrollcue', { opacity: 0, duration: 0.6 }, '-=0.2')
-    }, rootRef)
-    return () => ctx.revert()
+
+    function playEntrance() {
+      const ctx = gsap.context(() => {
+        const tl = gsap.timeline({ defaults: { ease: 'power3.out' } })
+        tl.from('.hero-badge', { opacity: 0, y: -12, scale: 0.8, duration: 0.6 })
+          .from('.hero-line', { opacity: 0, y: 28, duration: 0.7, stagger: 0.12 }, '-=0.35')
+          .from('.hero-tagline', { opacity: 0, y: 12, duration: 0.5 }, '-=0.25')
+          .from('.hero-copy', { opacity: 0, y: 12, duration: 0.5 }, '-=0.3')
+          .from('.hero-cta', { opacity: 0, y: 12, duration: 0.5, stagger: 0.1 }, '-=0.3')
+          .from(
+            frameWrapRef.current,
+            { opacity: 0, scale: 0.92, rotateY: -8, rotateX: 4, duration: 1, ease: 'power2.out' },
+            '-=0.9'
+          )
+          .from('.hero-scrollcue', { opacity: 0, duration: 0.6 }, '-=0.2')
+      }, rootRef)
+      return () => ctx.revert()
+    }
+
+    const splashAlreadyDone = (window as unknown as { __splashDone?: boolean }).__splashDone
+    if (splashAlreadyDone) {
+      return playEntrance()
+    }
+    let cleanup: (() => void) | undefined
+    const onSplashDone = () => {
+      cleanup = playEntrance()
+    }
+    window.addEventListener('splash-done', onSplashDone)
+    return () => {
+      window.removeEventListener('splash-done', onSplashDone)
+      cleanup?.()
+    }
   }, [reducedMotion])
 
   // Cursor-follow 3D tilt on the framed photo — desktop pointer only

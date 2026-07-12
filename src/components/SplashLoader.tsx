@@ -1,18 +1,32 @@
 import { useEffect, useState } from 'react'
 
+const SPLASH_DURATION = 1900
+
 export default function SplashLoader() {
   const [hidden, setHidden] = useState(false)
 
   useEffect(() => {
-    const t = setTimeout(() => setHidden(true), 1500)
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    const duration = reducedMotion ? 0 : SPLASH_DURATION
+    const t = setTimeout(() => {
+      setHidden(true)
+      ;(window as unknown as { __splashDone?: boolean }).__splashDone = true
+      window.dispatchEvent(new Event('splash-done'))
+    }, duration)
+    if (reducedMotion) {
+      ;(window as unknown as { __splashDone?: boolean }).__splashDone = true
+      window.dispatchEvent(new Event('splash-done'))
+    }
     return () => clearTimeout(t)
   }, [])
 
   if (hidden) return null
 
   return (
-    <div className="loader-screen fixed inset-0 z-[100] bg-kalo-dark flex items-center justify-center">
-      <svg width="100" height="116" viewBox="0 0 120 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <div className="loader-screen fixed inset-0 z-[100] bg-kalo-dark foil-texture flex flex-col items-center justify-center gap-5">
+      <div className="loader-glow absolute h-72 w-72 rounded-full bg-gold/10 blur-3xl" />
+
+      <svg width="88" height="102" viewBox="0 0 120 140" fill="none" className="relative" xmlns="http://www.w3.org/2000/svg">
         <path
           className="loader-path"
           d="M60 18
@@ -26,6 +40,15 @@ export default function SplashLoader() {
           strokeWidth="1.5"
         />
       </svg>
+
+      <div className="loader-wordmark text-center relative">
+        <p className="font-display text-sand text-lg tracking-wide">Kapiʻolani</p>
+        <p className="eyebrow text-gold text-[10px] mt-1">Service &amp; Sustainability Learning</p>
+      </div>
+
+      <div className="loader-bar relative h-px w-32 bg-sand/15 overflow-hidden rounded-full">
+        <div className="loader-bar-fill h-full bg-gold rounded-full" />
+      </div>
     </div>
   )
 }

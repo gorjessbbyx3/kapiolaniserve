@@ -216,7 +216,7 @@ html {
   color: var(--color-gold);
 }
 
-/* Splash loader — leaf line-art draws itself in */
+/* Splash loader — leaf line-art draws itself in, wordmark follows, then everything settles out */
 .loader-path {
   stroke-dasharray: 700;
   stroke-dashoffset: 700;
@@ -225,14 +225,49 @@ html {
 @keyframes draw-leaf {
   to { stroke-dashoffset: 0; }
 }
+
+.loader-wordmark {
+  opacity: 0;
+  animation: wordmark-in 0.6s ease-out 0.9s forwards;
+}
+@keyframes wordmark-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.loader-bar {
+  opacity: 0;
+  animation: bar-in 0.4s ease-out 1.2s forwards;
+}
+@keyframes bar-in {
+  to { opacity: 1; }
+}
+.loader-bar-fill {
+  width: 0%;
+  animation: bar-fill 0.7s ease-out 1.3s forwards;
+}
+@keyframes bar-fill {
+  to { width: 100%; }
+}
+
+.loader-glow {
+  opacity: 0;
+  animation: glow-in 1.2s ease-out 0.2s forwards;
+}
+@keyframes glow-in {
+  to { opacity: 1; }
+}
+
 @keyframes loader-fade {
-  0%, 70% { opacity: 1; }
-  100% { opacity: 0; visibility: hidden; }
+  0%, 68% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: scale(1.04); visibility: hidden; }
 }
 .loader-screen {
-  animation: loader-fade 1.5s ease-in forwards;
+  animation: loader-fade 1.9s ease-in forwards;
 }
 @media (prefers-reduced-motion: reduce) {
   .loader-path { animation: none; stroke-dashoffset: 0; }
+  .loader-wordmark, .loader-bar, .loader-glow { animation: none; opacity: 1; }
+  .loader-bar-fill { animation: none; width: 100%; }
   .loader-screen { animation: none; display: none; }
 }
