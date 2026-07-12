@@ -83,7 +83,7 @@ export default function Hero() {
   return (
     <>
       {/* Full-screen photo — the entire first viewport */}
-      <div ref={imageSectionRef} className="relative h-[100svh] min-h-[520px] overflow-hidden">
+      <div ref={imageSectionRef} className="relative h-[62vh] min-h-[380px] sm:h-[100svh] sm:min-h-[520px] overflow-hidden">
         <div className="ken-burns absolute inset-0">
           <img
             src="/images/hero-diamond-head.jpg"
