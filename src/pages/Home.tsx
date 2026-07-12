@@ -212,11 +212,16 @@ export default function Home() {
           items={[{ type: 'taro-outline', top: '-15%', left: '42%', size: 160, rotate: 5, opacity: 0.15 }]}
         />
         <div className="relative mx-auto max-w-7xl px-5 lg:px-8 py-14">
-          <p className="eyebrow text-kalo/60 mb-4 text-center">Proudly sponsored by</p>
-          <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-3 text-kalo/70 font-display text-lg">
-            <span>State Farm &mdash; Environmental Sustainability</span>
-            <span className="text-kalo/30">&middot;</span>
-            <span>Hawaiian Electric &mdash; Resiliency</span>
+          <p className="eyebrow text-kalo/60 mb-8 text-center">Proudly sponsored by</p>
+          <div className="flex flex-wrap items-center justify-center gap-8">
+            <div className="card-lift flex items-center gap-4 rounded-xl overflow-hidden bg-white gold-hairline pr-6">
+              <img src="/images/sponsors/state-farm.png" alt="State Farm" className="h-16 w-auto" />
+              <span className="text-sm text-ink/60 border-l border-kalo/10 pl-6">Environmental Sustainability</span>
+            </div>
+            <div className="card-lift flex items-center gap-4 rounded-xl overflow-hidden bg-white gold-hairline pr-6">
+              <img src="/images/sponsors/hawaiian-electric.jpg" alt="Hawaiian Electric" className="h-16 w-auto" />
+              <span className="text-sm text-ink/60 border-l border-kalo/10 pl-6">Resiliency</span>
+            </div>
           </div>
         </div>
       </section>
