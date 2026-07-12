@@ -150,14 +150,14 @@ export default function Header() {
             ))}
             <Link
               to="/#contact"
-              className="ml-3 px-5 py-2.5 text-sm rounded-full bg-hibiscus text-sand font-medium shadow-md shadow-hibiscus/30 hover:brightness-110 hover:-translate-y-0.5 transition-all"
+              className="press ml-3 px-5 py-2.5 text-sm rounded-full bg-hibiscus text-sand font-medium shadow-md shadow-hibiscus/30 hover:brightness-110 hover:-translate-y-0.5 transition-all"
             >
               Connect
             </Link>
           </nav>
 
           <button
-            className="lg:hidden p-2 relative z-[60]"
+            className="press lg:hidden p-2 relative z-[60]"
             aria-label={open ? 'Close menu' : 'Open menu'}
             onClick={() => setOpen((v) => !v)}
           >
@@ -239,7 +239,7 @@ export default function Header() {
           <div className="px-6 py-6">
             <Link
               to="/#contact"
-              className="flex items-center justify-center gap-2 px-5 py-3.5 rounded-full bg-hibiscus text-sand font-medium shadow-lg shadow-hibiscus/30"
+              className="press flex items-center justify-center gap-2 px-5 py-3.5 rounded-full bg-hibiscus text-sand font-medium shadow-lg shadow-hibiscus/30"
               onClick={() => setOpen(false)}
             >
               Connect <ArrowRight size={16} />

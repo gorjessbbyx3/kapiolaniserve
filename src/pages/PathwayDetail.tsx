@@ -1,6 +1,6 @@
 import { useParams, Link, Navigate } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
-import { pathways } from '../data/pathways'
+import { pathways, tint } from '../data/pathways'
 import { partnersByPathway } from '../data/partners'
 import PathwayMarker from '../components/PathwayMarker'
 import PartnerCard from '../components/PartnerCard'
@@ -35,11 +35,11 @@ export default function PathwayDetail() {
             <PathwayMarker marker={pathway.marker} color="rgba(255,255,255,0.18)" size="lg" />
             <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl">{pathway.name}</h1>
           </div>
-          <p className="mt-6 max-w-xl text-sand/90 leading-relaxed text-lg">{pathway.summary}</p>
+          <p className="mt-6 max-w-xl text-sand/90 leading-relaxed text-lg drop-cap">{pathway.summary}</p>
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-5 lg:px-8 py-16 grid lg:grid-cols-4 gap-12">
+      <section className="mx-auto max-w-7xl px-5 lg:px-8 py-16 grid lg:grid-cols-4 gap-12" style={{ backgroundColor: tint(pathway.color, 3) }}>
         <div className="lg:col-span-3">
           <div className="mb-10 max-w-md">
             <ImagePlaceholder label={`${pathway.name} pathway in action`} aspect="aspect-[16/9]" accent={pathway.color} />
@@ -56,7 +56,7 @@ export default function PathwayDetail() {
           </ul>
 
           {pathway.culturalNote && (
-            <div className="mb-10 border border-kalo/10 rounded-xl p-6" style={{ backgroundColor: `${pathway.color}0d` }}>
+            <div className="mb-10 border border-kalo/10 rounded-xl p-6" style={{ backgroundColor: tint(pathway.color, 5) }}>
               <p className="font-display text-lg text-kalo mb-4">{pathway.culturalNote.heading}</p>
               <div className="grid sm:grid-cols-2 gap-4">
                 {pathway.culturalNote.values.map((v) => (

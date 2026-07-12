@@ -11,10 +11,30 @@ gsap.registerPlugin(ScrollTrigger)
 export default function Pathway3DCarousel() {
   const sectionRef = useRef<HTMLDivElement>(null)
   const ringRef = useRef<HTMLDivElement>(null)
+  const glowRef = useRef<HTMLDivElement>(null)
   const cardRefs = useRef<(HTMLDivElement | null)[]>([])
   const [reducedMotion] = useState(
     () => typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches
   )
+
+  // Cursor-follow glow — desktop pointer devices only, skipped for reduced motion
+  useEffect(() => {
+    if (reducedMotion) return
+    const canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches
+    if (!canHover || !sectionRef.current || !glowRef.current) return
+
+    const section = sectionRef.current
+    const glow = glowRef.current
+
+    function handleMove(e: MouseEvent) {
+      const rect = section.getBoundingClientRect()
+      const x = e.clientX - rect.left
+      const y = e.clientY - rect.top
+      glow.style.background = `radial-gradient(320px circle at ${x}px ${y}px, rgba(201,162,75,0.16), transparent 70%)`
+    }
+    section.addEventListener('mousemove', handleMove)
+    return () => section.removeEventListener('mousemove', handleMove)
+  }, [reducedMotion])
 
   useEffect(() => {
     if (reducedMotion || !sectionRef.current || !ringRef.current) return
@@ -110,6 +130,7 @@ export default function Pathway3DCarousel() {
       className="relative h-screen overflow-hidden bg-kalo-dark foil-texture text-sand flex items-center justify-center"
     >
       <div className="absolute inset-0 bg-gradient-to-b from-kalo-dark via-kalo-dark to-[#0f1a14]" />
+      <div ref={glowRef} className="absolute inset-0 pointer-events-none" />
       <WatercolorWash color="#1c6b72" size={420} top="-10%" left="-10%" opacity={0.18} />
       <WatercolorWash color="#c9a24b" size={300} bottom="-15%" right="-8%" opacity={0.12} />
       <GoldDust count={16} seedOffset={80} />

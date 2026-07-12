@@ -80,13 +80,13 @@ export default function Home() {
             <div className="mt-8 flex flex-wrap gap-4">
               <Link
                 to="/pathways"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-hibiscus text-sand font-medium shadow-lg shadow-hibiscus/30 hover:brightness-110 hover:-translate-y-0.5 transition-all"
+                className="press inline-flex items-center gap-2 px-6 py-3 rounded-full bg-hibiscus text-sand font-medium shadow-lg shadow-hibiscus/30 hover:brightness-110 hover:-translate-y-0.5 transition-all"
               >
                 Explore the pathways <ArrowRight size={18} />
               </Link>
               <Link
                 to="/service-learners-start-here"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-full border-2 border-sand/40 text-sand hover:bg-white/10 hover:-translate-y-0.5 transition-all"
+                className="press inline-flex items-center gap-2 px-6 py-3 rounded-full border-2 border-sand/40 text-sand hover:bg-white/10 hover:-translate-y-0.5 transition-all"
               >
                 Start here as a student
               </Link>
@@ -149,11 +149,11 @@ export default function Home() {
             { type: 'hibiscus-outline', bottom: '2%', left: '-4%', size: 130, rotate: -10, opacity: 0.14, delay: 1.5 },
           ]}
         />
-        <div className="relative mx-auto max-w-7xl px-5 lg:px-8 py-20">
+        <div className="relative mx-auto max-w-7xl px-5 lg:px-8 py-20 sm:py-24">
           <p className="eyebrow text-ocean mb-3">Campus programs</p>
           <h2 className="font-display text-3xl sm:text-4xl text-kalo mb-10">Where students show up every week.</h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {programs.map((prog) => (
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {programs.slice(0, 3).map((prog) => (
               <Link key={prog.to} to={prog.to} className="card-lift group flex flex-col gap-4">
                 <ImagePlaceholder label={prog.photo} accent="#1c6b72" />
                 <div className="border-l-2 border-ocean pl-4 group-hover:border-papaya transition-colors">
@@ -163,6 +163,21 @@ export default function Home() {
               </Link>
             ))}
           </div>
+          {programs[3] && (
+            <Link
+              to={programs[3].to}
+              className="card-lift group mt-6 grid sm:grid-cols-[1fr_1.4fr] gap-6 sm:gap-10 items-center border border-kalo/10 rounded-2xl p-6 sm:p-8 bg-sand-deep/40"
+            >
+              <ImagePlaceholder label={programs[3].photo} accent="#c9a24b" aspect="aspect-[4/3]" />
+              <div>
+                <p className="eyebrow text-gold mb-2">Featured program</p>
+                <h3 className="font-display text-2xl text-kalo group-hover:text-papaya transition-colors">
+                  {programs[3].name}
+                </h3>
+                <p className="mt-3 text-ink/65 leading-relaxed max-w-md">{programs[3].blurb}</p>
+              </div>
+            </Link>
+          )}
         </div>
       </section>
 

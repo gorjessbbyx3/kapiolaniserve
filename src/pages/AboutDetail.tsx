@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import PageHero from '../components/PageHero'
 import { ImagePlaceholder } from '../components/Placeholders'
+import PullQuote from '../components/PullQuote'
 import { pathways } from '../data/pathways'
 
 export function MissionVision() {
@@ -15,15 +16,10 @@ export function MissionVision() {
         <Link to="/about" className="text-sm text-ocean hover:text-papaya">
           &larr; Back to About
         </Link>
-        <div>
-          <p className="font-display text-2xl italic text-kalo leading-snug">
-            &ldquo;Ma ka hana ka ʻike&rdquo;
-          </p>
-          <p className="mt-2 text-sm text-ink/60">It is in the doing that we learn — ʻŌlelo Noʻeau</p>
-        </div>
+        <PullQuote quote="Ma ka hana ka ʻike" attribution="It is in the doing that we learn — ʻŌlelo Noʻeau" />
         <div>
           <p className="eyebrow text-papaya mb-3">Since 1995</p>
-          <p className="text-ink/75 leading-relaxed">
+          <p className="text-ink/75 leading-relaxed drop-cap">
             Service-learning was first integrated into Kapiʻolani Community College coursework in 1995.
             Since then it has grown into a recognized student-engagement pedagogy, connecting classrooms,
             campus, community, and beyond into one continuous ecology of learning.
@@ -87,10 +83,10 @@ export function MeetTheTeam() {
         <Link to="/about" className="text-sm text-ocean hover:text-papaya">
           &larr; Back to About
         </Link>
-        <p className="font-display text-xl italic text-kalo leading-snug">
-          &ldquo;The best way to find yourself is to lose yourself in the service of others.&rdquo;
-        </p>
-        <p className="text-sm text-ink/60 -mt-4">&mdash; Mahatma Gandhi</p>
+        <PullQuote
+          quote="The best way to find yourself is to lose yourself in the service of others."
+          attribution="Mahatma Gandhi"
+        />
         <div className="grid sm:grid-cols-2 gap-5">
           {team.map((t) => (
             <div key={t.name} className="card-lift border border-kalo/10 rounded-xl p-6 bg-white">

@@ -64,7 +64,7 @@ export default function ContactForm() {
       </label>
       <button
         type="submit"
-        className="w-full sm:w-auto px-6 py-3 rounded-md bg-papaya text-sand font-medium hover:brightness-110 transition"
+        className="press w-full sm:w-auto px-6 py-3 rounded-md bg-papaya text-sand font-medium hover:brightness-110 transition"
       >
         Submit
       </button>

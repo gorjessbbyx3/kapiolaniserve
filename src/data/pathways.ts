@@ -90,3 +90,10 @@ export const pathways: Pathway[] = [
     focus: ['Disaster preparedness', 'Food security', 'Neighborhood partnerships'],
   },
 ]
+
+/** Returns a pathway color at a given opacity (0-100), as a hex-alpha string, e.g. tint('#2f4a3c', 10) */
+export function tint(hex: string, opacityPercent: number): string {
+  const alpha = Math.round((opacityPercent / 100) * 255)
+  const alphaHex = alpha.toString(16).padStart(2, '0')
+  return `${hex}${alphaHex}`
+}
