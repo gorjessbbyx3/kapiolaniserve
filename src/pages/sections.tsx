@@ -1,4 +1,5 @@
 import SectionOverview from '../components/SectionOverview'
+import PageHero from '../components/PageHero'
 import { leafPages } from '../data/siteContent'
 
 function childrenOf(sectionPath: string) {
@@ -20,23 +21,62 @@ export function StartHere() {
 
 export function EventsOpportunities() {
   return (
-    <SectionOverview
-      eyebrow="Get involved"
-      title="Events & Opportunities"
-      description="Ways to plug into KSSLP outside of a course requirement — one-time events, seasonal drives, and open volunteer roles."
-      links={childrenOf('/events-opportunities')}
-    />
+    <div>
+      <PageHero
+        eyebrow="Get involved"
+        title="Events & Opportunities"
+        description="Ways to plug into KSSLP outside of a course requirement — one-time events, seasonal drives, and open volunteer roles."
+      />
+      <section className="mx-auto max-w-3xl px-5 lg:px-8 py-16 space-y-5 text-ink/80 leading-relaxed">
+        <p>
+          Not enrolled in a service-learning course? You can still volunteer through campus blood drives,
+          KSSLP-affiliated events, and community partner opportunities across all seven pathways.
+        </p>
+        <p>
+          Volunteers fill a real gap for community organizations that can&rsquo;t staff every need on their
+          own &mdash; and in return, students get hands-on experience that complements what they&rsquo;re
+          studying in class. It&rsquo;s a win-win: organizations get motivated help, and students build
+          skills and connections outside the classroom.
+        </p>
+        <p>
+          The easiest way to start is to reach out to the KSSLP office directly, or connect with a specific
+          pathway&rsquo;s partner list to find an opportunity that fits your interests and schedule.
+        </p>
+        <div className="pt-4">
+          <a
+            href="https://www.bbh.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-md border border-kalo/20 text-sm text-kalo hover:border-papaya hover:text-papaya transition-colors"
+          >
+            Donate blood with the Blood Bank of Hawaiʻi
+          </a>
+        </div>
+      </section>
+    </div>
   )
 }
 
 export function BecomeCertified() {
   return (
-    <SectionOverview
-      eyebrow="Go deeper"
-      title="Become Certified"
-      description="Sustained, reflective service across one or more pathways can earn you a KSSLP service-learning certificate."
-      links={childrenOf('/become-certified')}
-    />
+    <div>
+      <PageHero
+        eyebrow="Go deeper"
+        title="Become Certified"
+        description="Sustained, reflective service across one or more pathways can earn you a KSSLP service-learning certificate."
+      />
+      <section className="mx-auto max-w-3xl px-5 lg:px-8 py-16 space-y-5 text-ink/80 leading-relaxed">
+        <p>
+          The certificate recognizes sustained, reflective service across one or more pathways, combining
+          logged hours, training modules, and a capstone reflection.
+        </p>
+        <p>
+          Training modules cover community engagement ethics, cultural protocol, and pathway-specific
+          orientation. Ask the KSSLP office about the current Academic Subject Certificate in Sustainability
+          track and how it stacks with your degree requirements.
+        </p>
+      </section>
+    </div>
   )
 }
 

@@ -29,12 +29,10 @@ const nav: NavItem[] = [
   {
     label: 'Events & Opportunities',
     to: '/events-opportunities',
-    children: [{ label: 'Get Involved!', to: '/get-involved' }],
   },
   {
     label: 'Become Certified',
     to: '/become-certified',
-    children: [{ label: 'Certificate Training Programs', to: '/certificate-training-programs' }],
   },
   {
     label: 'Resource Library',

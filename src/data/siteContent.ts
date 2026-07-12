@@ -67,31 +67,7 @@ export const leafPages: LeafPage[] = [
     ],
   },
   // Events & Opportunities
-  {
-    path: '/get-involved',
-    title: 'Get Involved!',
-    section: sections.events.title,
-    sectionPath: sections.events.path,
-    blurb: 'Ways to plug into KSSLP outside of a course requirement.',
-    body: [
-      'Not enrolled in a service-learning course? You can still volunteer through campus blood drives, KSSLP-affiliated events, and community partner opportunities across all seven pathways.',
-      'Volunteers fill a real gap for community organizations that can\u2019t staff every need on their own \u2014 and in return, students get hands-on experience that complements what they\u2019re studying in class. It\u2019s a win-win: organizations get motivated help, and students build skills and connections outside the classroom.',
-      'The easiest way to start is to reach out to the KSSLP office directly, or connect with a specific pathway\u2019s partner list to find an opportunity that fits your interests and schedule.',
-    ],
-    links: [{ label: 'Donate blood with the Blood Bank of Hawaiʻi', href: 'https://www.bbh.org/' }],
-  },
   // Become Certified
-  {
-    path: '/certificate-training-programs',
-    title: 'Certificate Training Programs',
-    section: sections.certified.title,
-    sectionPath: sections.certified.path,
-    blurb: 'Training pathways toward a KSSLP service-learning certificate.',
-    body: [
-      'The certificate recognizes sustained, reflective service across one or more pathways, combining logged hours, training modules, and a capstone reflection.',
-      'Training modules cover community engagement ethics, cultural protocol, and pathway-specific orientation. Ask the KSSLP office about the current Academic Subject Certificate in Sustainability track and how it stacks with your degree requirements.',
-    ],
-  },
   // Resource Library
   {
     path: '/pohukaina-food-pantry',

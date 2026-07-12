@@ -1,4 +1,4 @@
-import { Routes, Route, useLocation } from 'react-router-dom'
+import { Routes, Route, Navigate, useLocation } from 'react-router-dom'
 import { useEffect } from 'react'
 import Layout from './components/Layout'
 import Home from './pages/Home'
@@ -58,7 +58,9 @@ export default function App() {
 
           <Route path="/service-learners-start-here" element={<StartHere />} />
           <Route path="/events-opportunities" element={<EventsOpportunities />} />
+          <Route path="/get-involved" element={<Navigate to="/events-opportunities" replace />} />
           <Route path="/become-certified" element={<BecomeCertified />} />
+          <Route path="/certificate-training-programs" element={<Navigate to="/become-certified" replace />} />
           <Route path="/resource-library" element={<ResourceLibrary />} />
           <Route path="/about" element={<About />} />
           <Route path="/for-students" element={<ForStudents />} />
