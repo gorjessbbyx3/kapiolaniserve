@@ -17,7 +17,7 @@ See **[PHOTO_SHOTLIST.md](./PHOTO_SHOTLIST.md)** for the full breakdown with fra
 - [ ] Māla Māunuunu campus program photo — not found on legacy site, needs a new photo
 - [ ] One hero photo per pathway page (7 total)
 - [ ] 4 student pathway leader headshots (Darlene Michubu, Barbara Keola, Kai Yamasato, Ari Smith)
-- [ ] State Farm & Hawaiian Electric sponsor logos — couldn't extract from legacy site (rendered via a slideshow widget); need official files directly from the sponsors
+- [x] State Farm & Hawaiian Electric sponsor logos — real logos now in place, properly hosted in `/public/images/sponsors` (not hotlinked)
 
 ## Files to rehost
 
