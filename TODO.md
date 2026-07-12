@@ -14,8 +14,8 @@ Tracking list for what's left before this site is 100% ready to fully replace th
 See **[PHOTO_SHOTLIST.md](./PHOTO_SHOTLIST.md)** for the full breakdown with framing suggestions. Short version:
 
 - [x] Pohukaina Food Pantry, KCC Ecology Club, MINA — real photos now in place (hotlinked from legacy site, see rehosting note below)
-- [ ] Māla Māunuunu campus program photo — not found on legacy site, needs a new photo
-- [ ] One hero photo per pathway page (7 total)
+- [x] Māla Māunuunu campus program photo — real photo now in place (properly hosted, not hotlinked)
+- [ ] One hero photo per pathway page (6 remaining — Environment now has a real photo)
 - [ ] 4 student pathway leader headshots (Darlene Michubu, Barbara Keola, Kai Yamasato, Ari Smith)
 - [x] State Farm & Hawaiian Electric sponsor logos — real logos now in place, properly hosted in `/public/images/sponsors` (not hotlinked)
 
