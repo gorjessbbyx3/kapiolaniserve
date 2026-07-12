@@ -100,8 +100,13 @@ export const leafPages: LeafPage[] = [
     sectionPath: sections.library.path,
     blurb: 'KCC\u2019s on-campus food pantry supporting student food security.',
     body: [
-      'Pohukaina Food Pantry provides free groceries and essentials to KCC students facing food insecurity, staffed in part by service learners working the Health and Resilience Neighborhoods pathways.',
-      'Open during posted campus hours \u2014 no application required. Contact the KSSLP office for the current schedule and to volunteer a shift.',
+      'Pohukaina Food Pantry provides free pantry staples to any KCC student facing food insecurity, staffed in part by service learners working the Health and Resilience Neighborhoods pathways.',
+      'Pick-up is every Thursday, 2:00\u20135:00pm, at the Kīkaha o Laeʻahi Center, ʻIliahi 231. Park in Lot B, then walk up to ʻIliahi\u2019s 2nd floor, back door \u2014 signs will point the way. Bring reusable bags or containers for what you take home.',
+      'If you\u2019re not feeling well, please stay home and take care of yourself \u2014 the pantry will be there next week.',
+    ],
+    links: [
+      { label: 'Sign up for a pickup time', href: 'https://go.hawaii.edu/3Ss' },
+      { label: 'Hawaiʻi Foodbank — Oʻahu food assistance (PDF)', href: 'https://d9x3r8n6.rocketcdn.me/wp-content/uploads/2022/09/20220907-Food-Assistance-Handout-12.00pm.pdf' },
     ],
   },
   {

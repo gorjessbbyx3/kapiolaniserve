@@ -64,11 +64,26 @@ export function MissionVision() {
   )
 }
 
-const team = [
-  { name: 'Program Director', role: 'Oversees KSSLP strategy, partner relationships, and faculty coordination.' },
-  { name: 'Service-Learning Coordinator', role: 'Manages student registration, orientation, and hour certification.' },
-  { name: 'Community Partnerships Lead', role: 'Vets and onboards new community partner sites across all seven pathways.' },
-  { name: 'Pathway Faculty Coordinators', role: 'One per pathway, connecting coursework to service placements within their discipline.' },
+const staff = [
+  {
+    name: 'Denise M. Pierson, M.Ed., CVM',
+    role: 'Outreach Coordinator, Civic & Community Engagement',
+    bio: 'Working in service-learning since 1994, including 19 years as State Network Director for Hawaiʻi Pacific Islands Campus Compact before joining KCC. Certified in Urban & Community Forestry and FEMA/NDPTC disaster preparedness training.',
+    photo: 'https://kapiolaniserve.weebly.com/uploads/8/5/0/6/8506005/denise_orig.jpeg',
+  },
+  {
+    name: 'Krista Hiser',
+    role: 'Faculty Outreach Coordinator',
+    bio: 'Facilitates connections between faculty, service learners, and community partners — organizing Service-Learning Faculty Field Trips, Sustainability Institutes, and Faculty Institutes.',
+    photo: 'https://kapiolaniserve.weebly.com/uploads/8/5/0/6/8506005/krista_orig.jpg',
+  },
+]
+
+const studentLeaders = [
+  { name: 'Darlene Michubu', role: 'Health Promotion Team Leader | Health Pathway Leader' },
+  { name: 'Barbara Keola', role: 'KSSLP Admin Assistant | Education Pathway Leader' },
+  { name: 'Kailaniʻopuʻu (Kai) Yamasato', role: 'Intercultural Pathway Leader' },
+  { name: 'Ari Smith', role: 'Environment Promotion Team Leader | Environment Pathway Leader' },
 ]
 
 export function MeetTheTeam() {
@@ -77,9 +92,9 @@ export function MeetTheTeam() {
       <PageHero
         eyebrow="About KSSL"
         title="Meet the Team"
-        description="The staff and faculty coordinators behind KSSLP."
+        description="The staff and student pathway leaders behind KSSLP."
       />
-      <section className="mx-auto max-w-4xl px-5 lg:px-8 py-16 space-y-8">
+      <section className="mx-auto max-w-4xl px-5 lg:px-8 py-16 space-y-10">
         <Link to="/about" className="text-sm text-ocean hover:text-papaya">
           &larr; Back to About
         </Link>
@@ -87,17 +102,43 @@ export function MeetTheTeam() {
           quote="The best way to find yourself is to lose yourself in the service of others."
           attribution="Mahatma Gandhi"
         />
-        <div className="grid sm:grid-cols-2 gap-5">
-          {team.map((t) => (
-            <div key={t.name} className="card-lift border border-kalo/10 rounded-xl p-6 bg-white">
-              <div className="mb-4 max-w-[140px]">
-                <ImagePlaceholder label={`${t.name} headshot`} aspect="aspect-square" accent="#1c6b72" />
+
+        <div>
+          <p className="eyebrow text-ocean mb-4">KSSL Faculty & Staff</p>
+          <div className="grid sm:grid-cols-2 gap-5">
+            {staff.map((t) => (
+              <div key={t.name} className="card-lift border border-kalo/10 rounded-xl p-6 bg-white flex gap-4">
+                <img
+                  src={t.photo}
+                  alt={t.name}
+                  className="h-20 w-20 rounded-full object-cover gold-hairline shrink-0"
+                  loading="lazy"
+                />
+                <div>
+                  <h2 className="font-display text-lg text-kalo leading-snug">{t.name}</h2>
+                  <p className="text-xs eyebrow text-papaya mt-1 mb-2">{t.role}</p>
+                  <p className="text-sm text-ink/70 leading-relaxed">{t.bio}</p>
+                </div>
               </div>
-              <h2 className="font-display text-lg text-kalo">{t.name}</h2>
-              <p className="mt-2 text-sm text-ink/70 leading-relaxed">{t.role}</p>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
+
+        <div>
+          <p className="eyebrow text-ocean mb-4">KSSL Student Leaders</p>
+          <div className="grid sm:grid-cols-2 gap-5">
+            {studentLeaders.map((t) => (
+              <div key={t.name} className="card-lift border border-kalo/10 rounded-xl p-6 bg-white">
+                <div className="mb-4 max-w-[100px]">
+                  <ImagePlaceholder label={`${t.name} headshot`} aspect="aspect-square" accent="#1c6b72" />
+                </div>
+                <h2 className="font-display text-lg text-kalo">{t.name}</h2>
+                <p className="mt-2 text-sm text-ink/70 leading-relaxed">{t.role}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
         <div className="border-t border-kalo/10 pt-8">
           <p className="eyebrow text-ocean mb-4">Pathway coordinators by focus area</p>
           <div className="flex flex-wrap gap-2">

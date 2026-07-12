@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { ArrowRight, Award } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import ContactForm from '../components/ContactForm'
 import BotanicalScatter, { WatercolorWash, GoldDust, OrnamentDivider } from '../components/BotanicalScatter'
 import { ImagePlaceholder } from '../components/Placeholders'
@@ -10,25 +10,25 @@ const programs = [
     name: 'Pohukaina Food Pantry',
     to: '/pohukaina-food-pantry',
     blurb: 'On-campus food security for KCC students.',
-    photo: 'Pohukaina Food Pantry shelves/volunteers',
+    photo: 'https://kapiolaniserve.weebly.com/uploads/8/5/0/6/8506005/pohukaina-diaper-bank-fall-2024.jpg',
   },
   {
     name: 'Māla Māunuunu',
     to: '/mala-maunuunu',
     blurb: 'The campus garden anchoring hands-on Environment pathway work.',
-    photo: 'Māla Māunuunu garden, behind Mānele building',
+    photo: null,
   },
   {
     name: 'KCC Ecology Club',
     to: '/kcc-ecology-club',
     blurb: 'Student-led restoration days and sustainability advocacy.',
-    photo: 'Ecology Club / Nā Kiaʻi Honua work day',
+    photo: 'https://kapiolaniserve.weebly.com/uploads/8/5/0/6/8506005/kapiolani-community-college-ecology-club-1a_orig.jpg',
   },
   {
     name: 'MINA — Mālama I Nā Ahupuaʻa',
     to: '/mina',
     blurb: 'An intercollegiate gathering rooted in ahupuaʻa-based stewardship.',
-    photo: 'MINA students at a loʻi or fishpond site',
+    photo: 'https://kapiolaniserve.weebly.com/uploads/8/5/0/6/8506005/mina-1_orig.jpg',
   },
 ]
 
@@ -121,8 +121,13 @@ export default function Home() {
         <div className="mx-auto max-w-4xl px-5 lg:px-8">
           <div className="gold-hairline rounded-2xl bg-white/70 px-6 py-6 sm:px-10 sm:py-7 flex flex-col sm:flex-row items-center gap-6 text-center sm:text-left">
             <div className="shrink-0 relative">
-              <div className="h-20 w-20 rounded-full bg-kalo flex items-center justify-center ring-4 ring-gold/30">
-                <Award size={34} className="text-gold" strokeWidth={1.5} />
+              <div className="h-20 w-20 rounded-full bg-white flex items-center justify-center ring-4 ring-gold/30 p-2">
+                <img
+                  src="https://kapiolaniserve.weebly.com/uploads/8/5/0/6/8506005/editor/carnegie-foundation-logo-removebg-preview.png"
+                  alt="Carnegie Foundation logo"
+                  className="w-full h-full object-contain"
+                  loading="lazy"
+                />
               </div>
               <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 text-[9px] font-medium tracking-wide text-kalo-dark bg-gold rounded-full px-2 py-0.5 whitespace-nowrap">
                 2015&ndash;2025
@@ -155,7 +160,13 @@ export default function Home() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {programs.slice(0, 3).map((prog) => (
               <Link key={prog.to} to={prog.to} className="card-lift group flex flex-col gap-4">
-                <ImagePlaceholder label={prog.photo} accent="#1c6b72" />
+                {prog.photo ? (
+                  <div className="aspect-[4/3] w-full rounded-xl overflow-hidden gold-hairline">
+                    <img src={prog.photo} alt={prog.name} className="w-full h-full object-cover" loading="lazy" />
+                  </div>
+                ) : (
+                  <ImagePlaceholder label={`${prog.name} photo`} accent="#1c6b72" />
+                )}
                 <div className="border-l-2 border-ocean pl-4 group-hover:border-papaya transition-colors">
                   <h3 className="font-display text-base text-kalo">{prog.name}</h3>
                   <p className="mt-2 text-sm text-ink/65 leading-relaxed">{prog.blurb}</p>
@@ -168,7 +179,13 @@ export default function Home() {
               to={programs[3].to}
               className="card-lift group mt-6 grid sm:grid-cols-[1fr_1.4fr] gap-6 sm:gap-10 items-center border border-kalo/10 rounded-2xl p-6 sm:p-8 bg-sand-deep/40"
             >
-              <ImagePlaceholder label={programs[3].photo} accent="#c9a24b" aspect="aspect-[4/3]" />
+              {programs[3].photo ? (
+                <div className="aspect-[4/3] w-full rounded-xl overflow-hidden gold-hairline">
+                  <img src={programs[3].photo} alt={programs[3].name} className="w-full h-full object-cover" loading="lazy" />
+                </div>
+              ) : (
+                <ImagePlaceholder label={`${programs[3].name} photo`} accent="#c9a24b" aspect="aspect-[4/3]" />
+              )}
               <div>
                 <p className="eyebrow text-gold mb-2">Featured program</p>
                 <h3 className="font-display text-2xl text-kalo group-hover:text-papaya transition-colors">
