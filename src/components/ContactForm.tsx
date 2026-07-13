@@ -20,7 +20,7 @@ export default function ContactForm() {
 
   if (submitted) {
     return (
-      <div className="border border-kalo/15 rounded-xl p-8 bg-white">
+      <div className="p-8 bg-white rounded-2xl">
         <p className="font-display text-xl text-kalo">Message sent.</p>
         <p className="mt-2 text-sm text-ink/70">
           Thanks for reaching out &mdash; the KSSLP office will get back to you soon.
@@ -30,7 +30,7 @@ export default function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="border border-kalo/15 rounded-xl p-6 sm:p-8 bg-white space-y-5">
+    <form onSubmit={handleSubmit} className="p-6 sm:p-8 bg-white rounded-2xl space-y-5">
       <div className="grid sm:grid-cols-2 gap-5">
         <label className="block text-sm">
           <span className="text-ink/70">First name *</span>

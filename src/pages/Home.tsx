@@ -182,7 +182,7 @@ export default function Home() {
               <OrnamentDivider className="max-w-xs" />
             </div>
           </div>
-          <div className="rounded-2xl bg-sand p-1">
+          <div className="rounded-2xl gold-hairline overflow-hidden">
             <ContactForm />
           </div>
         </div>

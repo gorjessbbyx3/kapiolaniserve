@@ -32,7 +32,7 @@ export default function Footer() {
         alt="Kapiʻolani Service & Sustainability Learning — student volunteers at Diamond Head and planting in the garden"
         className="w-full h-auto"
       />
-      <div className="mx-auto max-w-7xl px-5 lg:px-8 py-14 grid gap-10 md:grid-cols-3">
+      <div className="border-t border-gold/25 mx-auto max-w-7xl px-5 lg:px-8 py-14 grid gap-10 sm:grid-cols-3">
         <div>
           <p className="font-display text-xl text-sand mb-3">Kapiʻolani Service &amp; Sustainability Learning</p>
           <p className="text-sm leading-relaxed text-sand/70">
@@ -43,7 +43,7 @@ export default function Footer() {
           </p>
         </div>
         <div className="text-sm leading-relaxed text-sand/70">
-          <p className="eyebrow text-ilima mb-2">Office Hours</p>
+          <p className="eyebrow text-gold mb-2">Office Hours</p>
           <p>Mon, Tue &amp; Fri &mdash; 9am to 4pm</p>
           <p>Wed &amp; Thu &mdash; 9am to 5pm</p>
           <p className="mt-1 italic">Hours subject to change &mdash; please call first.</p>
@@ -51,19 +51,19 @@ export default function Footer() {
           <p>Fax: (808) 734-9316</p>
         </div>
         <div className="text-sm leading-relaxed text-sand/70">
-          <p className="eyebrow text-ilima mb-2">Connect</p>
+          <p className="eyebrow text-gold mb-2">Connect</p>
           <div className="flex items-center gap-3 mb-4">
-            <a href="https://www.facebook.com/kapiolani.servelearn" aria-label="Facebook" className="hover:text-ilima">
+            <a href="https://www.facebook.com/kapiolani.servelearn" aria-label="Facebook" className="hover:text-gold">
               <Facebook size={20} />
             </a>
-            <a href="https://www.instagram.com/kapiolaniserve/" aria-label="Instagram" className="hover:text-ilima">
+            <a href="https://www.instagram.com/kapiolaniserve/" aria-label="Instagram" className="hover:text-gold">
               <Instagram size={20} />
             </a>
-            <a href="https://www.x.com/kapiolaniserve" aria-label="X (Twitter)" className="hover:text-ilima">
+            <a href="https://www.x.com/kapiolaniserve" aria-label="X (Twitter)" className="hover:text-gold">
               <Twitter size={20} />
             </a>
           </div>
-          <Link to="/#contact" className="underline decoration-ilima underline-offset-4 hover:text-ilima">
+          <Link to="/#contact" className="underline decoration-gold underline-offset-4 hover:text-gold">
             Send us a message
           </Link>
         </div>
@@ -78,7 +78,7 @@ export default function Footer() {
             href="https://techsavvyhawaii.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-ilima transition-colors"
+            className="hover:text-gold transition-colors"
           >
             Powered by TechSavvy Hawaii
           </a>

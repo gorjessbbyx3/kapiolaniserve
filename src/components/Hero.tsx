@@ -73,7 +73,7 @@ export default function Hero() {
 
             <h1 className="font-display leading-[0.95] text-sand">
               <span className="hero-line block text-4xl sm:text-5xl lg:text-6xl tracking-tight">Kapiʻolani</span>
-              <span className="hero-line block text-xl sm:text-2xl lg:text-3xl font-semibold text-plumeria mt-1">
+              <span className="hero-line block text-lg sm:text-2xl lg:text-3xl font-semibold text-plumeria mt-1">
                 Service &amp; Sustainability
               </span>
               <span className="hero-line block text-3xl sm:text-4xl lg:text-5xl italic font-normal mt-1">
