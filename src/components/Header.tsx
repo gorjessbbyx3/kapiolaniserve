@@ -60,15 +60,7 @@ const nav: NavItem[] = [
 export default function Header() {
   const [open, setOpen] = useState(false)
   const [mobileExpanded, setMobileExpanded] = useState<string | null>(null)
-  const [scrolled, setScrolled] = useState(false)
   const location = useLocation()
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 8)
-    onScroll()
-    window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
 
   useEffect(() => {
     setOpen(false)
@@ -83,11 +75,7 @@ export default function Header() {
   }, [open])
 
   return (
-    <header
-      className={`sticky top-0 z-50 bg-kalo text-sand transition-shadow ${
-        scrolled ? 'shadow-lg shadow-black/20' : ''
-      }`}
-    >
+    <header className="relative z-50 bg-kalo text-sand">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <Link to="/" className="flex items-center gap-3 group">
