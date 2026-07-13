@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
+import { ArrowRight, Users, Sprout, Calendar } from 'lucide-react'
 import ContactForm from '../components/ContactForm'
 import BotanicalScatter, { WatercolorWash, GoldDust, OrnamentDivider } from '../components/BotanicalScatter'
-import { ImagePlaceholder } from '../components/Placeholders'
 import Pathway3DCarousel from '../components/Pathway3DCarousel'
 import Hero from '../components/Hero'
 
@@ -11,39 +11,63 @@ const programs = [
     to: '/pohukaina-food-pantry',
     blurb: 'On-campus food security for KCC students.',
     photo: 'https://kapiolaniserve.weebly.com/uploads/8/5/0/6/8506005/pohukaina-diaper-bank-fall-2024.jpg',
+    span: 'lg:col-span-2 lg:row-span-2',
   },
   {
     name: 'Māla Māunuunu',
     to: '/mala-maunuunu',
     blurb: 'The campus garden anchoring hands-on Environment pathway work.',
     photo: '/images/programs/mala-maunuunu-workday.jpg',
+    span: 'lg:col-span-1 lg:row-span-1',
   },
   {
     name: 'KCC Ecology Club',
     to: '/kcc-ecology-club',
     blurb: 'Student-led restoration days and sustainability advocacy.',
     photo: 'https://kapiolaniserve.weebly.com/uploads/8/5/0/6/8506005/kapiolani-community-college-ecology-club-1a_orig.jpg',
+    span: 'lg:col-span-1 lg:row-span-1',
   },
   {
     name: 'MINA — Mālama I Nā Ahupuaʻa',
     to: '/mina',
     blurb: 'An intercollegiate gathering rooted in ahupuaʻa-based stewardship.',
     photo: 'https://kapiolaniserve.weebly.com/uploads/8/5/0/6/8506005/mina-1_orig.jpg',
+    span: 'lg:col-span-2 lg:row-span-1',
   },
+]
+
+const stats = [
+  { icon: Calendar, value: 'Since 1995', label: '30 years of student service' },
+  { icon: Sprout, value: '7', label: 'Service-learning pathways' },
+  { icon: Users, value: '60+', label: 'Community partner organizations' },
 ]
 
 export default function Home() {
   return (
     <div>
-      {/* Hero — animated, framed photo, cursor tilt */}
+      {/* Hero — bold cropped photo, floating gold card, entrance animation */}
       <Hero />
 
-      {/* Carnegie recognition seal */}
-      <section className="bg-sand-deep py-10">
-        <div className="mx-auto max-w-4xl px-5 lg:px-8">
-          <div className="gold-hairline rounded-2xl bg-white/70 px-6 py-6 sm:px-10 sm:py-7 flex flex-col sm:flex-row items-center gap-6 text-center sm:text-left">
+      {/* Trust bar — Carnegie seal + real program stats */}
+      <section className="relative bg-sand-deep pt-10 pb-14 sm:pt-14 sm:pb-16">
+        <div className="mx-auto max-w-5xl px-5 lg:px-8">
+          <div className="grid sm:grid-cols-3 gap-5">
+            {stats.map((s) => (
+              <div key={s.label} className="card-lift flex items-center gap-4 bg-white rounded-2xl gold-hairline px-5 py-5">
+                <span className="h-11 w-11 rounded-full bg-kalo/8 flex items-center justify-center shrink-0">
+                  <s.icon size={20} className="text-kalo" strokeWidth={1.75} />
+                </span>
+                <div>
+                  <p className="font-display text-lg text-kalo leading-none">{s.value}</p>
+                  <p className="text-xs text-ink/60 mt-1.5 leading-snug">{s.label}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-6 gold-hairline rounded-2xl bg-white/70 px-6 py-5 sm:px-8 sm:py-6 flex flex-col sm:flex-row items-center gap-5 text-center sm:text-left">
             <div className="shrink-0 relative">
-              <div className="h-20 w-20 rounded-full bg-white flex items-center justify-center ring-4 ring-gold/30 p-2">
+              <div className="h-16 w-16 rounded-full bg-white flex items-center justify-center ring-4 ring-gold/30 p-2">
                 <img
                   src="https://kapiolaniserve.weebly.com/uploads/8/5/0/6/8506005/editor/carnegie-foundation-logo-removebg-preview.png"
                   alt="Carnegie Foundation logo"
@@ -51,7 +75,7 @@ export default function Home() {
                   loading="lazy"
                 />
               </div>
-              <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 text-[9px] font-medium tracking-wide text-kalo-dark bg-gold rounded-full px-2 py-0.5 whitespace-nowrap">
+              <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 text-[8px] font-medium tracking-wide text-kalo-dark bg-gold rounded-full px-2 py-0.5 whitespace-nowrap">
                 2015&ndash;2025
               </span>
             </div>
@@ -67,7 +91,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Campus programs */}
+      {/* Campus programs — bento-style photo grid */}
       <section className="relative bg-white overflow-hidden">
         <BotanicalScatter
           lineColor="#c9a24b"
@@ -79,44 +103,31 @@ export default function Home() {
         <div className="relative mx-auto max-w-7xl px-5 lg:px-8 py-20 sm:py-24">
           <p className="eyebrow text-ocean mb-3">Campus programs</p>
           <h2 className="font-display text-3xl sm:text-4xl text-kalo mb-10">Where students show up every week.</h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {programs.slice(0, 3).map((prog) => (
-              <Link key={prog.to} to={prog.to} className="card-lift group flex flex-col gap-4">
-                {prog.photo ? (
-                  <div className="aspect-[4/3] w-full rounded-xl overflow-hidden gold-hairline">
-                    <img src={prog.photo} alt={prog.name} className="w-full h-full object-cover" loading="lazy" />
-                  </div>
-                ) : (
-                  <ImagePlaceholder label={`${prog.name} photo`} accent="#1c6b72" />
-                )}
-                <div className="border-l-2 border-ocean pl-4 group-hover:border-papaya transition-colors">
-                  <h3 className="font-display text-base text-kalo">{prog.name}</h3>
-                  <p className="mt-2 text-sm text-ink/65 leading-relaxed">{prog.blurb}</p>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 lg:grid-rows-2 gap-5 lg:h-[560px]">
+            {programs.map((prog) => (
+              <Link
+                key={prog.to}
+                to={prog.to}
+                className={`card-lift group relative rounded-2xl overflow-hidden gold-hairline ${prog.span} aspect-[4/3] lg:aspect-auto`}
+              >
+                <img
+                  src={prog.photo}
+                  alt={prog.name}
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-kalo-dark via-kalo-dark/20 to-transparent" />
+                <div className="absolute inset-x-0 bottom-0 p-5 sm:p-6">
+                  <h3 className="font-display text-lg sm:text-xl text-sand">{prog.name}</h3>
+                  <p className="mt-1.5 text-sm text-sand/80 leading-relaxed max-w-sm">{prog.blurb}</p>
+                  <span className="mt-3 inline-flex items-center gap-1.5 text-xs font-medium text-gold">
+                    Learn more <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform" />
+                  </span>
                 </div>
               </Link>
             ))}
           </div>
-          {programs[3] && (
-            <Link
-              to={programs[3].to}
-              className="card-lift group mt-6 grid sm:grid-cols-[1fr_1.4fr] gap-6 sm:gap-10 items-center border border-kalo/10 rounded-2xl p-6 sm:p-8 bg-sand-deep/40"
-            >
-              {programs[3].photo ? (
-                <div className="aspect-[4/3] w-full rounded-xl overflow-hidden gold-hairline">
-                  <img src={programs[3].photo} alt={programs[3].name} className="w-full h-full object-cover" loading="lazy" />
-                </div>
-              ) : (
-                <ImagePlaceholder label={`${programs[3].name} photo`} accent="#c9a24b" aspect="aspect-[4/3]" />
-              )}
-              <div>
-                <p className="eyebrow text-gold mb-2">Featured program</p>
-                <h3 className="font-display text-2xl text-kalo group-hover:text-papaya transition-colors">
-                  {programs[3].name}
-                </h3>
-                <p className="mt-3 text-ink/65 leading-relaxed max-w-md">{programs[3].blurb}</p>
-              </div>
-            </Link>
-          )}
         </div>
       </section>
 
@@ -148,10 +159,10 @@ export default function Home() {
       {/* Signature 3D moment */}
       <Pathway3DCarousel />
 
-      {/* Contact */}
-      <section id="contact" className="relative mx-auto max-w-7xl px-5 lg:px-8 py-20 overflow-hidden">
-        <WatercolorWash color="#1c6b72" size={340} top="10%" left="-8%" opacity={0.08} />
-        <GoldDust count={6} seedOffset={40} />
+      {/* Contact — richer two-panel treatment */}
+      <section id="contact" className="relative overflow-hidden bg-kalo-dark foil-texture">
+        <WatercolorWash color="#1c6b72" size={340} top="10%" left="-8%" opacity={0.18} />
+        <GoldDust count={10} seedOffset={40} />
         <BotanicalScatter
           lineColor="#c9a24b"
           items={[
@@ -159,16 +170,21 @@ export default function Home() {
             { type: 'fern', top: '0%', right: '4%', size: 170, rotate: -8, opacity: 0.24, delay: 0.5 },
           ]}
         />
-        <div className="relative grid lg:grid-cols-2 gap-12 items-start">
-          <div>
-            <p className="eyebrow text-papaya mb-3">Get in touch</p>
-            <h2 className="font-display text-3xl sm:text-4xl text-kalo">Connect with us.</h2>
-            <p className="mt-4 text-ink/70 leading-relaxed max-w-md">
+        <div className="relative mx-auto max-w-6xl px-5 lg:px-8 py-20 sm:py-24 grid lg:grid-cols-2 gap-12 items-start">
+          <div className="text-sand">
+            <p className="eyebrow text-gold mb-3">Get in touch</p>
+            <h2 className="font-display text-3xl sm:text-4xl">Connect with us.</h2>
+            <p className="mt-4 text-sand/75 leading-relaxed max-w-md">
               Whether you&rsquo;re a student, a faculty member, or a community organization
               interested in partnering with KSSLP, tell us a bit about what you&rsquo;re looking for.
             </p>
+            <div className="mt-8 hidden lg:block">
+              <OrnamentDivider className="max-w-xs" />
+            </div>
           </div>
-          <ContactForm />
+          <div className="rounded-2xl bg-sand p-1">
+            <ContactForm />
+          </div>
         </div>
       </section>
     </div>
