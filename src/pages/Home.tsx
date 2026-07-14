@@ -10,7 +10,7 @@ const programs = [
     name: 'Pohukaina Food Pantry',
     to: '/pohukaina-food-pantry',
     blurb: 'On-campus food security for KCC students.',
-    photo: 'https://kapiolaniserve.weebly.com/uploads/8/5/0/6/8506005/pohukaina-diaper-bank-fall-2024.jpg',
+    photo: '/images/programs/pohukaina-pantry-table.jpg',
     span: 'lg:col-span-2 lg:row-span-2',
   },
   {
