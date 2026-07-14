@@ -4,6 +4,8 @@ Tracking list for what's left before this site is 100% ready to fully replace th
 
 ## Content still needed from the client/legacy site
 
+- [ ] **⚠️ Verify Carnegie Community Engagement Classification dates** — the site currently shows "2015–2025," but the Carnegie Foundation's classification system has moved to new cycles (2024 and 2026 cohorts), and the old 2015 cycle's stated end date has now passed. Need to confirm with KCC/Carnegie's official current list (carnegieclassifications.acenet.edu) whether KCC renewed for 2024 or 2026, or if the classification needs to come down/be updated. Left as-is on the site until confirmed — don't want to guess on something this factual.
+
 - [x] **Assessment Reports Archive** — real 13-year fact sheet archive (2011–2024) now linked, pulled from legacy site
 - [x] **Faculty Resources** — real curated reading list now added (dropped stale 2021 Campus Compact event announcements as no longer current)
 - [x] **Plastic Pollution World Crisis** — real facts and external resource links added
