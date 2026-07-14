@@ -101,7 +101,7 @@ export default function Hero() {
               </Link>
               <Link
                 to="/service-learners-start-here"
-                className="hero-cta press inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/8 border-2 border-sand/60 text-sand font-medium hover:bg-white/20 hover:-translate-y-0.5 transition-all"
+                className="hero-cta press inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/8 border-2 border-sand/60 text-gold font-medium hover:bg-white/20 hover:-translate-y-0.5 transition-all"
               >
                 Start here as a student
               </Link>
