@@ -31,7 +31,7 @@ const programs = [
     name: 'MINA — Mālama I Nā Ahupuaʻa',
     to: '/mina',
     blurb: 'An intercollegiate gathering rooted in ahupuaʻa-based stewardship.',
-    photo: 'https://kapiolaniserve.weebly.com/uploads/8/5/0/6/8506005/mina-1_orig.jpg',
+    photo: '/images/programs/mina-loi-planting.jpg',
     span: 'lg:col-span-2 lg:row-span-1',
   },
 ]
