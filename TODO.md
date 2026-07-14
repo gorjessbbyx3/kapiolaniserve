@@ -23,7 +23,7 @@ See **[PHOTO_SHOTLIST.md](./PHOTO_SHOTLIST.md)** for the full breakdown with fra
 
 - [ ] **Ecology Club flyer PDF** and **MINA Factsheet PDF** currently link directly to the legacy Weebly file host (`kapiolaniserve.weebly.com/uploads/...`) — these need to be rehosted (e.g. Google Drive, like the Civic Action Plan and Sustainability Plan links) before the old site is retired, or the links will break
 - [ ] **All 13 Assessment Reports Archive PDFs** (2011–2024) are also on the legacy Weebly file host — same rehosting need, ideally in bulk before Weebly is retired
-- [ ] **Some real photos are still hotlinked from the legacy Weebly host**: Pohukaina Food Pantry and MINA photos, the Carnegie Foundation logo, and Denise Pierson & Krista Hiser's headshots. (KCC Ecology Club and Māla Māunuunu are now properly hosted in `/public/images/programs` — no longer hotlinked.) Download the remaining ones and drop them into `/public/images` before Weebly retires, or those photos will break.
+- [ ] **Some real photos are still hotlinked from the legacy Weebly host**: Pohukaina Food Pantry photo, the Carnegie Foundation logo, and Denise Pierson & Krista Hiser's headshots. (KCC Ecology Club, Māla Māunuunu, and MINA are now properly hosted in `/public/images/programs` — no longer hotlinked.) Download the remaining ones and drop them into `/public/images` before Weebly retires, or those photos will break.
 
 ## Functionality
 
