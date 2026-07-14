@@ -10,14 +10,14 @@ const programs = [
     name: 'Pohukaina Food Pantry',
     to: '/pohukaina-food-pantry',
     blurb: 'On-campus food security for KCC students.',
-    photo: '/images/programs/pohukaina-pantry-table.jpg',
+    photo: '/images/programs/pohukaina-pantry-shelves.jpg',
     span: 'lg:col-span-2 lg:row-span-2',
   },
   {
     name: 'Māla Māunuunu',
     to: '/mala-maunuunu',
     blurb: 'The campus garden anchoring hands-on Environment pathway work.',
-    photo: '/images/programs/mala-maunuunu-harvest-group.jpg',
+    photo: '/images/programs/mala-maunuunu-harvest-circle.jpg',
     span: 'lg:col-span-1 lg:row-span-1',
   },
   {
