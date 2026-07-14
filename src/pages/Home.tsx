@@ -49,25 +49,31 @@ export default function Home() {
       <Hero />
 
       {/* Trust bar — Carnegie seal + real program stats */}
-      <section className="relative bg-sand-deep pt-10 pb-14 sm:pt-14 sm:pb-16">
-        <div className="mx-auto max-w-5xl px-5 lg:px-8">
-          <div className="grid sm:grid-cols-3 gap-5">
-            {stats.map((s) => (
-              <div key={s.label} className="card-lift flex items-center gap-4 bg-white rounded-2xl gold-hairline px-5 py-5">
-                <span className="h-11 w-11 rounded-full bg-kalo/8 flex items-center justify-center shrink-0">
-                  <s.icon size={20} className="text-kalo" strokeWidth={1.75} />
+      <section className="relative bg-sand-deep py-10 sm:py-14 overflow-hidden">
+        <BotanicalScatter
+          lineColor="#c9a24b"
+          items={[{ type: 'taro-outline', top: '-20%', right: '38%', size: 140, rotate: 8, opacity: 0.1 }]}
+        />
+        <div className="relative mx-auto max-w-5xl px-5 lg:px-8">
+          <div className="card-lift gold-hairline rounded-2xl bg-white overflow-hidden grid grid-cols-3 divide-x divide-kalo/10">
+            {stats.map((s, i) => (
+              <div key={s.label} className="flex flex-col items-center text-center gap-1.5 sm:gap-2 px-2 sm:px-5 py-5 sm:py-6">
+                <span
+                  className="h-8 w-8 sm:h-11 sm:w-11 rounded-full flex items-center justify-center shrink-0"
+                  style={{ backgroundColor: `${['#2f4a3c', '#1c6b72', '#d43d51'][i]}14` }}
+                >
+                  <s.icon size={16} className="sm:hidden" style={{ color: ['#2f4a3c', '#1c6b72', '#d43d51'][i] }} strokeWidth={1.75} />
+                  <s.icon size={20} className="hidden sm:block" style={{ color: ['#2f4a3c', '#1c6b72', '#d43d51'][i] }} strokeWidth={1.75} />
                 </span>
-                <div>
-                  <p className="font-display text-lg text-kalo leading-none">{s.value}</p>
-                  <p className="text-xs text-ink/60 mt-1.5 leading-snug">{s.label}</p>
-                </div>
+                <p className="font-display text-sm sm:text-lg text-kalo leading-none">{s.value}</p>
+                <p className="text-[10px] sm:text-xs text-ink/55 leading-snug">{s.label}</p>
               </div>
             ))}
           </div>
 
-          <div className="mt-6 gold-hairline rounded-2xl bg-white/70 px-6 py-5 sm:px-8 sm:py-6 flex flex-col sm:flex-row items-center gap-5 text-center sm:text-left">
+          <div className="mt-5 gold-hairline rounded-2xl bg-white/70 px-4 py-4 sm:px-8 sm:py-6 flex items-center gap-4 sm:gap-5 text-left">
             <div className="shrink-0 relative">
-              <div className="h-16 w-16 rounded-full bg-white flex items-center justify-center ring-4 ring-gold/30 p-2">
+              <div className="h-11 w-11 sm:h-16 sm:w-16 rounded-full bg-white flex items-center justify-center ring-2 sm:ring-4 ring-gold/30 p-1.5 sm:p-2">
                 <img
                   src="https://kapiolaniserve.weebly.com/uploads/8/5/0/6/8506005/editor/carnegie-foundation-logo-removebg-preview.png"
                   alt="Carnegie Foundation logo"
@@ -75,16 +81,21 @@ export default function Home() {
                   loading="lazy"
                 />
               </div>
-              <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 text-[8px] font-medium tracking-wide text-kalo-dark bg-gold rounded-full px-2 py-0.5 whitespace-nowrap">
+              <span className="hidden sm:block absolute -bottom-1 left-1/2 -translate-x-1/2 text-[8px] font-medium tracking-wide text-kalo-dark bg-gold rounded-full px-2 py-0.5 whitespace-nowrap">
                 2015&ndash;2025
               </span>
             </div>
             <div>
-              <p className="eyebrow text-papaya mb-1.5">Carnegie Community Engagement Classification</p>
-              <p className="text-sm text-ink/70 leading-relaxed">
+              <p className="eyebrow text-papaya mb-1 sm:mb-1.5 text-[10px] sm:text-xs leading-snug">
+                Carnegie Community Engagement Classification <span className="sm:hidden text-ink/50">&middot; 2015&ndash;2025</span>
+              </p>
+              <p className="hidden sm:block text-sm text-ink/70 leading-relaxed">
                 Kapiʻolani Community College is proud to hold the Carnegie Foundation&rsquo;s Community
                 Engagement Classification, honoring our sustained commitment to community partnership
                 and service-based learning.
+              </p>
+              <p className="sm:hidden text-xs text-ink/60 leading-relaxed">
+                Honoring KCC&rsquo;s sustained commitment to community partnership.
               </p>
             </div>
           </div>

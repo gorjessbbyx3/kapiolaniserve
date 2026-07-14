@@ -37,22 +37,20 @@ export default function Hero() {
 
   return (
     <div className="relative">
-      {/* Bold cropped photo, fixed height — a statement image, not a document scan */}
-      <div ref={imageRef} className="relative h-[62vh] sm:h-[75vh] lg:h-[82vh] overflow-hidden bg-kalo-dark">
-        <div className="ken-burns absolute inset-0">
+      {/* Full-width photo — edges match the viewport exactly, natural height, zero crop */}
+      <div ref={imageRef} className="relative w-full overflow-hidden bg-kalo-dark">
+        <div className="ken-burns">
           <img
             src="/images/hero-diamond-head.jpg"
             alt="Diamond Head and Waikīkī coastline"
-            className="w-full h-full object-cover"
-            style={{ objectPosition: '50% 38%' }}
+            className="w-full h-auto block"
           />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-t from-kalo-dark via-kalo-dark/10 to-black/10" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-kalo-dark via-transparent to-black/10" />
       </div>
 
       {/* Floating gold-edged card bridging the photo into the page */}
-      <div className="relative -mt-24 sm:-mt-32 lg:-mt-40 z-10 px-5 lg:px-8">
+      <div className="relative -mt-10 sm:-mt-20 lg:-mt-28 z-10 px-5 lg:px-8">
         <div
           ref={cardRef}
           className="relative mx-auto max-w-4xl rounded-3xl bg-kalo-dark foil-texture frame-shadow gold-hairline overflow-hidden px-6 py-10 sm:px-14 sm:py-14 text-center"
