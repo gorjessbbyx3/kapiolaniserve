@@ -7,6 +7,7 @@ export type Pathway = {
   short: string
   focus: string[]
   photo?: string
+  photoPosition?: string
   culturalNote?: { heading: string; values: { term: string; meaning: string }[] }
 }
 

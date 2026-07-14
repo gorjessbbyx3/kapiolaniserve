@@ -24,7 +24,7 @@ const programs = [
     name: 'KCC Ecology Club',
     to: '/kcc-ecology-club',
     blurb: 'Student-led restoration days and sustainability advocacy.',
-    photo: 'https://kapiolaniserve.weebly.com/uploads/8/5/0/6/8506005/kapiolani-community-college-ecology-club-1a_orig.jpg',
+    photo: '/images/programs/ecology-club-workday.jpg',
     span: 'lg:col-span-1 lg:row-span-1',
   },
   {

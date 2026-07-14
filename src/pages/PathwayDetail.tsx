@@ -44,7 +44,13 @@ export default function PathwayDetail() {
           <div className="mb-10 max-w-md">
             {pathway.photo ? (
               <div className="aspect-[16/9] w-full rounded-xl overflow-hidden gold-hairline">
-                <img src={pathway.photo} alt={`${pathway.name} pathway`} className="w-full h-full object-cover" loading="lazy" />
+                <img
+                  src={pathway.photo}
+                  alt={`${pathway.name} pathway`}
+                  className="w-full h-full object-cover"
+                  style={pathway.photoPosition ? { objectPosition: pathway.photoPosition } : undefined}
+                  loading="lazy"
+                />
               </div>
             ) : (
               <ImagePlaceholder label={`${pathway.name} pathway in action`} aspect="aspect-[16/9]" accent={pathway.color} />
