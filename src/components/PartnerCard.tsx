@@ -4,7 +4,7 @@ import type { Partner } from '../data/partners'
 export default function PartnerCard({ partner, accent }: { partner: Partner; accent: string }) {
   return (
     <div
-      className="card-lift border border-kalo/10 rounded-xl p-6 bg-white flex flex-col gap-3 border-t-4"
+      className="card-lift gold-hairline rounded-xl p-6 bg-white flex flex-col gap-3 border-t-4"
       style={{ borderTopColor: accent }}
     >
       <div className="flex items-start justify-between gap-3">

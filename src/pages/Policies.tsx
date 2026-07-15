@@ -3,12 +3,12 @@ import PageHero from '../components/PageHero'
 
 function PolicyBlock({ title, points }: { title: string; points: string[] }) {
   return (
-    <div className="border-l-2 border-ocean pl-6 py-1">
+    <div className="border-l-2 border-gold pl-6 py-1">
       <h2 className="font-display text-xl text-kalo">{title}</h2>
       <ul className="mt-3 space-y-2">
         {points.map((p) => (
           <li key={p} className="flex items-start gap-3 text-sm text-ink/75 leading-relaxed">
-            <span className="mt-2 h-1.5 w-1.5 rounded-full bg-ocean shrink-0" />
+            <span className="mt-2 h-1.5 w-1.5 rounded-full bg-gold shrink-0" />
             {p}
           </li>
         ))}

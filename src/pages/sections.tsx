@@ -47,7 +47,7 @@ export function EventsOpportunities() {
             href="https://www.bbh.org/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-md border border-kalo/20 text-sm text-kalo hover:border-papaya hover:text-papaya transition-colors"
+            className="card-lift inline-flex items-center gap-2 px-4 py-2 rounded-md gold-hairline text-sm text-kalo hover:text-papaya transition-colors"
           >
             Donate blood with the Blood Bank of Hawaiʻi
           </a>

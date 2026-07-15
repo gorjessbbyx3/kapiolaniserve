@@ -18,13 +18,14 @@ export default function PathwaysOverview() {
             <Link
               key={p.slug}
               to={`/pathways/${p.slug}`}
-              className="card-lift group border border-kalo/10 rounded-xl p-7 bg-white flex gap-5"
+              className="card-lift group rounded-xl p-7 bg-white flex gap-5 border-t-4 gold-hairline"
+              style={{ borderTopColor: p.color }}
             >
               <PathwayMarker marker={p.marker} color={p.color} size="lg" />
               <div>
                 <h2 className="font-display text-xl text-kalo">{p.name}</h2>
                 <p className="mt-2 text-sm text-ink/70 leading-relaxed">{p.summary}</p>
-                <span className="mt-3 inline-flex items-center gap-1 text-sm text-papaya font-medium">
+                <span className="mt-3 inline-flex items-center gap-1 text-sm text-gold font-medium">
                   View pathway <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
                 </span>
               </div>

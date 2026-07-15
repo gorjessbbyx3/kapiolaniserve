@@ -5,16 +5,16 @@ type Species = { name: string; hawaiianName?: string; note: string }
 
 function SpeciesTable({ species }: { species: Species[] }) {
   return (
-    <div className="overflow-x-auto border border-kalo/10 rounded-xl">
+    <div className="overflow-x-auto rounded-xl gold-hairline">
       <table className="w-full text-sm">
-        <thead className="bg-sand-deep text-left">
+        <thead className="bg-sand-deep text-left border-b border-gold/20">
           <tr>
             <th className="px-5 py-3 font-medium text-kalo">Species</th>
             <th className="px-5 py-3 font-medium text-kalo">Hawaiian name</th>
             <th className="px-5 py-3 font-medium text-kalo">Note</th>
           </tr>
         </thead>
-        <tbody className="divide-y divide-kalo/10">
+        <tbody className="divide-y divide-gold/10">
           {species.map((s) => (
             <tr key={s.name}>
               <td className="px-5 py-3 text-ink/85 font-medium">{s.name}</td>

@@ -34,20 +34,20 @@ export default function ContactForm() {
       <div className="grid sm:grid-cols-2 gap-5">
         <label className="block text-sm">
           <span className="text-ink/70">First name *</span>
-          <input required type="text" name="firstName" className="mt-1 w-full rounded-md border border-kalo/20 px-3 py-2 focus:border-ocean" />
+          <input required type="text" name="firstName" className="mt-1 w-full rounded-md border border-kalo/20 px-3 py-2 focus:border-gold" />
         </label>
         <label className="block text-sm">
           <span className="text-ink/70">Last name *</span>
-          <input required type="text" name="lastName" className="mt-1 w-full rounded-md border border-kalo/20 px-3 py-2 focus:border-ocean" />
+          <input required type="text" name="lastName" className="mt-1 w-full rounded-md border border-kalo/20 px-3 py-2 focus:border-gold" />
         </label>
       </div>
       <label className="block text-sm">
         <span className="text-ink/70">Email *</span>
-        <input required type="email" name="email" className="mt-1 w-full rounded-md border border-kalo/20 px-3 py-2 focus:border-ocean" />
+        <input required type="email" name="email" className="mt-1 w-full rounded-md border border-kalo/20 px-3 py-2 focus:border-gold" />
       </label>
       <label className="block text-sm">
         <span className="text-ink/70">I am... *</span>
-        <select required name="role" defaultValue="" className="mt-1 w-full rounded-md border border-kalo/20 px-3 py-2 bg-white focus:border-ocean">
+        <select required name="role" defaultValue="" className="mt-1 w-full rounded-md border border-kalo/20 px-3 py-2 bg-white focus:border-gold">
           <option value="" disabled>
             Choose one
           </option>
@@ -60,7 +60,7 @@ export default function ContactForm() {
       </label>
       <label className="block text-sm">
         <span className="text-ink/70">Message *</span>
-        <textarea required name="message" rows={4} className="mt-1 w-full rounded-md border border-kalo/20 px-3 py-2 focus:border-ocean" />
+        <textarea required name="message" rows={4} className="mt-1 w-full rounded-md border border-kalo/20 px-3 py-2 focus:border-gold" />
       </label>
       <button
         type="submit"

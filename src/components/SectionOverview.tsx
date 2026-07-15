@@ -27,11 +27,11 @@ export default function SectionOverview({
               <Link
                 key={l.to}
                 to={l.to}
-                className="card-lift group border border-kalo/10 rounded-xl p-6 bg-white"
+                className="card-lift group gold-hairline rounded-xl p-6 bg-white"
               >
                 <h2 className="font-display text-lg text-kalo">{l.title}</h2>
                 <p className="mt-2 text-sm text-ink/70 leading-relaxed">{l.blurb}</p>
-                <span className="mt-3 inline-flex items-center gap-1 text-sm text-papaya font-medium">
+                <span className="mt-3 inline-flex items-center gap-1 text-sm text-gold font-medium">
                   Read more <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
                 </span>
               </Link>

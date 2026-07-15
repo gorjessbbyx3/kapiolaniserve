@@ -68,7 +68,7 @@ export default function PathwayDetail() {
           </ul>
 
           {pathway.culturalNote && (
-            <div className="mb-10 border border-kalo/10 rounded-xl p-6" style={{ backgroundColor: tint(pathway.color, 5) }}>
+            <div className="mb-10 gold-hairline rounded-xl p-6" style={{ backgroundColor: tint(pathway.color, 5) }}>
               <p className="font-display text-lg text-kalo mb-4">{pathway.culturalNote.heading}</p>
               <div className="grid sm:grid-cols-2 gap-4">
                 {pathway.culturalNote.values.map((v) => (
@@ -97,7 +97,7 @@ export default function PathwayDetail() {
             </>
           )}
 
-          <div className="mt-10 border border-kalo/10 rounded-xl p-6 bg-white">
+          <div className="mt-10 gold-hairline rounded-xl p-6 bg-white">
             <p className="font-display text-lg text-kalo">Ready to register for this pathway?</p>
             <p className="mt-2 text-sm text-ink/70">
               Start with orientation and registration, then bring your course details to the KSSLP office.
@@ -118,7 +118,7 @@ export default function PathwayDetail() {
               <Link
                 key={p.slug}
                 to={`/pathways/${p.slug}`}
-                className="card-lift flex items-center gap-3 border border-kalo/10 rounded-lg px-4 py-3 bg-white/60 hover:bg-white"
+                className="card-lift flex items-center gap-3 gold-hairline rounded-lg px-4 py-3 bg-white/60 hover:bg-white"
               >
                 <PathwayMarker marker={p.marker} color={p.color} size="sm" />
                 <span className="text-sm text-kalo">{p.name}</span>

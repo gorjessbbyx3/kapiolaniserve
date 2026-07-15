@@ -18,18 +18,20 @@ export default function LeafPage() {
         </Link>
         <div className="mt-6 space-y-5 text-ink/80 leading-relaxed">
           {page.body.map((p, i) => (
-            <p key={i}>{p}</p>
+            <p key={i} className={i === 0 ? 'drop-cap' : undefined}>
+              {p}
+            </p>
           ))}
         </div>
         {page.links && page.links.length > 0 && (
-          <div className="mt-8 pt-6 border-t border-kalo/10 flex flex-wrap gap-3">
+          <div className="mt-8 pt-6 border-t border-gold/20 flex flex-wrap gap-3">
             {page.links.map((l) => (
               <a
                 key={l.href}
                 href={l.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-md border border-kalo/20 text-sm text-kalo hover:border-papaya hover:text-papaya transition-colors"
+                className="card-lift inline-flex items-center gap-2 px-4 py-2 rounded-md gold-hairline text-sm text-kalo hover:text-papaya transition-colors"
               >
                 {l.label} <ExternalLink size={14} />
               </a>

@@ -107,7 +107,7 @@ export function MeetTheTeam() {
           <p className="eyebrow text-ocean mb-4">KSSL Faculty & Staff</p>
           <div className="grid sm:grid-cols-2 gap-5">
             {staff.map((t) => (
-              <div key={t.name} className="card-lift border border-kalo/10 rounded-xl p-6 bg-white flex gap-4">
+              <div key={t.name} className="card-lift gold-hairline rounded-xl p-6 bg-white flex gap-4">
                 <img
                   src={t.photo}
                   alt={t.name}
@@ -128,7 +128,7 @@ export function MeetTheTeam() {
           <p className="eyebrow text-ocean mb-4">KSSL Student Leaders</p>
           <div className="grid sm:grid-cols-2 gap-5">
             {studentLeaders.map((t) => (
-              <div key={t.name} className="card-lift border border-kalo/10 rounded-xl p-6 bg-white">
+              <div key={t.name} className="card-lift gold-hairline rounded-xl p-6 bg-white">
                 <div className="mb-4 max-w-[100px]">
                   <ImagePlaceholder label={`${t.name} headshot`} aspect="aspect-square" accent="#1c6b72" />
                 </div>
