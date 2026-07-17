@@ -125,6 +125,18 @@ export function MeetTheTeam() {
         </div>
 
         <div>
+          <div className="rounded-xl overflow-hidden gold-hairline">
+            <img
+              src="https://kapionews.com/wp-content/uploads/2024/05/IMG_9321.jpg"
+              alt="Denise Pierson works with service-learning students in the ʻIliahi building"
+              className="w-full h-auto object-cover"
+              loading="lazy"
+            />
+          </div>
+          <p className="mt-2 text-xs text-ink/45 text-right">Photo: Shawna Takaki / Kapiʻo News</p>
+        </div>
+
+        <div>
           <p className="eyebrow text-ocean mb-4">KSSL Student Leaders</p>
           <div className="grid sm:grid-cols-2 gap-5">
             {studentLeaders.map((t) => (
