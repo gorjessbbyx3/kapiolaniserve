@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import PageHero from '../components/PageHero'
 import Accordion from '../components/Accordion'
+import JsonLd from '../components/JsonLd'
 import type { QA } from '../components/Accordion'
 
 function FAQPage({
@@ -18,8 +19,22 @@ function FAQPage({
   backLabel: string
   items: QA[]
 }) {
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: items.map((item) => ({
+      '@type': 'Question',
+      name: item.q,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.a,
+      },
+    })),
+  }
+
   return (
     <div>
+      <JsonLd data={faqSchema} />
       <PageHero eyebrow={eyebrow} title={title} description={description} />
       <section className="mx-auto max-w-3xl px-5 lg:px-8 py-16">
         <Link to={backTo} className="text-sm text-ocean hover:text-papaya">

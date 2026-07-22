@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import BotanicalScatter, { WatercolorWash, GoldDust } from './BotanicalScatter'
+import JsonLd from './JsonLd'
 
 export default function PageHero({
   eyebrow,
@@ -20,8 +21,38 @@ export default function PageHero({
     }
   }, [title])
 
+  useEffect(() => {
+    if (!description) return
+    const metaTag = document.querySelector('meta[name="description"]')
+    const previousContent = metaTag?.getAttribute('content') ?? ''
+    metaTag?.setAttribute('content', description)
+    return () => {
+      metaTag?.setAttribute('content', previousContent)
+    }
+  }, [description])
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: 'https://kapiolaniserve.techsavvyhawaii.com/',
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: title,
+        item: typeof window !== 'undefined' ? window.location.href : undefined,
+      },
+    ],
+  }
+
   return (
     <section className="relative bg-kalo text-sand contour-field foil-texture overflow-hidden">
+      <JsonLd data={breadcrumbSchema} />
       <WatercolorWash color="#1c6b72" size={300} top="-20%" right="-6%" opacity={0.16} />
       <GoldDust count={8} seedOffset={120} />
       <BotanicalScatter

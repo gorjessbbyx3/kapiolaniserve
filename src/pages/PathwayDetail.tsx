@@ -7,6 +7,7 @@ import PathwayMarker from '../components/PathwayMarker'
 import PartnerCard from '../components/PartnerCard'
 import BotanicalScatter, { GoldDust } from '../components/BotanicalScatter'
 import { ImagePlaceholder } from '../components/Placeholders'
+import JsonLd from '../components/JsonLd'
 
 export default function PathwayDetail() {
   const { slug } = useParams()
@@ -21,13 +22,48 @@ export default function PathwayDetail() {
     }
   }, [pathway])
 
+  useEffect(() => {
+    if (!pathway) return
+    const metaTag = document.querySelector('meta[name="description"]')
+    const previousContent = metaTag?.getAttribute('content') ?? ''
+    metaTag?.setAttribute('content', pathway.summary)
+    return () => {
+      metaTag?.setAttribute('content', previousContent)
+    }
+  }, [pathway])
+
   if (!pathway) return <Navigate to="/pathways" replace />
 
   const others = pathways.filter((p) => p.slug !== pathway.slug)
   const partners = partnersByPathway[pathway.slug] ?? []
 
+  const pathwaySchema = {
+    '@context': 'https://schema.org',
+    '@type': 'EducationalOccupationalProgram',
+    name: `${pathway.name} Pathway`,
+    description: pathway.summary,
+    provider: {
+      '@type': 'EducationalOrganization',
+      name: 'Kapiʻolani Service & Sustainability Learning Program',
+      sameAs: 'https://kapiolaniserve.techsavvyhawaii.com/',
+    },
+    occupationalCategory: pathway.focus.join(', '),
+  }
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://kapiolaniserve.techsavvyhawaii.com/' },
+      { '@type': 'ListItem', position: 2, name: 'Pathways', item: 'https://kapiolaniserve.techsavvyhawaii.com/pathways' },
+      { '@type': 'ListItem', position: 3, name: pathway.name, item: `https://kapiolaniserve.techsavvyhawaii.com/pathways/${pathway.slug}` },
+    ],
+  }
+
   return (
     <div>
+      <JsonLd data={pathwaySchema} />
+      <JsonLd data={breadcrumbSchema} />
       <section className="relative text-sand contour-field overflow-hidden" style={{ backgroundColor: pathway.color }}>
         <GoldDust count={8} seedOffset={200} />
         <BotanicalScatter
