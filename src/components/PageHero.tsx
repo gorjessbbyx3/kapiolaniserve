@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import BotanicalScatter, { WatercolorWash, GoldDust } from './BotanicalScatter'
 
 export default function PageHero({
@@ -11,6 +12,14 @@ export default function PageHero({
   description?: string
   accent?: string
 }) {
+  useEffect(() => {
+    const previousTitle = document.title
+    document.title = `${title} | KSSLP`
+    return () => {
+      document.title = previousTitle
+    }
+  }, [title])
+
   return (
     <section className="relative bg-kalo text-sand contour-field foil-texture overflow-hidden">
       <WatercolorWash color="#1c6b72" size={300} top="-20%" right="-6%" opacity={0.16} />

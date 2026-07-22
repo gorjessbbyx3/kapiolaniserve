@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { useParams, Link, Navigate } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
 import { pathways, tint } from '../data/pathways'
@@ -10,6 +11,15 @@ import { ImagePlaceholder } from '../components/Placeholders'
 export default function PathwayDetail() {
   const { slug } = useParams()
   const pathway = pathways.find((p) => p.slug === slug)
+
+  useEffect(() => {
+    if (!pathway) return
+    const previousTitle = document.title
+    document.title = `${pathway.name} Pathway | KSSLP`
+    return () => {
+      document.title = previousTitle
+    }
+  }, [pathway])
 
   if (!pathway) return <Navigate to="/pathways" replace />
 
