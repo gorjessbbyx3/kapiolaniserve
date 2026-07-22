@@ -30,7 +30,7 @@ See **[PHOTO_SHOTLIST.md](./PHOTO_SHOTLIST.md)** for the full breakdown with fra
 
 ## Functionality
 
-- [ ] Contact form on the homepage is a front-end stub only — needs a real backend (Cloudflare Pages Function, Formspree, etc.) to actually deliver submissions
+- [ ] Contact form backend is built (`functions/api/contact.ts`, sends to kccserve@hawaii.edu via Resend) — **needs one-time setup**: create a Resend account, add `RESEND_API_KEY` as a Cloudflare Pages environment variable/secret, and redeploy. Full steps in README.md under "Contact form email setup." Until that's done, form submissions will fail with an error message rather than silently disappearing.
 - [ ] Decide on final domain/subdomain and confirm DNS once client is ready to fully cut over from Weebly
 
 ## Nice-to-haves / possible next steps

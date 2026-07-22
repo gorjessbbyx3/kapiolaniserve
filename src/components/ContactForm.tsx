@@ -9,16 +9,44 @@ const roles = [
 ]
 
 export default function ContactForm() {
-  const [submitted, setSubmitted] = useState(false)
+  const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle')
+  const [errorMessage, setErrorMessage] = useState('')
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
-    // Wire this up to your form handler of choice (Cloudflare Pages Function,
-    // Formspree, etc). Left as a client-side stub for now.
-    setSubmitted(true)
+    setStatus('sending')
+    setErrorMessage('')
+
+    const form = e.currentTarget
+    const data = new FormData(form)
+    const payload = {
+      firstName: data.get('firstName'),
+      lastName: data.get('lastName'),
+      email: data.get('email'),
+      role: data.get('role'),
+      message: data.get('message'),
+    }
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      })
+
+      if (!res.ok) {
+        const body = await res.json().catch(() => ({}))
+        throw new Error(body.error || 'Something went wrong. Please try again.')
+      }
+
+      setStatus('sent')
+    } catch (err) {
+      setStatus('error')
+      setErrorMessage(err instanceof Error ? err.message : 'Something went wrong. Please try again.')
+    }
   }
 
-  if (submitted) {
+  if (status === 'sent') {
     return (
       <div className="p-8 bg-white rounded-2xl">
         <p className="font-display text-xl text-kalo">Message sent.</p>
@@ -62,11 +90,19 @@ export default function ContactForm() {
         <span className="text-ink/70">Message *</span>
         <textarea required name="message" rows={4} className="mt-1 w-full rounded-md border border-kalo/20 px-3 py-2 focus:border-gold" />
       </label>
+
+      {status === 'error' && (
+        <p className="text-sm text-hibiscus" role="alert">
+          {errorMessage}
+        </p>
+      )}
+
       <button
         type="submit"
-        className="press w-full sm:w-auto px-6 py-3 rounded-md bg-papaya text-sand font-medium hover:brightness-110 transition"
+        disabled={status === 'sending'}
+        className="press w-full sm:w-auto px-6 py-3 rounded-md bg-papaya text-sand font-medium hover:brightness-110 transition disabled:opacity-60 disabled:cursor-not-allowed"
       >
-        Submit
+        {status === 'sending' ? 'Sending…' : 'Submit'}
       </button>
     </form>
   )
