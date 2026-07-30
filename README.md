@@ -61,7 +61,7 @@ emails submissions to **kccserve@hawaii.edu** using [Resend](https://resend.com)
 **About the sending address**: the function currently sends from
 `onboarding@resend.dev`, Resend's shared test address — this works immediately with no
 setup, but looks like an unfamiliar sender and has lower deliverability. For a more
-trustworthy sender (e.g. `noreply@kapiolaniserve.techsavvyhawaii.com` or similar):
+trustworthy sender (e.g. `noreply@kccserve.com` or similar):
 1. In Resend, add and verify your sending domain (a few DNS records — SPF/DKIM — added
    wherever the domain's DNS is managed, e.g. Cloudflare DNS).
 2. Update `FROM_EMAIL` in `functions/api/contact.ts` to use that verified address.

@@ -45,7 +45,7 @@ export default function PathwayDetail() {
     provider: {
       '@type': 'EducationalOrganization',
       name: 'Kapiʻolani Service & Sustainability Learning Program',
-      sameAs: 'https://kapiolaniserve.techsavvyhawaii.com/',
+      sameAs: 'https://kccserve.com/',
     },
     occupationalCategory: pathway.focus.join(', '),
   }
@@ -54,9 +54,9 @@ export default function PathwayDetail() {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://kapiolaniserve.techsavvyhawaii.com/' },
-      { '@type': 'ListItem', position: 2, name: 'Pathways', item: 'https://kapiolaniserve.techsavvyhawaii.com/pathways' },
-      { '@type': 'ListItem', position: 3, name: pathway.name, item: `https://kapiolaniserve.techsavvyhawaii.com/pathways/${pathway.slug}` },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://kccserve.com/' },
+      { '@type': 'ListItem', position: 2, name: 'Pathways', item: 'https://kccserve.com/pathways' },
+      { '@type': 'ListItem', position: 3, name: pathway.name, item: `https://kccserve.com/pathways/${pathway.slug}` },
     ],
   }
 

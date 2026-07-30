@@ -32,4 +32,4 @@ Allow: /
 User-agent: Bytespider
 Allow: /
 
-Sitemap: https://kapiolaniserve.techsavvyhawaii.com/sitemap.xml
+Sitemap: https://kccserve.com/sitemap.xml

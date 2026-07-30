@@ -39,7 +39,7 @@ export default function PageHero({
         '@type': 'ListItem',
         position: 1,
         name: 'Home',
-        item: 'https://kapiolaniserve.techsavvyhawaii.com/',
+        item: 'https://kccserve.com/',
       },
       {
         '@type': 'ListItem',
