@@ -30,11 +30,10 @@ See **[PHOTO_SHOTLIST.md](./PHOTO_SHOTLIST.md)** for the full breakdown with fra
 
 ## Functionality
 
-- [ ] Contact form backend is built (`functions/api/contact.ts`, sends to kccserve@hawaii.edu via Resend) — **needs one-time setup**: create a Resend account, add `RESEND_API_KEY` as a Cloudflare Pages environment variable/secret, and redeploy. Full steps in README.md under "Contact form email setup." Until that's done, form submissions will fail with an error message rather than silently disappearing.
-- [ ] Decide on final domain/subdomain and confirm DNS once client is ready to fully cut over from Weebly
+- [x] Contact form backend built and configured (`functions/api/contact.ts` + Resend API key added) — sends to kccserve@hawaii.edu
+- [x] Domain confirmed: live at kccserve.com, with www.kccserve.com being added as a redirect
 
 ## Nice-to-haves / possible next steps
 
 - [ ] Replace remaining stock-style copy in Resource Library leaf pages with more specific real content if/when available
-- [ ] Add real sponsor logos (State Farm, Hawaiian Electric) instead of text-only sponsor strip
 - [ ] Consider an events/calendar page if KSSLP wants to surface upcoming workdays (MINA calendar, 808 Cleanups calendar, etc. are currently just linked externally)
