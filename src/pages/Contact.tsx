@@ -1,11 +1,8 @@
 import {
   ArrowLeft,
-  Facebook,
-  Instagram,
   Mail,
   MapPin,
   Phone,
-  Twitter,
 } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
@@ -13,17 +10,14 @@ const socialLinks = [
   {
     label: 'Facebook',
     href: 'https://www.facebook.com/kapiolani.servelearn',
-    icon: Facebook,
   },
   {
     label: 'Instagram',
     href: 'https://www.instagram.com/kapiolaniserve/',
-    icon: Instagram,
   },
   {
     label: 'X (Twitter)',
     href: 'https://www.x.com/kapiolaniserve',
-    icon: Twitter,
   },
 ]
 
@@ -129,7 +123,7 @@ export default function Contact() {
           </div>
 
           <div className="flex flex-wrap gap-3">
-            {socialLinks.map(({ label, href, icon: Icon }) => (
+            {socialLinks.map(({ label, href }) => (
               <a
                 key={label}
                 href={href}
@@ -137,7 +131,6 @@ export default function Contact() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-full border border-gold/30 px-5 py-3 text-sm hover:bg-gold/10 hover:text-gold transition-colors"
               >
-                <Icon size={18} />
                 {label}
               </a>
             ))}
