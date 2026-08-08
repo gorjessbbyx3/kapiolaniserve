@@ -147,7 +147,7 @@ export default function Header() {
               </div>
             ))}
             <Link
-              to="/#contact"
+              to="/contact"
               className="press ml-3 px-5 py-2.5 text-sm rounded-full bg-hibiscus text-sand font-medium shadow-md shadow-hibiscus/30 hover:brightness-110 hover:-translate-y-0.5 transition-all"
             >
               Connect
@@ -236,7 +236,7 @@ export default function Header() {
 
           <div className="px-6 py-6">
             <Link
-              to="/#contact"
+              to="/contact"
               className="press flex items-center justify-center gap-2 px-5 py-3.5 rounded-full bg-hibiscus text-sand font-medium shadow-lg shadow-hibiscus/30"
               onClick={() => setOpen(false)}
             >
